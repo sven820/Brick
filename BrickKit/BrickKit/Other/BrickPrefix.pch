@@ -1,0 +1,26 @@
+//
+//  BrickPrefix.pch
+//  BrickKit
+//
+//  Created by jinxiaofei on 16/6/19.
+//  Copyright © 2016年 JJ.sevn. All rights reserved.
+//
+
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "Masonry.h"
+#import "BrickKitDefine.h"
+#import "BRCategory.h"
+#import "YCFSafe.h"
+
+#import "BRComponent.h"
+
+#endif

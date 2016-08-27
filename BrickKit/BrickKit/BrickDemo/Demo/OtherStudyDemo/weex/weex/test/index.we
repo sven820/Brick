@@ -1,0 +1,20 @@
+<template>
+
+	<list-view items="{{items}}" dir="{{dir}}"></list-view>
+
+</template>
+
+<script>
+	require('./include/list-view.we');
+	require('./include/list-item.we');
+	module.exports = {
+		data: {
+			dir: 'test',
+			items: [
+
+				{name: 'Hello 99World', title: 'Hello World', src: 'testBundleJs/module/hello-world.js'},
+				{name: 'Common Style', title: 'Common Style', src: 'testBundleJs/module/style.js'}
+			],
+		},
+	}
+</script>

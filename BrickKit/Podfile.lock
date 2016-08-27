@@ -1,0 +1,42 @@
+PODS:
+  - Masonry (1.0.1)
+  - OCMock (3.3.1)
+  - ReactiveCocoa (4.2.1):
+    - Result (~> 2.0)
+  - Result (2.1.3)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SocketRocket (0.5.1)
+  - WeexSDK (0.6.0):
+    - SocketRocket
+  - WXDevtool (0.0.1):
+    - WeexSDK
+
+DEPENDENCIES:
+  - Masonry
+  - OCMock
+  - ReactiveCocoa
+  - SDWebImage
+  - WeexSDK (from `Pods/Weex/sdk/`)
+  - WXDevtool (from `Pods/Weex/WXDevtool/`)
+
+EXTERNAL SOURCES:
+  WeexSDK:
+    :path: Pods/Weex/sdk/
+  WXDevtool:
+    :path: Pods/Weex/WXDevtool/
+
+SPEC CHECKSUMS:
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  ReactiveCocoa: 5a42745f11ea236f405bb9ce5e97c5e3b23562dd
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  WeexSDK: 3ce441ea90c93462f1f8e7744cb0b63081744de9
+  WXDevtool: dc48ee7771740735fcb93fa8359162d83fe749b8
+
+PODFILE CHECKSUM: 384158abd13ec672cad8025d5a131cb77d785a44
+
+COCOAPODS: 1.1.0.beta.1

@@ -1,0 +1,15 @@
+<template>
+	<style-box></style-box>
+</template>
+
+<style></style>
+
+<script>
+	
+	require('weex-components');
+	module.exports = {
+		data: {
+
+		}
+	}
+</script>

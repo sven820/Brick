@@ -1,0 +1,29 @@
+<template>
+	<wxc-list-item onClick="{{didClick}}">
+		<text class="item-text">{{title}}</text>
+	</wxc-list-item>
+</template>
+
+<style>
+	.item-text {
+		font-size: 48px;
+		color: #555;
+	}
+</style>
+
+<script>
+	require('weex-components');
+	module.exports = {
+		data: {
+			title: '',
+			src: '',
+		}, 
+
+		methods: {
+			didClick: function () {
+				this.$openURL(this.src);
+			}
+		}
+		
+	}
+</script>
