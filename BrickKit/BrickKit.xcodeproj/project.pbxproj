@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		419557DB0D86D5F8F6927D98 /* Pods_BrickKit_BrickKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9245FD38BFD28A2AEBA5DE3 /* Pods_BrickKit_BrickKitUITests.framework */; };
-		99CDBE4D1D709572006538E4 /* weex in Resources */ = {isa = PBXBuildFile; fileRef = 99CDBE4C1D709572006538E4 /* weex */; };
 		99F03AF01D6E076700A14FEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03AEF1D6E076700A14FEE /* AppDelegate.m */; };
 		99F03AFB1D6E076700A14FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F03AFA1D6E076700A14FEE /* Assets.xcassets */; };
 		99F03B091D6E076700A14FEE /* BrickKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03B081D6E076700A14FEE /* BrickKitTests.m */; };
@@ -94,7 +93,6 @@
 		99F03C831D6E0AC500A14FEE /* JJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03C3B1D6E0AC500A14FEE /* JJPhoto.m */; };
 		99F03C841D6E0AC500A14FEE /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03C3F1D6E0AC500A14FEE /* YYFPSLabel.m */; };
 		99F03C851D6E0AC500A14FEE /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03C411D6E0AC500A14FEE /* YYWeakProxy.m */; };
-		99F03C871D6E0ACE00A14FEE /* MarkDown in Resources */ = {isa = PBXBuildFile; fileRef = 99F03C861D6E0ACE00A14FEE /* MarkDown */; };
 		99F03C8B1D6E0D3E00A14FEE /* BRLoadImageAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03C891D6E0D3E00A14FEE /* BRLoadImageAPITest.m */; };
 		99F03C8C1D6E0D3E00A14FEE /* BRTestViewModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03C8A1D6E0D3E00A14FEE /* BRTestViewModelTest.m */; };
 		99F03CB71D6E97FB00A14FEE /* BRImageToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03CB61D6E97FB00A14FEE /* BRImageToolsTest.m */; };
@@ -107,10 +105,6 @@
 		99F03D1F1D6EEA2C00A14FEE /* BRImageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D151D6EEA2C00A14FEE /* BRImageTools.m */; };
 		99F03D201D6EEA2C00A14FEE /* BRLoadImageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D171D6EEA2C00A14FEE /* BRLoadImageAPI.m */; };
 		99F03D211D6EEA2C00A14FEE /* BRTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D191D6EEA2C00A14FEE /* BRTestViewModel.m */; };
-		99F03D281D6EEA8E00A14FEE /* BRWeexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D271D6EEA8E00A14FEE /* BRWeexViewController.m */; };
-		99F03D2F1D6EEDF200A14FEE /* WXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D2A1D6EEDF200A14FEE /* WXEventModule.m */; };
-		99F03D301D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D2C1D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.m */; };
-		99F03D311D6EEDF200A14FEE /* BRWXComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F03D2E1D6EEDF200A14FEE /* BRWXComponent.m */; };
 		B2BCCFCD7575AAE55EAB8B8C /* Pods_BrickKit_BrickKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12EACEADA1587974F51FE5C4 /* Pods_BrickKit_BrickKitTests.framework */; };
 		F0260E5CACA883EB668D2B0A /* Pods_BrickKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C9FE197013D97BE63BB707 /* Pods_BrickKit.framework */; };
 /* End PBXBuildFile section */
@@ -140,7 +134,6 @@
 		8B66DF84F5BEF24D997B4846 /* Pods-BrickKit-BrickKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickKit-BrickKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrickKit-BrickKitTests/Pods-BrickKit-BrickKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		90A358D24CA5DC2BD7D8F0C7 /* Pods-BrickKit-BrickKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickKit-BrickKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrickKit-BrickKitUITests/Pods-BrickKit-BrickKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99BF1D23D6E7EC41B6AF3DEB /* Pods-BrickKit-BrickKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickKit-BrickKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrickKit-BrickKitTests/Pods-BrickKit-BrickKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		99CDBE4C1D709572006538E4 /* weex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = weex; sourceTree = "<group>"; };
 		99F03AE81D6E076700A14FEE /* BrickKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F03AEE1D6E076700A14FEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		99F03AEF1D6E076700A14FEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -317,7 +310,6 @@
 		99F03C3F1D6E0AC500A14FEE /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		99F03C401D6E0AC500A14FEE /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		99F03C411D6E0AC500A14FEE /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
-		99F03C861D6E0ACE00A14FEE /* MarkDown */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MarkDown; sourceTree = "<group>"; };
 		99F03C891D6E0D3E00A14FEE /* BRLoadImageAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRLoadImageAPITest.m; sourceTree = "<group>"; };
 		99F03C8A1D6E0D3E00A14FEE /* BRTestViewModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTestViewModelTest.m; sourceTree = "<group>"; };
 		99F03CB61D6E97FB00A14FEE /* BRImageToolsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRImageToolsTest.m; sourceTree = "<group>"; };
@@ -342,15 +334,6 @@
 		99F03D181D6EEA2C00A14FEE /* BRTestViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTestViewModel.h; sourceTree = "<group>"; };
 		99F03D191D6EEA2C00A14FEE /* BRTestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTestViewModel.m; sourceTree = "<group>"; };
 		99F03D1A1D6EEA2C00A14FEE /* 单元测试浅析.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "单元测试浅析.h"; sourceTree = "<group>"; };
-		99F03D251D6EEA6D00A14FEE /* weex基本介绍.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weex基本介绍.h"; sourceTree = "<group>"; };
-		99F03D261D6EEA8E00A14FEE /* BRWeexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRWeexViewController.h; sourceTree = "<group>"; };
-		99F03D271D6EEA8E00A14FEE /* BRWeexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRWeexViewController.m; sourceTree = "<group>"; };
-		99F03D291D6EEDF200A14FEE /* WXEventModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXEventModule.h; sourceTree = "<group>"; };
-		99F03D2A1D6EEDF200A14FEE /* WXEventModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEventModule.m; sourceTree = "<group>"; };
-		99F03D2B1D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImgLoaderDefaultImpl.h; sourceTree = "<group>"; };
-		99F03D2C1D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImgLoaderDefaultImpl.m; sourceTree = "<group>"; };
-		99F03D2D1D6EEDF200A14FEE /* BRWXComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRWXComponent.h; sourceTree = "<group>"; };
-		99F03D2E1D6EEDF200A14FEE /* BRWXComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRWXComponent.m; sourceTree = "<group>"; };
 		D8233FCD46B57F313547E7E4 /* Pods-BrickKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrickKit/Pods-BrickKit.debug.xcconfig"; sourceTree = "<group>"; };
 		D9245FD38BFD28A2AEBA5DE3 /* Pods_BrickKit_BrickKitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrickKit_BrickKitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -432,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				99F03CC41D6EDE1A00A14FEE /* 待归档 */,
-				99F03C861D6E0ACE00A14FEE /* MarkDown */,
 				99F03B831D6E0AC500A14FEE /* BrickKit */,
 				99F03B331D6E0ABE00A14FEE /* BrickDemo */,
 				99F03AEE1D6E076700A14FEE /* AppDelegate.h */,
@@ -612,7 +594,6 @@
 				99F03D0A1D6EEA2C00A14FEE /* CodeTechnique */,
 				99F03D101D6EEA2C00A14FEE /* RAC */,
 				99F03D131D6EEA2C00A14FEE /* TestUnit */,
-				99F03D1B1D6EEA2C00A14FEE /* weex */,
 			);
 			path = OtherStudyDemo;
 			sourceTree = "<group>";
@@ -1184,23 +1165,6 @@
 			path = TestUnit;
 			sourceTree = "<group>";
 		};
-		99F03D1B1D6EEA2C00A14FEE /* weex */ = {
-			isa = PBXGroup;
-			children = (
-				99CDBE4C1D709572006538E4 /* weex */,
-				99F03D251D6EEA6D00A14FEE /* weex基本介绍.h */,
-				99F03D261D6EEA8E00A14FEE /* BRWeexViewController.h */,
-				99F03D271D6EEA8E00A14FEE /* BRWeexViewController.m */,
-				99F03D291D6EEDF200A14FEE /* WXEventModule.h */,
-				99F03D2A1D6EEDF200A14FEE /* WXEventModule.m */,
-				99F03D2B1D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.h */,
-				99F03D2C1D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.m */,
-				99F03D2D1D6EEDF200A14FEE /* BRWXComponent.h */,
-				99F03D2E1D6EEDF200A14FEE /* BRWXComponent.m */,
-			);
-			path = weex;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1314,10 +1278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F03C791D6E0AC500A14FEE /* JJRefreshView.xib in Resources */,
-				99F03C871D6E0ACE00A14FEE /* MarkDown in Resources */,
 				99F03B2D1D6E0A9C00A14FEE /* Info.plist in Resources */,
 				99F03CC51D6EDE1A00A14FEE /* 待归档 in Resources */,
-				99CDBE4D1D709572006538E4 /* weex in Resources */,
 				99F03B321D6E0AA800A14FEE /* shuma.png in Resources */,
 				99F03AFB1D6E076700A14FEE /* Assets.xcassets in Resources */,
 			);
@@ -1499,7 +1461,6 @@
 				99F03C741D6E0AC500A14FEE /* JJTitleBtn.m in Sources */,
 				99F03C6C1D6E0AC500A14FEE /* BRCalendarConfig.m in Sources */,
 				99F03C831D6E0AC500A14FEE /* JJPhoto.m in Sources */,
-				99F03D301D6EEDF200A14FEE /* WXImgLoaderDefaultImpl.m in Sources */,
 				99F03C521D6E0AC500A14FEE /* UIImage+Fit.m in Sources */,
 				99F03C561D6E0AC500A14FEE /* UIImage+Image.m in Sources */,
 				99F03C6F1D6E0AC500A14FEE /* BRCalendarCell.m in Sources */,
@@ -1511,7 +1472,6 @@
 				99F03AF01D6E076700A14FEE /* AppDelegate.m in Sources */,
 				99F03C681D6E0AC500A14FEE /* YCFInputAttribute.m in Sources */,
 				99F03C4A1D6E0AC500A14FEE /* NSMutableAttributedString+Extension.m in Sources */,
-				99F03D311D6EEDF200A14FEE /* BRWXComponent.m in Sources */,
 				99F03C781D6E0AC500A14FEE /* JJRefreshView.m in Sources */,
 				99F03D1F1D6EEA2C00A14FEE /* BRImageTools.m in Sources */,
 				99F03C5B1D6E0AC500A14FEE /* NSCalendar+JJInitCalendar.m in Sources */,
@@ -1530,14 +1490,12 @@
 				99F03C5A1D6E0AC500A14FEE /* NSDictionary+PropertyCode.m in Sources */,
 				99F03C821D6E0AC500A14FEE /* NSString+YCFSafe.m in Sources */,
 				99F03C661D6E0AC500A14FEE /* BRTitleView.m in Sources */,
-				99F03D281D6EEA8E00A14FEE /* BRWeexViewController.m in Sources */,
 				99F03C801D6E0AC500A14FEE /* NSArray+YCFSafe.m in Sources */,
 				99F03C461D6E0AC500A14FEE /* NSArray+Extension.m in Sources */,
 				99F03C5F1D6E0AC500A14FEE /* JJBingTu.m in Sources */,
 				99F03C4F1D6E0AC500A14FEE /* NSMutableURLRequest+XMGUpload.m in Sources */,
 				99F03C4C1D6E0AC500A14FEE /* NSString+Extension.m in Sources */,
 				99F03C7B1D6E0AC500A14FEE /* JJTableCollectionCell.m in Sources */,
-				99F03D2F1D6EEDF200A14FEE /* WXEventModule.m in Sources */,
 				99F03B711D6E0ABE00A14FEE /* YCFKeyboardManagerDemoViewController.m in Sources */,
 				99F03C571D6E0AC500A14FEE /* UIScrollView+JJExtension.m in Sources */,
 				99F03B821D6E0ABE00A14FEE /* BRDemoTabBarController.m in Sources */,

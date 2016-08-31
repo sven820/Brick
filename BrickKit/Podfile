@@ -9,13 +9,9 @@ target 'BrickKit' do
     pod 'Masonry'
     pod 'SDWebImage'
     pod 'ReactiveCocoa'
-    pod 'WeexSDK', :path=>'Pods/Weex/sdk/'
-    pod 'WXDevtool', :path=>'Pods/Weex/WXDevtool/'
-
+    
   target 'BrickKitTests' do
-
-      pod 'OCMock' 
-
+      pod 'OCMock'
   end
 
   target 'BrickKitUITests' do

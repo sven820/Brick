@@ -88,16 +88,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Result/Result.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SocketRocket/SocketRocket.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/WXDevtool/WXDevtool.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/WeexSDK/WeexSDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Result/Result.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SocketRocket/SocketRocket.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/WXDevtool/WXDevtool.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/WeexSDK/WeexSDK.framework"
 fi
