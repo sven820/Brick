@@ -170,7 +170,7 @@ typedef NS_ENUM(NSUInteger, MagicItemType) {
 @property(nonatomic, assign) BOOL hidden;
 
 @property(nonatomic, strong) NSIndexPath *indexPath;
-@property (nonatomic, assign) MagicItemType kind;
+@property(nonatomic, assign) MagicItemType kind;
 
 @property(nonatomic, assign) BOOL isOnscreen;
 #warning todo
