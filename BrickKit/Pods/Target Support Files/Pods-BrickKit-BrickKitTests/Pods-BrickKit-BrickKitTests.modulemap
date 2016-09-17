@@ -1,6 +1,0 @@
-framework module Pods_BrickKit_BrickKitTests {
-  umbrella header "Pods-BrickKit-BrickKitTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

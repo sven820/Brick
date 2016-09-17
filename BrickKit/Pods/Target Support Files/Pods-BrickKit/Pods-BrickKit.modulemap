@@ -1,6 +1,0 @@
-framework module Pods_BrickKit {
-  umbrella header "Pods-BrickKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
