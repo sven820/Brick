@@ -22,6 +22,7 @@ static NSString * const kSectionContainerIdentify = @"kSectionContainerIdentify"
 static NSString * const kFatherItemNotificaation = @"kFatherItemNotificaation";
 static NSString * const kFatherSectionNotificaation = @"kFatherSectionNotificaation";
 
+static NSString * const kFatherNoteInfoFatherVisiableRectKey = @"kFatherNoteInfoFatherVisiableRectKey";
 static NSString * const kFatherNoteInfoFatherBigScrollViewKey = @"kFatherNoteInfoFatherBigScrollViewKey";
 static NSString * const kFatherNoteInfoSectionScrollViewTagKey = @"kFatherNoteInfoSectionScrollViewTagKey";
 
@@ -107,7 +108,6 @@ static NSInteger const kcontainerViewTag = -100;
 @property(nonatomic, strong) void (^longPressHandle)(UIView *view);
 @property(nonatomic, strong) void (^doubleClickHandle)(UIView *view);
 
-@property(nonatomic, strong) NSValue *visiableRect;
 @end
 
 @implementation UIView (Magic)
@@ -148,19 +148,10 @@ static NSInteger const kcontainerViewTag = -100;
 #pragma mark - delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    BOOL isBig;
-    if (scrollView.tag == kcontainerViewTag)
-    {
-        isBig = YES;
-        self.visiableRect = [NSValue valueWithCGRect:[self currentLayoutRect:scrollView]];
-    }
-    else
-    {
-        MagicSectionAttributes *attr = [self.storage.sectionAttrses objectForKey:[NSString stringWithFormat:@"%zd", scrollView.tag]];
-        attr.sectionContainerVisiableRect = [self currentLayoutRect:scrollView];
-    }
+    CGRect visiableRect = [self currentLayoutRect:scrollView];
     NSMutableDictionary *noteInfo = [NSMutableDictionary dictionary];
-    [noteInfo setObject:[NSNumber numberWithBool:isBig] forKey:kFatherNoteInfoFatherBigScrollViewKey];
+    [noteInfo setObject:[NSValue valueWithCGRect:visiableRect] forKey:kFatherNoteInfoFatherVisiableRectKey];
+    [noteInfo setObject:[NSNumber numberWithBool:scrollView.tag == kcontainerViewTag] forKey:kFatherNoteInfoFatherBigScrollViewKey];
     [noteInfo setObject:[NSNumber numberWithInteger:scrollView.tag] forKey:kFatherNoteInfoSectionScrollViewTagKey];
 
     if (scrollView.tag == kcontainerViewTag)
@@ -1038,7 +1029,7 @@ static NSInteger const kcontainerViewTag = -100;
             sectionAttr = [[MagicSectionAttributes alloc] init];
             sectionAttr.section = section;
             sectionAttr.father = self;
-            sectionAttr.bigContainerVisiableRect = [self.visiableRect CGRectValue];
+            sectionAttr.bigContainerVisiableRect = [self currentLayoutRect:self.containerView];
             if ([self.layout respondsToSelector:@selector(magicView:isNeedPageEnabledAtSectionIfNeed:)])
             {
                 sectionAttr.pageEnabled = [self.layout magicView:self isNeedPageEnabledAtSectionIfNeed:section];
@@ -1620,21 +1611,6 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
 {
     objc_setAssociatedObject(self, @selector(sectionContainers), sectionContainers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-//visiableRect
-- (NSValue *)visiableRect
-{
-    NSValue *rect = objc_getAssociatedObject(self, @selector(visiableRect));
-    if (!rect)
-    {
-        rect = [NSValue valueWithCGRect:CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height)];
-        self.visiableRect = rect;
-    }
-    return rect;
-}
-- (void)setVisiableRect:(NSValue *)visiableRect
-{
-    objc_setAssociatedObject(self, @selector(visiableRect), visiableRect, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
 @end
 
 
@@ -1759,16 +1735,17 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
 - (void)dealWithReusableItem:(NSNotification *)note
 {
     NSDictionary *noteInfo = note.userInfo;
-    CGRect rect = [self.father.visiableRect CGRectValue];
+    CGRect rect = [[noteInfo valueForKey:kFatherNoteInfoFatherVisiableRectKey] CGRectValue];;
     BOOL isBigContainer = [[noteInfo valueForKey:kFatherNoteInfoFatherBigScrollViewKey] boolValue];
     NSInteger sectionTag = [[noteInfo valueForKey:kFatherNoteInfoSectionScrollViewTagKey] integerValue];
+
     //移出不在屏幕内的item
     if (self.isOnscreen)
     {
         BOOL dealBig = isBigContainer && self.kind != MagicItemTypeItem && !CGRectIntersectsRect(rect, self.frame);
         BOOL dealBigInSection = isBigContainer && self.kind == MagicItemTypeItem &&
         !CGRectIntersectsRect(rect, CGRectMake(self.frame.origin.x - self.sectionAttr.son.contentOffset.x, self.frame.origin.y - self.sectionAttr.son.contentOffset.y, self.frame.size.width, self.frame.size.height));
-        BOOL dealSection = !isBigContainer && self.sectionAttr.section == sectionTag && !CGRectIntersectsRect(rect, self.sectionFrame) && self.kind == MagicItemTypeItem;
+        BOOL dealSection = !isBigContainer && self.indexPath.section == sectionTag && !CGRectIntersectsRect(rect, self.sectionFrame) && self.kind == MagicItemTypeItem;
         if (dealBig || dealBigInSection || dealSection )
         {
             [self.son removeFromSuperview];
@@ -1786,7 +1763,7 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
                 if ([self.father.dataSource respondsToSelector:@selector(magicView:itemAtIndexPath:)])
                 {
                     BOOL dealBig = isBigContainer && CGRectIntersectsRect(rect, CGRectMake(self.frame.origin.x - self.sectionAttr.son.contentOffset.x, self.frame.origin.y - self.sectionAttr.son.contentOffset.y, self.frame.size.width, self.frame.size.height));
-                    BOOL dealSection = !isBigContainer && self.sectionAttr.section == sectionTag && CGRectIntersectsRect(rect, self.sectionFrame);
+                    BOOL dealSection = !isBigContainer && self.indexPath.section == sectionTag && CGRectIntersectsRect(rect, self.sectionFrame);
                     
                     if (dealBig || dealSection)
                     {
@@ -1802,8 +1779,8 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
                             self.bigContainerVisiableRect = rect;
                         }
                         if (dealSection) {
-                            self.sectionAttr.sectionContainerVisiableRect = rect;
                             self.sectionContainerVisiableRect = rect;
+                            self.sectionAttr.sectionContainerVisiableRect = rect;
                         }
                     }
                 }
@@ -1882,12 +1859,13 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
 
 - (void)dealWithReusableSection:(NSNotification *)note
 {
+    CGRect rect = [[note.userInfo valueForKey:kFatherNoteInfoFatherVisiableRectKey] CGRectValue];;
     if (self.isOnscreen)
     {
-        if (!CGRectIntersectsRect([self.father.visiableRect CGRectValue], self.sectionFrame))
+        if (!CGRectIntersectsRect(rect, self.sectionFrame))
         {
             [self.son removeFromSuperview];
-            [self.father.screenSections removeObject:self];0x7fc441580bb0 /0x7fc4414b8980;
+            [self.father.screenSections removeObject:self];
             self.isOnscreen = NO;
             ReusableItemManager *manager = [self.father.reusableManagers objectForKey:kSectionContainerIdentify];
             [manager.reusableItems addObject:self.son];
@@ -1895,9 +1873,7 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
     }
     else
     {
-        NSLog(@"ddd-%zd-%p----%@----%@", self.section, self, NSStringFromCGRect(self.sectionFrame), NSStringFromCGRect([self.father.visiableRect CGRectValue]));
-
-        if (CGRectIntersectsRect([self.father.visiableRect CGRectValue], self.sectionFrame))
+        if (CGRectIntersectsRect(rect, self.sectionFrame))
         {
             [self.father.screenSections addObject:self];
             self.isOnscreen = YES;
@@ -1910,6 +1886,8 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
             sectionContainer.pagingEnabled = self.pageEnabled;
             self.son = sectionContainer;
             [self.father.containerView insertSubview:sectionContainer atIndex:0];//解决滚动条被挡住了, 不知道为什么
+            
+            self.bigContainerVisiableRect = rect;
         }
     }
 }

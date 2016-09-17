@@ -65,16 +65,19 @@
     YCFTabsView *tabView5 = [YCFTabsView quickCreateTabsViewWithTitles:@[@"Icon", @"ceshi"] iconImage:@[@"Icon", @"", @"Icon"] iconImageH:nil iconImageS:nil isNeedEqualWidth:NO];
     [self.view addSubview:tabView5];
     tabView5.frame = CGRectMake(100, 365, 250, 30);
+    tabView5.columnMargin = 5;
     tabView5.backgroundColor = [UIColor greenColor];
     
     YCFTabsView *tabView6 = [YCFTabsView quickCreateTabsViewWithTitles:@[@"Icon", @"ceshi"] iconImage:@[@"Icon", @"", @"Icon"] iconImageH:nil iconImageS:nil isNeedEqualWidth:NO];
     [self.view addSubview:tabView6];
+    tabView6.columnMargin = 5;
     tabView6.frame = CGRectMake(100, 420, 250, 60);
     tabView6.backgroundColor = [UIColor greenColor];
     
     YCFTabsView *tabView7 = [YCFTabsView quickCreateTabsViewWithTitles:@[@"Icon", @"ceshi"] iconImage:@[@"Icon", @"", @"Icon"] iconImageH:nil iconImageS:nil isNeedEqualWidth:NO];
     [self.view addSubview:tabView7];
     tabView7.frame = CGRectMake(100, 420, 250, 60);
+    tabView7.columnMargin = 5;
     tabView7.backgroundColor = [UIColor greenColor];
     [tabView7 configTabItemBtn:YCFTabsItemBtnTypeVerticalTitleIcon contentInsets:UIEdgeInsetsZero titleInsets:UIEdgeInsetsZero iconInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
 }
