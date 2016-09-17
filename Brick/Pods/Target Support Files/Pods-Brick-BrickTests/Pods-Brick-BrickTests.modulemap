@@ -1,0 +1,6 @@
+framework module Pods_Brick_BrickTests {
+  umbrella header "Pods-Brick-BrickTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
