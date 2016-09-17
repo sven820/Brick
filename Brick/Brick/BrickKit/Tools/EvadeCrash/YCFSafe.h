@@ -1,16 +1,20 @@
 //
-//  YCFSafe.h
-//  YCFComponentKit_OC
+//  Category.h
+//  YXY
 //
-//  Created by 林小程 on 16/8/9.
-//  Copyright © 2016年 yaochufa. All rights reserved.
+//  Created by jinxiaofei on 16/9/17.
+//  Copyright © 2016年 Guangzhou TalkHunt Information Technology Co., Ltd. All rights reserved.
 //
 
-#ifndef YCFSafe_h
-#define YCFSafe_h
+#ifndef Category_h
+#define Category_h
 
-#import "NSObject+YCFSafe.h"
-#import "NSString+YCFSafe.h"
-#import "NSArray+YCFSafe.h"
 #import "YCFUtils.h"
-#endif /* YCFSafe_h */
+
+
+#import "NSObject+YXYSafe.h"
+#import "NSString+YXYSafe.h"
+#import "NSArray+YXYSafe.h"
+#import "NSDictionary+YXYSafe.h"
+
+#endif /* Category_h */

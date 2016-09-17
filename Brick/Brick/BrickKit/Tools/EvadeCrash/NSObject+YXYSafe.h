@@ -2,7 +2,7 @@
 //  NSObject+YCFSafe.h
 //  YCFComponentKit_OC
 //
-//  Created by 林小程 on 16/8/9.
+//  Created by JJ.sven on 16/8/9.
 //  Copyright © 2016年 yaochufa. All rights reserved.
 //
 
@@ -13,8 +13,10 @@ typedef NS_ENUM(NSUInteger, YCFSafeCompareOption) {
     YCFSafeCompareOptionNilIsGreater  //为nil的一方更大
 };
 
-@interface NSObject (YCFSafe)
+@interface NSObject (YXYSafe)
 
+#pragma mark - 仿止crash容错API
++ (BOOL)isEmpty:(id)obj;
 /**
  *  直接调用 safe_compare:withAnother:option，option传入YCFSafeCompareOptionNilIsSmaller
  */

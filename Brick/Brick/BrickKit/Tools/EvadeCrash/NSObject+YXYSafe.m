@@ -2,13 +2,22 @@
 //  NSObject+YCFSafe.m
 //  YCFComponentKit_OC
 //
-//  Created by 林小程 on 16/8/9.
+//  Created by JJ.sven on 16/8/9.
 //  Copyright © 2016年 yaochufa. All rights reserved.
 //
 
-#import "NSObject+YCFSafe.h"
+#import "NSObject+YXYSafe.h"
 
-@implementation NSObject (YCFSafe)
+@implementation NSObject (YXYSafe)
+
++ (BOOL)isEmpty:(id)obj
+{
+    return obj == nil || [obj isEqual:[NSNull null]]
+    || ([obj respondsToSelector:@selector(length)]
+        && [(NSData *)obj length] == 0)
+    || ([obj respondsToSelector:@selector(count)]
+        && [(NSArray *)obj count] == 0);
+}
 
 + (NSComparisonResult)safe_compare:(id)obj withAnother:(id)anotherObj
 {
