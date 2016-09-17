@@ -75,10 +75,6 @@
         self.selectedIndex = 0;
         self.showsVerticalScrollIndicator = NO;
         self.showsHorizontalScrollIndicator = NO;
-        self.isShowSplitLine = YES;
-        self.splitLineWidth = 1 / [UIScreen mainScreen].scale;
-        self.splitLineColor = [UIColor blackColor];
-        self.splitLineInsets = UIEdgeInsetsMake(5, 0, 0, 0);
     }
     return self;
 }
@@ -305,10 +301,9 @@
                 CGFloat w = self.isNeedEqualWidth ? self.equalWidth : tab.frame.size.width;
                 content.frame = CGRectMake(X, Y, w, self.frame.size.height);
                 tab.frame = content.bounds;
-                CGFloat lineX = w - self.splitLineWidth * 0.5 + self.columnMargin * 0.5 + self.splitLineInsets.left - self.splitLineInsets.right ;
+                CGFloat lineX = w - self.splitLineSize.width * 0.5 + self.columnMargin * 0.5 + self.splitLineInsets.left - self.splitLineInsets.right ;
                 CGFloat lineY = self.splitLineInsets.top - self.splitLineInsets.bottom;
-                CGFloat lineHeight = self.frame.size.height - 2 * lineY;
-                line.frame = CGRectMake(lineX, lineY, self.splitLineWidth, lineHeight);
+                line.frame = CGRectMake(lineX, lineY, self.splitLineSize.width, self.splitLineSize.height);
                 if (index == self.selectedIndex && self.tabsStyle == YCFTabsStyleLine)
                 {
                     [self addSubview:self.bottomIndicator];
@@ -329,9 +324,8 @@
                 content.frame = CGRectMake(X, Y, self.frame.size.width, h);
                 tab.frame = content.bounds;
                 CGFloat lineX = self.splitLineInsets.left - self.splitLineInsets.right;
-                CGFloat lineY = h - self.splitLineWidth * 0.5 + self.columnMargin * 0.5 + self.splitLineInsets.top - self.splitLineInsets.bottom;
-                CGFloat lineW = self.frame.size.width - 2 * lineX;
-                line.frame = CGRectMake(lineX, lineY, lineW, self.splitLineWidth);
+                CGFloat lineY = h - self.splitLineSize.height * 0.5 + self.columnMargin * 0.5 + self.splitLineInsets.top - self.splitLineInsets.bottom;
+                line.frame = CGRectMake(lineX, lineY, self.splitLineSize.width, self.splitLineSize.height);
                 if (index == self.selectedIndex && self.tabsStyle == YCFTabsStyleLine)
                 {
                     [self addSubview:self.bottomIndicator];
@@ -430,10 +424,6 @@
             if (self.isNeedEqualWidth && !self.equalWidth)
             {
                 self.equalWidth = self.frame.size.width / self.tabs.count;
-                if (self.isShowSplitLine)
-                {
-                    self.equalWidth += self.splitLineWidth;
-                }
             }
             
             CGSize size = CGSizeZero;
@@ -464,10 +454,6 @@
             if (self.isNeedEqualWidth && !self.equalWidth)
             {
                 self.equalWidth = self.frame.size.height / self.tabs.count;
-                if (self.isShowSplitLine)
-                {
-                    self.equalWidth += self.splitLineWidth;
-                }
             }
             
             CGSize size = CGSizeZero;

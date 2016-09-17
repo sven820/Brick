@@ -62,7 +62,7 @@ typedef NS_ENUM(NSUInteger, YCFTabsItemBtnType) {
 
 @property (nonatomic, assign) BOOL isShowSplitLine;
 @property (nonatomic, assign) UIEdgeInsets splitLineInsets;
-@property (nonatomic, assign) CGFloat splitLineWidth;
+@property (nonatomic, assign) CGSize splitLineSize;
 @property (nonatomic, assign) UIColor *splitLineColor;
 
 //内部默认实现子item为[UIButton class]
