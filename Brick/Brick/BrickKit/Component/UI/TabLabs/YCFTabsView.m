@@ -7,18 +7,6 @@
 //
 
 #import "YCFTabsView.h"
-#import "UIView+Magic.h"
-
-#pragma mark - YCFTabButton
-@interface YCFTabButton : UIButton
-@property(nonatomic, assign) UIEdgeInsets contentInsets;
-@property(nonatomic, assign) UIEdgeInsets iconInsets;
-@property(nonatomic, assign) UIEdgeInsets titleInsets;
-@property(nonatomic, assign) YCFTabsItemBtnType btnType;
-
-- (void)configTabItemBtn:(YCFTabsItemBtnType)btnType contentInsets:(UIEdgeInsets)contentInsets titleInsets:(UIEdgeInsets)titleInsets iconInsets:(UIEdgeInsets)iconInsets;
-
-@end
 
 #pragma mark - YCFTabs
 @interface YCFTabsView ()<UIGestureRecognizerDelegate>
@@ -87,17 +75,6 @@
     [self p_layoutTabs];
 }
 
-- (void)configTabItemBtn:(YCFTabsItemBtnType)btnType contentInsets:(UIEdgeInsets)contentInsets titleInsets:(UIEdgeInsets)titleInsets iconInsets:(UIEdgeInsets)iconInsets
-{
-    for (YCFTabButton *tabBtn in self.tabs)
-    {
-        if ([tabBtn isKindOfClass:[YCFTabButton class]])
-        {
-            [tabBtn configTabItemBtn:btnType contentInsets:contentInsets titleInsets:titleInsets iconInsets:iconInsets];
-        }
-    }
-}
-
 - (void)selectedTabItemAtIndex:(NSInteger)index
 {
     if (index >= self.tabs.count)
@@ -153,16 +130,16 @@
 #pragma mark - private methods
 - (void)p_setSelectedItem
 {
-    if ([self.selectedItem isKindOfClass:[YCFTabButton class]])
+    if ([self.selectedItem isKindOfClass:[EasyButton class]])
     {
-        YCFTabButton *btn = (YCFTabButton *)self.selectedItem;
+        EasyButton *btn = (EasyButton *)self.selectedItem;
         btn.selected = NO;
     }
     
     UIView *selectedItem = self.tabs[self.selectedIndex];
-    if ([selectedItem isKindOfClass:[YCFTabButton class]])
+    if ([selectedItem isKindOfClass:[EasyButton class]])
     {
-        YCFTabButton *tabBtn = (YCFTabButton *)selectedItem;
+        EasyButton *tabBtn = (EasyButton *)selectedItem;
         tabBtn.selected = YES;
         self.selectedItem = tabBtn;
     }
@@ -358,7 +335,7 @@
     NSInteger count = titles.count > icons.count ? titles.count : icons.count;
     for (int i = 0; i < count; i++)
     {
-        YCFTabButton *tabBtn = [[YCFTabButton alloc] init];
+        EasyButton *tabBtn = [[EasyButton alloc] init];
 
         NSString *title = [self objectAtIndex:i array:titles];
         if (titles && title.length > 0)
@@ -501,10 +478,34 @@
     }
 }
 #pragma mark - public methods
+- (void)configTabItemBtn:(EasyBtnType)btnType contentInsets:(UIEdgeInsets)contentInsets titleInsets:(UIEdgeInsets)titleInsets iconInsets:(UIEdgeInsets)iconInsets isSetIconRound:(BOOL)isSetIconRound
+{
+    for (EasyButton *tabBtn in self.tabs)
+    {
+        if ([tabBtn isKindOfClass:[EasyButton class]])
+        {
+            [tabBtn configTabItemBtn:btnType contentInsets:contentInsets titleInsets:titleInsets iconInsets:iconInsets isSetIconRound:isSetIconRound];
+        }
+    }
+}
+
 + (instancetype)quickCreateTabsViewWithTitles:(NSArray<NSString *> *)titles isNeedEqualWidth:(BOOL)isNeedEqualWidth
 {
     return [[self  alloc] initWithTabsViewWithTitles:titles
                                            iconImage:nil
+                                          iconImageH:nil
+                                          iconImageS:nil
+                                             bgImage:nil
+                                            bgImageH:nil
+                                            bgImageS:nil
+                                    isNeedEqualWidth:isNeedEqualWidth];
+}
+
++ (instancetype)quickCreateTabsViewWithIcons:(NSArray<NSString *> *)icons
+                            isNeedEqualWidth:(BOOL)isNeedEqualWidth
+{
+    return [[self  alloc] initWithTabsViewWithTitles:nil
+                                           iconImage:icons
                                           iconImageH:nil
                                           iconImageS:nil
                                              bgImage:nil
@@ -664,83 +665,5 @@
         }
     }
     return _splitLines;
-}
-@end
-
-#pragma mark - YCFTabButton
-@implementation YCFTabButton
-- (void)configTabItemBtn:(YCFTabsItemBtnType)btnType contentInsets:(UIEdgeInsets)contentInsets titleInsets:(UIEdgeInsets)titleInsets iconInsets:(UIEdgeInsets)iconInsets
-{
-    self.btnType = btnType;
-    self.contentInsets = contentInsets;
-    self.iconInsets = iconInsets;
-    self.titleInsets = titleInsets;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    if (self.titleLabel && !self.imageView.image)
-    {
-        CGFloat centerX = self.bounds.size.width * 0.5;
-        CGFloat centerY = self.bounds.size.height * 0.5;
-        self.titleLabel.center = CGPointMake(centerX, centerY);
-        return;
-    }
-    else if(self.imageView.image && !(self.titleLabel.text && self.titleLabel.text.length > 0))
-    {
-        CGFloat centerX = self.bounds.size.width * 0.5;
-        CGFloat centerY = self.bounds.size.height * 0.5;
-        self.imageView.center = CGPointMake(centerX, centerY);
-        return;
-    }
-
-    switch (self.btnType) {
-        case YCFTabsItemBtnTypeHorizontaIconTitle:
-        {
-            CGFloat iconCenterX = self.imageView.bounds.size.width * 0.5 + self.contentInsets.left - self.contentInsets.right + self.iconInsets.left -self.iconInsets.right;
-            CGFloat iconCenterY = self.bounds.size.height * 0.5;
-            self.imageView.center = CGPointMake(iconCenterX, iconCenterY);
-
-            CGFloat titleCenterX = CGRectGetMaxX(self.imageView.frame) +self.titleLabel.bounds.size.width * 0.5 + self.titleInsets.left -self.titleInsets.right;
-            CGFloat titleCenterY = self.imageView.center.y + self.titleInsets.top - self.titleInsets.bottom;
-            self.titleLabel.center = CGPointMake(titleCenterX, titleCenterY);
-            break;
-        }
-        case YCFTabsItemBtnTypeHorizontaTitleIcon:
-        {
-            CGFloat titleCenterX = self.titleLabel.bounds.size.width * 0.5 + self.contentInsets.left - self.contentInsets.right + self.titleInsets.left -self.titleInsets.right;
-            CGFloat titleCenterY = self.bounds.size.height * 0.5;
-            self.titleLabel.center = CGPointMake(titleCenterX, titleCenterY);
-            
-            CGFloat iconCenterX = CGRectGetMaxX(self.titleLabel.frame) + self.imageView.bounds.size.width * 0.5 + self.iconInsets.left -self.iconInsets.right;
-            CGFloat iconCenterY = self.titleLabel.center.y + self.iconInsets.left -self.iconInsets.right;
-            self.imageView.center = CGPointMake(iconCenterX, iconCenterY);
-            break;
-        }
-        case YCFTabsItemBtnTypeVerticalIconTitle:
-        {
-            CGFloat iconCenterX = self.bounds.size.width * 0.5 + self.contentInsets.left - self.contentInsets.right + self.iconInsets.left -self.iconInsets.right;
-            CGFloat iconCenterY = self.imageView.bounds.size.height * 0.5 + self.contentInsets.top - self.contentInsets.bottom + self.iconInsets.top - self.iconInsets.bottom;
-            self.imageView.center = CGPointMake(iconCenterX, iconCenterY);
-            
-            CGFloat titleCenterX = self.imageView.center.x;
-            CGFloat titleCenterY = CGRectGetMaxY(self.imageView.frame) + self.titleLabel.bounds.size.height * 0.5 + self.titleInsets.top - self.titleInsets.bottom;
-            self.titleLabel.center = CGPointMake(titleCenterX, titleCenterY);
-            break;
-        }
-        case YCFTabsItemBtnTypeVerticalTitleIcon:
-        {
-            CGFloat titleCenterX = self.bounds.size.width * 0.5 + self.contentInsets.left - self.contentInsets.right + self.titleInsets.left -self.titleInsets.right;
-            CGFloat titleCenterY = self.titleLabel.bounds.size.height * 0.5 + self.contentInsets.top - self.contentInsets.bottom + self.titleInsets.top - self.titleInsets.bottom;
-            self.titleLabel.center = CGPointMake(titleCenterX, titleCenterY);
-
-            CGFloat iconCenterX = self.titleLabel.center.x;
-            CGFloat iconCenterY = CGRectGetMaxY(self.titleLabel.frame) + self.imageView.bounds.size.height * 0.5 + self.iconInsets.top - self.iconInsets.bottom;
-            self.imageView.center = CGPointMake(iconCenterX, iconCenterY);
-            break;
-        }
-    }
 }
 @end

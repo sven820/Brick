@@ -17,6 +17,9 @@
 #import <Foundation/Foundation.h>
 
 #import "Masonry.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
 #import "BrickKitDefine.h"
 #import "BRCategory.h"
 #import "YCFSafe.h"

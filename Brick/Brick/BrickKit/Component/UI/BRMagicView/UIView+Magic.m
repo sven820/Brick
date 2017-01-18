@@ -23,8 +23,7 @@ static NSString * const kFatherItemNotificaation = @"kFatherItemNotificaation";
 static NSString * const kFatherSectionNotificaation = @"kFatherSectionNotificaation";
 
 static NSString * const kFatherNoteInfoFatherVisiableRectKey = @"kFatherNoteInfoFatherVisiableRectKey";
-static NSString * const kFatherNoteInfoFatherBigScrollViewKey = @"kFatherNoteInfoFatherBigScrollViewKey";
-static NSString * const kFatherNoteInfoSectionScrollViewTagKey = @"kFatherNoteInfoSectionScrollViewTagKey";
+static NSString * const kFatherNoteInfoContainerTagKey = @"kFatherNoteInfoContainerTagKey";
 
 static NSInteger const kcontainerViewTag = -100;
 
@@ -60,6 +59,7 @@ static NSInteger const kcontainerViewTag = -100;
 @property(nonatomic, assign) NSInteger page;
 
 @property(nonatomic, assign) NSInteger numberOfSection;
+@property (nonatomic, assign) NSInteger numerOfItems;
 @property(nonatomic, assign) CGFloat width;
 @property(nonatomic, assign) CGFloat height;
 
@@ -108,6 +108,10 @@ static NSInteger const kcontainerViewTag = -100;
 @property(nonatomic, strong) void (^longPressHandle)(UIView *view);
 @property(nonatomic, strong) void (^doubleClickHandle)(UIView *view);
 
+@property (nonatomic, strong) NSMutableDictionary *layoutLocationCache;
+
+@property (nonatomic, assign) BOOL isSectionEndLayout;
+@property (nonatomic, assign) BOOL isAllLayoutOver;
 @end
 
 @implementation UIView (Magic)
@@ -149,16 +153,8 @@ static NSInteger const kcontainerViewTag = -100;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGRect visiableRect = [self currentLayoutRect:scrollView];
-    NSMutableDictionary *noteInfo = [NSMutableDictionary dictionary];
-    [noteInfo setObject:[NSValue valueWithCGRect:visiableRect] forKey:kFatherNoteInfoFatherVisiableRectKey];
-    [noteInfo setObject:[NSNumber numberWithBool:scrollView.tag == kcontainerViewTag] forKey:kFatherNoteInfoFatherBigScrollViewKey];
-    [noteInfo setObject:[NSNumber numberWithInteger:scrollView.tag] forKey:kFatherNoteInfoSectionScrollViewTagKey];
-
-    if (scrollView.tag == kcontainerViewTag)
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kFatherSectionNotificaation object:self userInfo:noteInfo];
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kFatherItemNotificaation object:self userInfo:noteInfo];
+    [self prepareForItemAttributes:visiableRect containerTag:scrollView.tag isInit:NO];
+    
 }
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -300,7 +296,7 @@ static NSInteger const kcontainerViewTag = -100;
         NSInteger sections = [self.dataSource numberOfSections:self];
         if (sections) self.storage.numberOfSection = sections;
     }
-    
+    self.isSectionEndLayout = YES;
     self.storage.layout = self.layout;
     
     self.storage.width = self.containerView.frame.size.width;
@@ -313,112 +309,98 @@ static NSInteger const kcontainerViewTag = -100;
     dispatch_async(dispatch_get_global_queue(0, DISPATCH_QUEUE_PRIORITY_DEFAULT), ^{
         [self estimateContentSize];
     });
-    [self prepareForItemAttributes];
+    [self prepareForItemAttributes:[self currentLayoutRect:self.containerView] containerTag:self.containerView.tag isInit:YES];
 }
 
--(void)prepareForItemAttributes
+-(void)prepareForItemAttributes:(CGRect)visiableRect containerTag:(NSInteger)containerTag isInit:(BOOL)isInit;
 {
-    MagicItemAttributes *attrs = [self.storage.attrses.allValues lastObject];
-    NSInteger fromSection = attrs.indexPath.section;
-    NSInteger fromItem = attrs.indexPath.item + 1;
-    if (attrs == nil)
-    {
-        fromSection = 0;
-        fromItem = 0;
-    }
-    
-    if (fromItem >= [self numberItemsInSection:fromSection])
-    {
-        fromSection += 1;
-        fromItem = 0;
-    }
-    
-    if (fromSection >= self.storage.numberOfSection) return;
-    for (NSInteger i = fromSection; i < self.storage.numberOfSection; i++)
+    for (NSInteger i = [self getMinSectionInLayoutCache]; i < self.storage.numberOfSection; i++)
     {
         MagicSectionAttributes *sectionAttr = [self getSectionAttributes:i];
         
-        CGFloat sectionContainerX = 0.0;
-        CGFloat sectionContainerY = 0.0;
-        CGFloat sectionContainerW = 0.0;
-        CGFloat sectionContainerH = 0.0;
-        CGFloat sectionContainerContentWidth = 0.0;
-        CGFloat sectionContainerContentHeight = self.storage.heightStandardVertical;
-        
-        UIEdgeInsets edgeInsets = self.storage.sectionEdgeInsets;
-        if ([self.layout respondsToSelector:@selector(magicView:insetsForSection:)])
+        if (self.isSectionEndLayout)
         {
-            edgeInsets = [self.layout magicView:self insetsForSection:i];
-        }
-        
-        switch (self.storage.scrollDirection){
-            case BRMagicViewLayoutScrollDirectionVertical: {
-                self.storage.sectionWidth = self.containerView.bounds.size.width - edgeInsets.left - edgeInsets.right;
-                self.storage.sectionX = edgeInsets.left;
-                self.storage.heightStandardVertical += edgeInsets.top;
-                self.storage.heightStandardHorizontal = edgeInsets.left;
-                break;
-            }
-            case BRMagicViewLayoutScrollDirectionHorizontal: {
-                self.storage.sectionWidth = self.containerView.bounds.size.height - edgeInsets.top - edgeInsets.bottom;
-                self.storage.sectionY = edgeInsets.top;
-                self.storage.heightStandardHorizontal += edgeInsets.left;
-                self.storage.heightStandardVertical = edgeInsets.top;
-                break;
-            }
-        }
-        
-        //header
-        NSIndexPath *sectionHeaderIndexPath = [NSIndexPath indexPathForItem:MagicItemTypeHeader inSection:i];
-        NSString *sectionHeaderKey = [NSString stringWithFormat:@"%zd?%zd", MagicItemTypeHeader, i];
-        MagicItemAttributes *headerAttr = [self.storage.attrses objectForKey:sectionHeaderKey];
-        if (!headerAttr)
-        {
-            headerAttr = [self layoutForHeaderAtIndexPath:sectionHeaderIndexPath kind:MagicItemTypeHeader];
-            if (headerAttr)
+            self.isSectionEndLayout = NO;
+            if ([self.layout respondsToSelector:@selector(magicView:insetsForSection:)])
             {
-                headerAttr.father = self;
-                headerAttr.sectionAttr = sectionAttr;
-                [self.storage.attrses setObject:headerAttr forKey:sectionHeaderKey];
+                self.storage.sectionEdgeInsets = [self.layout magicView:self insetsForSection:i];
             }
-        }
-        
-        switch (self.storage.scrollDirection){
-            case BRMagicViewLayoutScrollDirectionVertical: {
-                sectionContainerX = self.storage.sectionX;
-                sectionContainerY = self.storage.heightStandardVertical;
-                sectionContainerW = self.storage.sectionWidth;
-                break;
+            
+            switch (self.storage.scrollDirection){
+                case BRMagicViewLayoutScrollDirectionVertical: {
+                    self.storage.sectionWidth = self.containerView.bounds.size.width - self.storage.sectionEdgeInsets.left - self.storage.sectionEdgeInsets.right;
+                    self.storage.sectionX = self.storage.sectionEdgeInsets.left;
+                    self.storage.heightStandardVertical += self.storage.sectionEdgeInsets.top;
+                    self.storage.heightStandardHorizontal = self.storage.sectionEdgeInsets.left;
+                    break;
+                }
+                case BRMagicViewLayoutScrollDirectionHorizontal: {
+                    self.storage.sectionWidth = self.containerView.bounds.size.height - self.storage.sectionEdgeInsets.top - self.storage.sectionEdgeInsets.bottom;
+                    self.storage.sectionY = self.storage.sectionEdgeInsets.top;
+                    self.storage.heightStandardHorizontal += self.storage.sectionEdgeInsets.left;
+                    self.storage.heightStandardVertical = self.storage.sectionEdgeInsets.top;
+                    break;
+                }
             }
-            case BRMagicViewLayoutScrollDirectionHorizontal: {
-                sectionContainerX = self.storage.heightStandardHorizontal;
-                sectionContainerY = self.storage.sectionY;
-                sectionContainerH = self.storage.sectionWidth;
-                break;
+            
+            //header
+            if (containerTag < 0) {
+                NSIndexPath *sectionHeaderIndexPath = [NSIndexPath indexPathForItem:MagicItemTypeHeader inSection:i];
+                NSString *sectionHeaderKey = [NSString stringWithFormat:@"%zd?%zd", MagicItemTypeHeader, i];
+                MagicItemAttributes *headerAttr = [self.storage.attrses objectForKey:sectionHeaderKey];
+                if (!headerAttr)
+                {
+                    headerAttr = [self layoutForHeaderAtIndexPath:sectionHeaderIndexPath kind:MagicItemTypeHeader];
+                    if (headerAttr)
+                    {
+                        headerAttr.father = self;
+                        headerAttr.sectionAttr = sectionAttr;
+                        [self.storage.attrses setObject:headerAttr forKey:sectionHeaderKey];
+                    }
+                }
+                
+                if (!CGRectIntersectsRect(visiableRect, headerAttr.frame) && containerTag < 0) {
+                    [self setLayOutCache:sectionHeaderIndexPath];
+                    break;
+                }
             }
-        }
+            
+            switch (self.storage.scrollDirection){
+                case BRMagicViewLayoutScrollDirectionVertical: {
+                    sectionAttr.sectionFrame = CGRectMake(self.storage.sectionX, self.storage.heightStandardVertical, self.storage.sectionWidth, 0);
+                    break;
+                }
+                case BRMagicViewLayoutScrollDirectionHorizontal: {
+                    sectionAttr.sectionFrame = CGRectMake(self.storage.heightStandardHorizontal, self.storage.sectionY, 0, self.storage.sectionWidth);
 
-
-        //items
-        self.storage.sectionColumnCount = self.storage.columnCount;
-        self.storage.sectionLayoutType = self.storage.layoutType;
-        if ([self.layout respondsToSelector:@selector(magicView:columnCountAtSection:)]) {
-            self.storage.sectionColumnCount = [self.layout magicView:self columnCountAtSection:i];
+                    break;
+                }
+            }
+            
+            //items
+            self.storage.sectionColumnCount = self.storage.columnCount;
+            self.storage.sectionLayoutType = self.storage.layoutType;
+            if ([self.layout respondsToSelector:@selector(magicView:columnCountAtSection:)]) {
+                self.storage.sectionColumnCount = [self.layout magicView:self columnCountAtSection:i];
+            }
+            if ([self.layout respondsToSelector:@selector(magicView:layoutTypeAtSection:)]) {
+                self.storage.sectionLayoutType = [self.layout magicView:self layoutTypeAtSection:i];
+            }
+            self.storage.numerOfItems = [self numberItemsInSection:i];
         }
-        if ([self.layout respondsToSelector:@selector(magicView:layoutTypeAtSection:)]) {
-            self.storage.sectionLayoutType = [self.layout magicView:self layoutTypeAtSection:i];
-        }
-        NSInteger items  = [self numberItemsInSection:i];
-        
+        NSInteger fromItem = [self.layoutLocationCache objectForKey:@(i)] ? [[self.layoutLocationCache objectForKey:@(i)] integerValue] : 0;
         switch (self.storage.scrollDirection){
             case BRMagicViewLayoutScrollDirectionVertical:
             {
                 switch (self.storage.sectionLayoutType) {
                     case BRMagicViewLayoutTypeHorizontal:
                     {
+                        if (containerTag >= 0) {
+                            break;
+                        }
                         self.storage.sectionItemWidth = (self.storage.sectionWidth - (self.storage.sectionColumnCount - 1)*self.storage.columnMargin)/self.storage.sectionColumnCount;
-                        
-                        for (NSInteger j = fromItem; j < items; j++)
+//                        NSLog(@"-------%zd", self.storage.attrses.count);
+                        for (NSInteger j = 0; j < self.storage.numerOfItems; j++)
                         {
                             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:j inSection:i];
                             NSString *key = [NSString stringWithFormat:@"%zd?%zd", j, i];
@@ -431,19 +413,34 @@ static NSInteger const kcontainerViewTag = -100;
                                 attrs.sectionAttr = sectionAttr;
                                 [self.storage.attrses setObject:attrs forKey:key];
                                 [sectionAttr.grandSonAttrses addObject:attrs];
+                                
+                                if (j == self.storage.numerOfItems - 1)
+                                {
+                                    self.isSectionEndLayout = YES;
+                                }
+                            }
+                            if (!CGRectIntersectsRect(visiableRect, attrs.frame))
+                            {
+                                [self setLayOutCache:indexPath];
+                                break;
                             }
                         }
-                        break;
                     }
+                        break;
                     case BRMagicViewLayoutTypeVertical:
                     {
+                        if (containerTag < 0 && !isInit)
+                        {
+                            break;
+                        }
                         CGFloat sectionHeight = 0;
                         if ([self.layout respondsToSelector:@selector(magicView:heightForSectionIfNeed:)])
                         {
                             sectionHeight = [self.layout magicView:self heightForSectionIfNeed:i];
                             self.storage.sectionItemWidth = (sectionHeight - (self.storage.sectionColumnCount - 1)*self.storage.columnMargin)/self.storage.sectionColumnCount;
                             [self standardAllSetValue:self.storage.heightStandardVertical + sectionHeight standardArr:self.storage.standardArrVertical];
-                            for (NSInteger j = fromItem; j < items; j++)
+                             self.isSectionEndLayout = YES;
+                            for (NSInteger j = fromItem; j < self.storage.numerOfItems; j++)
                             {
                                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:j inSection:i];
                                 NSString *key = [NSString stringWithFormat:@"%zd?%zd", j, i];
@@ -457,6 +454,16 @@ static NSInteger const kcontainerViewTag = -100;
                                     [sectionAttr.grandSonAttrses addObject:attrs];
                                     attrs.sectionAttr = sectionAttr;
                                 }
+                                CGRect rect = visiableRect;
+                                if (isInit)
+                                {
+                                    rect = CGRectMake(0, 0, self.storage.sectionWidth, sectionHeight);
+                                }
+                                if (!CGRectIntersectsRect(rect, attrs.sectionFrame))
+                                {
+                                    [self setLayOutCache:indexPath];
+                                    break;
+                                }
                             }
                         }
                         else
@@ -467,6 +474,10 @@ static NSInteger const kcontainerViewTag = -100;
                     }
                     case BRMagicViewLayoutTypeReverseRank:
                     {
+                        if (containerTag < 0 && !isInit)
+                        {
+                            break;
+                        }
                         CGFloat sectionHeight = 0;
                         CGFloat rankWidth = 0;
                         if ([self.layout respondsToSelector:@selector(magicView:heightForSectionIfNeed:)] &&
@@ -476,24 +487,34 @@ static NSInteger const kcontainerViewTag = -100;
                             rankWidth = [self.layout magicView:self widthForSectionIfNeed:i];
                             
                             self.storage.sectionItemWidth = (rankWidth - (self.storage.sectionColumnCount - 1)*self.storage.columnMargin)/self.storage.sectionColumnCount;
-                            for (NSInteger j = fromItem; j < items; j++)
+                            for (NSInteger j = fromItem; j < self.storage.numerOfItems; j++)
                             {
                                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:j inSection:i];
                                 NSString *key = [NSString stringWithFormat:@"%zd?%zd", j, i];
                                 MagicItemAttributes *attrs = [self.storage.attrses objectForKey:key];
                                 if (!attrs)
                                 {
-                                    attrs = [self layoutItemForVerticalScrollAndVerticalLayoutAndHorizontalRank:indexPath rankWidth:rankWidth sectionHeight:sectionHeight leftMargin:edgeInsets.left];
-                                    
+                                    attrs = [self layoutItemForVerticalScrollAndVerticalLayoutAndHorizontalRank:indexPath rankWidth:rankWidth sectionHeight:sectionHeight leftMargin:self.storage.sectionEdgeInsets.left];
                                     
                                     attrs.father = self;
                                     [self.storage.attrses setObject:attrs forKey:key];
                                     [sectionAttr.grandSonAttrses addObject:attrs];
                                     attrs.sectionAttr = sectionAttr;
                                 }
+                                CGRect rect = visiableRect;
+                                if (isInit)
+                                {
+                                    rect = CGRectMake(0, 0, self.storage.sectionWidth, sectionHeight);
+                                }
+                                if (!CGRectIntersectsRect(rect, attrs.sectionFrame))
+                                {
+                                    [self setLayOutCache:indexPath];
+                                    break;
+                                }
                             }
                             self.storage.heightStandardHorizontal += rankWidth;
                             [self standardAllSetValue:self.storage.heightStandardVertical + sectionHeight standardArr:self.storage.standardArrVertical];
+                            self.isSectionEndLayout = YES;
                         }
                         else
                         {
@@ -515,6 +536,7 @@ static NSInteger const kcontainerViewTag = -100;
                             CGRect rect = CGRectMake(self.storage.sectionX, self.storage.heightStandardVertical, self.storage.sectionWidth, sectionHeight);
                             [self.layout magicView:self customLayoutRect:rect forSection:i];
                         }
+                        self.isSectionEndLayout = YES;
                         break;
                     }
                 }
@@ -525,8 +547,12 @@ static NSInteger const kcontainerViewTag = -100;
                 switch (self.storage.sectionLayoutType) {
                     case BRMagicViewLayoutTypeVertical:
                     {
+                        if (containerTag >= 0)
+                        {
+                            break;
+                        }
                         self.storage.sectionItemWidth = (self.storage.sectionWidth - (self.storage.sectionColumnCount - 1)*self.storage.columnMargin)/self.storage.sectionColumnCount;
-                        for (NSInteger j = fromItem; j < items; j++)
+                        for (NSInteger j = fromItem; j < self.storage.numerOfItems; j++)
                         {
                             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:j inSection:i];
                             NSString *key = [NSString stringWithFormat:@"%zd?%zd", j, i];
@@ -539,19 +565,34 @@ static NSInteger const kcontainerViewTag = -100;
                                 [self.storage.attrses setObject:attrs forKey:key];
                                 [sectionAttr.grandSonAttrses addObject:attrs];
                                 attrs.sectionAttr = sectionAttr;
+                                
+                                if (j == self.storage.numerOfItems - 1)
+                                {
+                                    self.isSectionEndLayout = YES;
+                                }
+                            }
+                            if (!CGRectIntersectsRect(visiableRect, attrs.frame))
+                            {
+                                [self setLayOutCache:indexPath];
+                                break;
                             }
                         }
                         break;
                     }
                     case BRMagicViewLayoutTypeHorizontal:
                     {
+                        if (containerTag < 0 && !isInit)
+                        {
+                            break;
+                        }
                         CGFloat sectionHeight = 0;
                         if ([self.layout respondsToSelector:@selector(magicView:heightForSectionIfNeed:)])
                         {
                             sectionHeight = [self.layout magicView:self heightForSectionIfNeed:i];
                             self.storage.sectionItemWidth = (sectionHeight - (self.storage.sectionColumnCount - 1)*self.storage.columnMargin)/self.storage.sectionColumnCount;
                             [self standardAllSetValue:self.storage.heightStandardHorizontal + sectionHeight standardArr:self.storage.standardArrHorizontal];
-                            for (NSInteger j = fromItem; j < items; j++)
+                            self.isSectionEndLayout = YES;
+                            for (NSInteger j = fromItem; j < self.storage.numerOfItems; j++)
                             {
                                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:j inSection:i];
                                 NSString *key = [NSString stringWithFormat:@"%zd?%zd", j, i];
@@ -565,6 +606,16 @@ static NSInteger const kcontainerViewTag = -100;
                                     [sectionAttr.grandSonAttrses addObject:attrs];
                                     attrs.sectionAttr = sectionAttr;
                                 }
+                                CGRect rect = visiableRect;
+                                if (isInit)
+                                {
+                                    rect = CGRectMake(0, 0, sectionHeight, self.storage.sectionWidth);
+                                }
+                                if (!CGRectIntersectsRect(rect, attrs.sectionFrame))
+                                {
+                                    [self setLayOutCache:indexPath];
+                                    break;
+                                }
                             }
                         }
                         else
@@ -575,6 +626,10 @@ static NSInteger const kcontainerViewTag = -100;
                     }
                     case BRMagicViewLayoutTypeReverseRank:
                     {
+                        if (containerTag < 0 && !isInit)
+                        {
+                            break;
+                        }
                         CGFloat sectionHeight = 0;
                         CGFloat rankWidth = 0;
                         if ([self.layout respondsToSelector:@selector(magicView:heightForSectionIfNeed:)] &&
@@ -584,24 +639,36 @@ static NSInteger const kcontainerViewTag = -100;
                             rankWidth = [self.layout magicView:self widthForSectionIfNeed:i];
                             
                             self.storage.sectionItemWidth = (rankWidth - (self.storage.sectionColumnCount - 1)*self.storage.columnMargin)/self.storage.sectionColumnCount;
-                            for (NSInteger j = fromItem; j < items; j++)
+                            for (NSInteger j = fromItem; j < self.storage.numerOfItems; j++)
                             {
                                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:j inSection:i];
                                 NSString *key = [NSString stringWithFormat:@"%zd?%zd", j, i];
                                 MagicItemAttributes *attrs = [self.storage.attrses objectForKey:key];
                                 if (!attrs)
                                 {
-                                    attrs = [self layoutItemForHorizontalScrollAndHorizontalLayoutAndVerticalRank:indexPath rankWidth:rankWidth sectionHeight:sectionHeight topMargin:edgeInsets.top];
+                                    attrs = [self layoutItemForHorizontalScrollAndHorizontalLayoutAndVerticalRank:indexPath rankWidth:rankWidth sectionHeight:sectionHeight topMargin:self.storage.sectionEdgeInsets.top];
                                     
                                     attrs.father = self;
                                     [self.storage.attrses setObject:attrs forKey:key];
                                     [sectionAttr.grandSonAttrses addObject:attrs];
                                     attrs.sectionAttr = sectionAttr;
                                 }
+                                CGRect rect = visiableRect;
+                                if (isInit)
+                                {
+                                    rect = CGRectMake(0, 0, sectionHeight, self.storage.sectionWidth);
+                                }
+
+                                if (!CGRectIntersectsRect(visiableRect, attrs.sectionFrame))
+                                {
+                                    [self setLayOutCache:indexPath];
+                                    break;
+                                }
                             }
                             
                             self.storage.heightStandardVertical += rankWidth;
                             [self standardAllSetValue:self.storage.heightStandardHorizontal + sectionHeight standardArr:self.storage.standardArrHorizontal];
+                            self.isSectionEndLayout = YES;
                         }
                         else
                         {
@@ -623,7 +690,7 @@ static NSInteger const kcontainerViewTag = -100;
                             CGRect rect = CGRectMake(self.storage.heightStandardHorizontal, self.storage.sectionY, sectionHeight, self.storage.sectionWidth);
                             [self.layout magicView:self customLayoutRect:rect forSection:i];
                         }
-                        
+                        self.isSectionEndLayout = YES;
                         break;
                     }
                 }
@@ -631,89 +698,145 @@ static NSInteger const kcontainerViewTag = -100;
             }
         }
         
-        //布局位置记录
-        StndardLoc standardMaxVertical = [self getStandardMax:self.storage.standardArrVertical];
-        
-        StndardLoc standardMaxHorizontal = [self getStandardMax:self.storage.standardArrHorizontal];
-        
-        self.storage.standardArrVertical = nil;//致空, 下个section根据heightStandard的值重新初始化
-        self.storage.standardArrHorizontal = nil;//致空, 下个section根据heightStandard的值重新初始化
-        switch (self.storage.scrollDirection){
-            case BRMagicViewLayoutScrollDirectionVertical: {
-                if (self.storage.contentWidth < standardMaxHorizontal.value)
-                {
-                    self.storage.contentWidth = standardMaxHorizontal.value-edgeInsets.left;
-                }
-                sectionContainerContentWidth = self.storage.contentWidth;
-                sectionContainerContentHeight = standardMaxVertical.value - self.storage.heightStandardVertical;
-                sectionContainerH = sectionContainerContentHeight;
-                
-                self.storage.heightStandardVertical = standardMaxVertical.value;
-                self.storage.heightStandardHorizontal = 0;//致0, 下个section重新获取
-                self.storage.contentWidth = 0;
-                break;
-            }
-            case BRMagicViewLayoutScrollDirectionHorizontal: {
-                if (self.storage.contentWidth < standardMaxVertical.value)
-                {
-                    self.storage.contentWidth = standardMaxVertical.value-edgeInsets.top;
-                }
-                sectionContainerContentHeight = self.storage.contentWidth;
-                sectionContainerContentWidth = standardMaxHorizontal.value - self.storage.heightStandardHorizontal;
-                sectionContainerW = sectionContainerContentWidth;
-                
-                self.storage.heightStandardHorizontal = standardMaxHorizontal.value;
-                self.storage.heightStandardVertical = 0;//致0, 下个section重新获取
-                self.storage.contentWidth = 0;
-                break;
-            }
-        }
-        
-        sectionAttr.sectionFrame = CGRectMake(sectionContainerX, sectionContainerY, sectionContainerW, sectionContainerH);
-        sectionAttr.sectionContentSize = CGSizeMake(sectionContainerContentWidth, sectionContainerContentHeight);
-        
-        //footer
-        NSIndexPath *sectionFooterIndexPath = [NSIndexPath indexPathForItem:MagicItemTypeFooter inSection:i];
-        NSString *sectionFooterKey = [NSString stringWithFormat:@"%zd?%zd", MagicItemTypeFooter, i];
-        MagicItemAttributes *footerAttr = [self.storage.attrses objectForKey:sectionFooterKey];
-        if (!footerAttr)
+        if (!self.isSectionEndLayout)
         {
-            footerAttr = [self layoutForFooterAtIndexPath:sectionFooterIndexPath kind:MagicItemTypeFooter];
-            if (footerAttr)
-            {
-                footerAttr.father = self;
-                footerAttr.sectionAttr = sectionAttr;
-                [self.storage.attrses setObject:footerAttr forKey:sectionFooterKey];
+            //布局位置记录
+            StndardLoc standardMaxVertical = [self getStandardMax:self.storage.standardArrVertical];
+            StndardLoc standardMaxHorizontal = [self getStandardMax:self.storage.standardArrHorizontal];
+            
+            switch (self.storage.scrollDirection){
+                case BRMagicViewLayoutScrollDirectionVertical: {
+                    CGRect sectionFrame = sectionAttr.sectionFrame;
+                    sectionFrame.size.height = standardMaxVertical.value - self.storage.heightStandardVertical;
+                    sectionAttr.sectionFrame = sectionFrame;
+                    break;
+                }
+                case BRMagicViewLayoutScrollDirectionHorizontal: {
+                    CGRect sectionFrame = sectionAttr.sectionFrame;
+                    sectionFrame.size.width = standardMaxHorizontal.value - self.storage.heightStandardHorizontal;
+                    sectionAttr.sectionFrame = sectionFrame;
+                    break;
+                }
             }
         }
         
-        //section 底部间距
-        switch (self.storage.scrollDirection){
-            case BRMagicViewLayoutScrollDirectionVertical: {
-                self.storage.heightStandardVertical += edgeInsets.bottom;
-                break;
+        if (self.isSectionEndLayout)
+        {
+            //布局位置记录
+            CGFloat sectionContainerContentWidth;
+            CGFloat sectionContainerContentHeight;
+            
+            StndardLoc standardMaxVertical = [self getStandardMax:self.storage.standardArrVertical];
+            StndardLoc standardMaxHorizontal = [self getStandardMax:self.storage.standardArrHorizontal];
+            
+            self.storage.standardArrVertical = nil;//致空, 下个section根据heightStandard的值重新初始化
+            self.storage.standardArrHorizontal = nil;//致空, 下个section根据heightStandard的值重新初始化
+            switch (self.storage.scrollDirection){
+                case BRMagicViewLayoutScrollDirectionVertical: {
+                    if (self.storage.contentWidth < standardMaxHorizontal.value)
+                    {
+                        self.storage.contentWidth = standardMaxHorizontal.value-self.storage.sectionEdgeInsets.left;
+                    }
+                    sectionContainerContentWidth = self.storage.contentWidth;
+                    sectionContainerContentHeight = standardMaxVertical.value - self.storage.heightStandardVertical;
+                    CGRect sectionFrame = sectionAttr.sectionFrame;
+                    sectionFrame.size.height = sectionContainerContentHeight;
+                    sectionAttr.sectionFrame = sectionFrame;
+                    
+                    self.storage.heightStandardVertical = standardMaxVertical.value;
+                    self.storage.heightStandardHorizontal = 0;//致0, 下个section重新获取
+                    self.storage.contentWidth = 0;
+                    break;
+                }
+                case BRMagicViewLayoutScrollDirectionHorizontal: {
+                    if (self.storage.contentWidth < standardMaxVertical.value)
+                    {
+                        self.storage.contentWidth = standardMaxVertical.value-self.storage.sectionEdgeInsets.top;
+                    }
+                    sectionContainerContentHeight = self.storage.contentWidth;
+                    sectionContainerContentWidth = standardMaxHorizontal.value - self.storage.heightStandardHorizontal;
+                    CGRect sectionFrame = sectionAttr.sectionFrame;
+                    sectionFrame.size.width = sectionContainerContentWidth;
+                    sectionAttr.sectionFrame = sectionFrame;
+                    
+                    self.storage.heightStandardHorizontal = standardMaxHorizontal.value;
+                    self.storage.heightStandardVertical = 0;//致0, 下个section重新获取
+                    self.storage.contentWidth = 0;
+                    break;
+                }
             }
-            case BRMagicViewLayoutScrollDirectionHorizontal: {
-                self.storage.heightStandardHorizontal += edgeInsets.right;
-                break;
+            
+            sectionAttr.sectionContentSize = CGSizeMake(sectionContainerContentWidth, sectionContainerContentHeight);
+            
+            //footer
+            if (containerTag < 0) {
+                NSIndexPath *sectionFooterIndexPath = [NSIndexPath indexPathForItem:MagicItemTypeFooter inSection:i];
+                NSString *sectionFooterKey = [NSString stringWithFormat:@"%zd?%zd", MagicItemTypeFooter, i];
+                MagicItemAttributes *footerAttr = [self.storage.attrses objectForKey:sectionFooterKey];
+                if (!footerAttr)
+                {
+                    footerAttr = [self layoutForFooterAtIndexPath:sectionFooterIndexPath kind:MagicItemTypeFooter];
+                    if (footerAttr)
+                    {
+                        footerAttr.father = self;
+                        footerAttr.sectionAttr = sectionAttr;
+                        [self.storage.attrses setObject:footerAttr forKey:sectionFooterKey];
+                    }
+                }
+                
+                if (!CGRectIntersectsRect(visiableRect, footerAttr.frame) && containerTag < 0)
+                {
+                    [self setLayOutCache:sectionFooterIndexPath];
+                    break;
+                }
+            }
+            //section 底部间距
+            switch (self.storage.scrollDirection){
+                case BRMagicViewLayoutScrollDirectionVertical: {
+                    self.storage.heightStandardVertical += self.storage.sectionEdgeInsets.bottom;
+                    break;
+                }
+                case BRMagicViewLayoutScrollDirectionHorizontal: {
+                    self.storage.heightStandardHorizontal += self.storage.sectionEdgeInsets.right;
+                    break;
+                }
+            }
+            
+            
+            if (i == self.storage.numberOfSection - 1)
+            {
+                self.isAllLayoutOver = YES;
             }
         }
     }
     //设置contentsize
     
-    switch (self.storage.scrollDirection){
-        case BRMagicViewLayoutScrollDirectionVertical: {
-            self.containerView.contentSize = CGSizeMake(0, self.storage.heightStandardVertical);
-            break;
+    if (self.isAllLayoutOver)
+    {
+        switch (self.storage.scrollDirection){
+            case BRMagicViewLayoutScrollDirectionVertical: {
+                self.containerView.contentSize = CGSizeMake(0, self.storage.heightStandardVertical);
+                break;
+            }
+            case BRMagicViewLayoutScrollDirectionHorizontal: {
+                self.containerView.contentSize = CGSizeMake(self.storage.heightStandardHorizontal, 0);
+                break;
+            }
         }
-        case BRMagicViewLayoutScrollDirectionHorizontal: {
-            self.containerView.contentSize = CGSizeMake(self.storage.heightStandardHorizontal, 0);
-            break;
-        }
+        
+        self.isAllLayoutOver = NO;
     }
-    
     //绘制屏幕内的item
-    [self scrollViewDidScroll:self.containerView];
+    NSMutableDictionary *noteInfo = [NSMutableDictionary dictionary];
+    [noteInfo setObject:[NSValue valueWithCGRect:visiableRect] forKey:kFatherNoteInfoFatherVisiableRectKey];
+    [noteInfo setObject:[NSNumber numberWithInteger:containerTag] forKey:kFatherNoteInfoContainerTagKey];
+    
+    if (containerTag == kcontainerViewTag)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kFatherSectionNotificaation object:self userInfo:noteInfo];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFatherItemNotificaation object:self userInfo:noteInfo];
+   
 }
 
 - (void)estimateContentSize
@@ -741,11 +864,11 @@ static NSInteger const kcontainerViewTag = -100;
         
         switch (self.storage.scrollDirection){
             case BRMagicViewLayoutScrollDirectionVertical: {
-                contentSizeHeight = edgeInsets.top + headerHeight;
+                contentSizeHeight = contentSizeHeight + edgeInsets.top + headerHeight;
                 break;
             }
             case BRMagicViewLayoutScrollDirectionHorizontal: {
-                contentSizeWidth += edgeInsets.left + headerHeight;
+                contentSizeWidth = contentSizeWidth + edgeInsets.left + headerHeight;
                 break;
             }
         }
@@ -952,17 +1075,19 @@ static NSInteger const kcontainerViewTag = -100;
         //section 底部间距
         switch (self.storage.scrollDirection){
             case BRMagicViewLayoutScrollDirectionVertical: {
-                contentSizeHeight = footerHeight + edgeInsets.bottom;
+                contentSizeHeight = contentSizeHeight + footerHeight + edgeInsets.bottom;
                 break;
             }
             case BRMagicViewLayoutScrollDirectionHorizontal: {
-                contentSizeWidth = footerHeight + edgeInsets.right;
+                contentSizeWidth = contentSizeWidth + footerHeight + edgeInsets.right;
                 break;
             }
         }
     }
     //设置contentsize
-    self.containerView.contentSize = CGSizeMake(contentSizeWidth, contentSizeHeight);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.containerView.contentSize = CGSizeMake(contentSizeWidth, contentSizeHeight);
+    });
 }
 
 - (void)tapGestureView:(UITapGestureRecognizer *)tap
@@ -1382,6 +1507,30 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
     }
 }
 
+- (void)setLayOutCache:(NSIndexPath *)indexPath
+{
+    NSInteger fromItem = indexPath.item;
+    NSInteger fromSection = indexPath.section;
+    [self.layoutLocationCache setObject:@(fromItem) forKey:@(fromSection)];
+}
+
+- (NSInteger)getMinSectionInLayoutCache
+{
+    NSInteger min = NSIntegerMax;
+    for (NSString *key in [self.layoutLocationCache allKeys])
+    {
+        NSInteger section = [key integerValue];
+        if (section < min)
+        {
+            min = section;
+        }
+    }
+    if (![self.layoutLocationCache allKeys].count)
+    {
+        min = 0;
+    }
+    return min;
+}
 - (void)clear
 {
     self.storage.standardArrVertical = nil;
@@ -1611,6 +1760,39 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
 {
     objc_setAssociatedObject(self, @selector(sectionContainers), sectionContainers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+//layoutLocationCache
+- (NSMutableDictionary *)layoutLocationCache
+{
+    NSMutableDictionary *cache = objc_getAssociatedObject(self, @selector(layoutLocationCache));
+    if (!cache)
+    {
+        cache = [NSMutableDictionary dictionary];
+        self.layoutLocationCache = cache;
+    }
+    return cache;
+}
+- (void)setLayoutLocationCache:(NSMutableDictionary *)layoutLocationCache
+{
+    objc_setAssociatedObject(self, @selector(layoutLocationCache), layoutLocationCache, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+//isSectionEndLayout
+- (BOOL)isSectionEndLayout
+{
+    return [objc_getAssociatedObject(self, @selector(isSectionEndLayout)) boolValue];
+}
+- (void)setIsSectionEndLayout:(BOOL)isSectionEndLayout
+{
+    objc_setAssociatedObject(self, @selector(isSectionEndLayout), @(isSectionEndLayout), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+//isAllLayoutOver
+- (BOOL)isAllLayoutOver
+{
+    return [objc_getAssociatedObject(self, @selector(isAllLayoutOver)) boolValue];
+}
+- (void)setIsAllLayoutOver:(BOOL)isAllLayoutOver
+{
+    objc_setAssociatedObject(self, @selector(isAllLayoutOver), @(isAllLayoutOver), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 @end
 
 
@@ -1736,8 +1918,8 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
 {
     NSDictionary *noteInfo = note.userInfo;
     CGRect rect = [[noteInfo valueForKey:kFatherNoteInfoFatherVisiableRectKey] CGRectValue];;
-    BOOL isBigContainer = [[noteInfo valueForKey:kFatherNoteInfoFatherBigScrollViewKey] boolValue];
-    NSInteger sectionTag = [[noteInfo valueForKey:kFatherNoteInfoSectionScrollViewTagKey] integerValue];
+    NSInteger containerTag = [[noteInfo valueForKey:kFatherNoteInfoContainerTagKey] integerValue];
+    BOOL isBigContainer = containerTag < 0;
 
     //移出不在屏幕内的item
     if (self.isOnscreen)
@@ -1745,7 +1927,7 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
         BOOL dealBig = isBigContainer && self.kind != MagicItemTypeItem && !CGRectIntersectsRect(rect, self.frame);
         BOOL dealBigInSection = isBigContainer && self.kind == MagicItemTypeItem &&
         !CGRectIntersectsRect(rect, CGRectMake(self.frame.origin.x - self.sectionAttr.son.contentOffset.x, self.frame.origin.y - self.sectionAttr.son.contentOffset.y, self.frame.size.width, self.frame.size.height));
-        BOOL dealSection = !isBigContainer && self.indexPath.section == sectionTag && !CGRectIntersectsRect(rect, self.sectionFrame) && self.kind == MagicItemTypeItem;
+        BOOL dealSection = !isBigContainer && self.indexPath.section == containerTag && !CGRectIntersectsRect(rect, self.sectionFrame) && self.kind == MagicItemTypeItem;
         if (dealBig || dealBigInSection || dealSection )
         {
             [self.son removeFromSuperview];
@@ -1763,7 +1945,7 @@ static  NSInteger sectionReverseRankTempCount;//记录换页时候的item数量
                 if ([self.father.dataSource respondsToSelector:@selector(magicView:itemAtIndexPath:)])
                 {
                     BOOL dealBig = isBigContainer && CGRectIntersectsRect(rect, CGRectMake(self.frame.origin.x - self.sectionAttr.son.contentOffset.x, self.frame.origin.y - self.sectionAttr.son.contentOffset.y, self.frame.size.width, self.frame.size.height));
-                    BOOL dealSection = !isBigContainer && self.indexPath.section == sectionTag && CGRectIntersectsRect(rect, self.sectionFrame);
+                    BOOL dealSection = !isBigContainer && self.indexPath.section == containerTag && CGRectIntersectsRect(rect, self.sectionFrame);
                     
                     if (dealBig || dealSection)
                     {

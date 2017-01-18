@@ -9,6 +9,7 @@
 #import "BRStudyDemoViewController.h"
 #import "BRDemoModel.h"
 #import "BRRACDemoViewController.h"
+#import "FMDBViewDemoController.h"
 
 @interface BRStudyDemoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -63,6 +64,12 @@ static NSString * const kDemoCellIdentify = @"demoCellIdentify";
     demo1.className = NSStringFromClass([BRRACDemoViewController class]);
     [self.demoModels addObject:demo1];
 
+    /** Demo2*/
+    BRDemoModel *demo2 = [[BRDemoModel alloc] init];
+    demo1.demoName = @"rac学习";
+    demo2.demoDetail = @"rac学习";
+    demo2.className = NSStringFromClass([FMDBViewDemoController class]);
+    [self.demoModels addObject:demo2];
     
     [self.tableView reloadData];
 }

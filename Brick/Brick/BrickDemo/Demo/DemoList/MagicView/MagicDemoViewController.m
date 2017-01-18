@@ -8,7 +8,6 @@
 
 #import "MagicDemoViewController.h"
 #import "UIView+Magic.h"
-#import "TestView.h"
 
 @interface MagicDemoViewController ()<BRMagicViewDataSource, BRMagicViewDelegate, BRMagicViewLayout>
 @property(nonatomic, strong) UIView *magicView;
@@ -32,7 +31,6 @@
     [self.view addSubview:self.magicView];
     self.magicView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
     self.magicView.backgroundColor = [UIColor lightGrayColor];
-    [self.magicView registerItemViewClass:[TestView class] forItemViewReuseIdentifier:@"item"];
     [self.magicView registerItemViewClass:[UILabel class] forItemViewReuseIdentifier:@"header"];
     [self.magicView registerItemViewClass:[UILabel class] forItemViewReuseIdentifier:@"footer"];
     
@@ -96,11 +94,7 @@
 
 - (UIView *)magicView:(UIView *)magicView itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TestView *item = (TestView *)[magicView dequeueReusableItemViewWithIdentifier:@"item"];
-    item.backgroundColor = RandomColor;
-    item.label.text = [NSString stringWithFormat:@"%zd", indexPath.item];
-    item.label.textAlignment = NSTextAlignmentCenter;
-    return item;
+    return nil;
 }
 #pragma mark - BRMagicViewLayout
 - (CGFloat)magicView:(UIView *)magicView heightForHeaderAtSection:(NSInteger)section
@@ -117,7 +111,7 @@
 }
 - (NSInteger)magicView:(UIView *)magicView columnCountAtSection:(NSInteger)section
 {
-    return arc4random_uniform(3) + 2;
+    return 4;
 }
 - (BRMagicViewLayoutType)magicView:(UIView *)magicView layoutTypeAtSection:(NSInteger)section
 {

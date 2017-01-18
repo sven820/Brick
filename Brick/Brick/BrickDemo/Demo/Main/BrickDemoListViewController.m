@@ -15,6 +15,8 @@
 #import "YCFInfiniteDemoViewController.h"
 #import "YCFTabsDemoViewController.h"
 #import "MagicDemoViewController.h"
+#import "BRMessageSessionDemoController.h"
+#import "PopViewDemoController.h"
 
 
 @interface BrickDemoListViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -100,6 +102,20 @@ static NSString * const kDemoCellIdentify = @"demoCellIdentify";
     Demo6.demoDetail = @"MagicView";
     Demo6.className = NSStringFromClass([MagicDemoViewController class]);
     [self.demoModels addObject:Demo6];
+    
+    /** Demo7*/
+    BRDemoModel *Demo7 = [[BRDemoModel alloc] init];
+    Demo7.demoName = @"BRMessageSession";
+    Demo7.demoDetail = @"BRMessageSession";
+    Demo7.className = NSStringFromClass([BRMessageSessionDemoController class]);
+    [self.demoModels addObject:Demo7];
+    
+    /** Demo8*/
+    BRDemoModel *Demo8 = [[BRDemoModel alloc] init];
+    Demo8.demoName = @"pop view";
+    Demo8.demoDetail = @"pop view";
+    Demo8.className = NSStringFromClass([PopViewDemoController class]);
+    [self.demoModels addObject:Demo8];
 }
 
 #pragma mark - delegate

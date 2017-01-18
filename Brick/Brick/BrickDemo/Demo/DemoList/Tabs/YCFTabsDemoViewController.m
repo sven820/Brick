@@ -23,12 +23,17 @@
     
     YCFTabsView *tabView = [YCFTabsView quickCreateTabsViewWithTitles:@[@"标题1",@"标题2",@"标题3",@"标题4",@"标题5",]isNeedEqualWidth:YES];
     [self.view addSubview:tabView];
-    tabView.frame = CGRectMake(0, 100, self.view.frame.size.width, 39);
+    tabView.frame = CGRectMake(0, 80 , self.view.frame.size.width, 39);
     tabView.tabsStyle = YCFTabsStyleLine;
     tabView.selectedIndex = 3;
     tabView.backgroundColor = [UIColor greenColor];
     self.tabView = tabView;
     
+    YCFTabsView *tabView1 = [YCFTabsView quickCreateTabsViewWithIcons:@[@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",@"Icon",]isNeedEqualWidth:NO];
+    [self.view addSubview:tabView1];
+    tabView1.frame = CGRectMake(0, 140 , self.view.frame.size.width, 39);
+    tabView1.backgroundColor = [UIColor greenColor];
+    [tabView1 configTabItemBtn:0 contentInsets:UIEdgeInsetsZero titleInsets:UIEdgeInsetsZero iconInsets:UIEdgeInsetsZero isSetIconRound:YES];
     
     YCFTabsView *tabView2 = [YCFTabsView quickCreateTabsViewWithTitles:@[@"标题1",@"标题23332",@"标题333",@"标题4",@"标xx题5",@"标噢噢噢噢题1",@"标题1",@"题1",]isNeedEqualWidth:NO];
     tabView2.columnMargin = 15;
@@ -79,7 +84,7 @@
     tabView7.frame = CGRectMake(100, 420, 250, 60);
     tabView7.columnMargin = 5;
     tabView7.backgroundColor = [UIColor greenColor];
-    [tabView7 configTabItemBtn:YCFTabsItemBtnTypeVerticalTitleIcon contentInsets:UIEdgeInsetsZero titleInsets:UIEdgeInsetsZero iconInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
+    [tabView7 configTabItemBtn:EasyBtnTypeBtnTypeVerticalTitleIcon contentInsets:UIEdgeInsetsZero titleInsets:UIEdgeInsetsZero iconInsets:UIEdgeInsetsMake(10, 0, 0, 0) isSetIconRound:NO];
 }
 
 
