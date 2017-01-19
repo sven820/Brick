@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EasyButton.h"
+
 @class YCFTabsView;
 //这个组件的作用, 用来快速布局一些tabs, 并且提供一些生成快速样式方法
 
@@ -19,13 +21,6 @@ typedef NS_ENUM(NSUInteger, YCFTabsStyle) {
     YCFTabsStyleNone,
     YCFTabsStyleLine,
     YCFTabsStyleCharFlow,
-};
-
-typedef NS_ENUM(NSUInteger, YCFTabsItemBtnType) {
-    YCFTabsItemBtnTypeHorizontaIconTitle,
-    YCFTabsItemBtnTypeHorizontaTitleIcon,
-    YCFTabsItemBtnTypeVerticalIconTitle,
-    YCFTabsItemBtnTypeVerticalTitleIcon,
 };
 
 @protocol YCFTabsDelegate <UIScrollViewDelegate>
@@ -69,6 +64,9 @@ typedef NS_ENUM(NSUInteger, YCFTabsItemBtnType) {
 + (instancetype)quickCreateTabsViewWithTitles:(NSArray<NSString *> *)titles
                              isNeedEqualWidth:(BOOL)isNeedEqualWidth;
 
++ (instancetype)quickCreateTabsViewWithIcons:(NSArray<NSString *> *)icons
+                             isNeedEqualWidth:(BOOL)isNeedEqualWidth;
+
 + (instancetype)quickCreateTabsViewWithTitles:(NSArray<NSString *> *)titles
                                     iconImage:(NSArray<NSString *> *)icons
                                    iconImageH:(NSArray<NSString *> *)iconsH
@@ -84,7 +82,7 @@ typedef NS_ENUM(NSUInteger, YCFTabsItemBtnType) {
                                      bgImageS:(NSArray<NSString *> *)bgImagesS
                              isNeedEqualWidth:(BOOL)isNeedEqualWidth;
 //如果是上面快速方法创建的tab, 用这个方法调整btn的图片和文字位置
-- (void)configTabItemBtn:(YCFTabsItemBtnType)btnType contentInsets:(UIEdgeInsets)contentInsets titleInsets:(UIEdgeInsets)titleInsets iconInsets:(UIEdgeInsets)iconInsets;
+- (void)configTabItemBtn:(EasyBtnType)btnType contentInsets:(UIEdgeInsets)contentInsets titleInsets:(UIEdgeInsets)titleInsets iconInsets:(UIEdgeInsets)iconInsets isSetIconRound:(BOOL)isSetIconRound;
 
 /**
  *  如果想使用这个方法快速管理内部布局, 子item必须有明确的bounds

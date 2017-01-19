@@ -141,7 +141,7 @@
         make.left.equalTo(superView);
         make.top.equalTo(superView).offset(230);
         make.width.mas_equalTo(100);
-        make.height.mas_equalTo(toolBarEdit1.bounds.size.height);
+        make.height.mas_equalTo(150);
     }];
     
     [toolBarEdit2 mas_makeConstraints:^(MASConstraintMaker *make) {

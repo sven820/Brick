@@ -8,7 +8,6 @@
 #import "YTKNetwork.h"
 #import "YTKNetworkAgent.h"
 #import "YTKNetworkConfig.h"
-#import "YTKNetworkPrivate.h"
 #import "YTKRequest.h"
 
 FOUNDATION_EXPORT double YTKNetworkVersionNumber;
