@@ -127,14 +127,14 @@ static inline void setObjectAtDictionary(NSMutableDictionary *dic, id key, id va
     {
         return;
     }
-    if (IsEmpty(key) || ([key isKindOfClass:[NSString class]] && [NSString checkIsEmptyOrNull:key]) || ![key conformsToProtocol:@protocol(NSCopying)])
-    {
-        return;
-    }
-    if (IsEmpty(value) || ([value isKindOfClass:[NSString class]] && [NSString checkIsEmptyOrNull:value]))
-    {
-        return;
-    }
+//    if (IsEmpty(key) || ([key isKindOfClass:[NSString class]] && [NSString checkIsEmptyOrNull:key]) || ![key conformsToProtocol:@protocol(NSCopying)])
+//    {
+//        return;
+//    }
+//    if (IsEmpty(value) || ([value isKindOfClass:[NSString class]] && [NSString checkIsEmptyOrNull:value]))
+//    {
+//        return;
+//    }
     [dic setObject:value forKey:key];
 }
 #endif
