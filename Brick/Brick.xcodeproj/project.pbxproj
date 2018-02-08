@@ -114,6 +114,8 @@
 		9958C10D1D71C7FE005EC3DF /* BRImageToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C10A1D71C7FE005EC3DF /* BRImageToolsTest.m */; };
 		9958C10E1D71C7FE005EC3DF /* BRLoadImageAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C10B1D71C7FE005EC3DF /* BRLoadImageAPITest.m */; };
 		9958C10F1D71C7FE005EC3DF /* BRTestViewModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C10C1D71C7FE005EC3DF /* BRTestViewModelTest.m */; };
+		99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C73202C454F005EBB54 /* MyTestOperation.m */; };
+		99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C76202C4E34005EBB54 /* DemoForOCLock.m */; };
 		99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03E61D7D502700608A07 /* UIView+Magic.m */; };
 		99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F01D7E572600608A07 /* MagicDemoViewController.m */; };
 		99CE03F41D7F12C800608A07 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F31D7F12C800608A07 /* TestView.m */; };
@@ -351,6 +353,10 @@
 		9958C10A1D71C7FE005EC3DF /* BRImageToolsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRImageToolsTest.m; sourceTree = "<group>"; };
 		9958C10B1D71C7FE005EC3DF /* BRLoadImageAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRLoadImageAPITest.m; sourceTree = "<group>"; };
 		9958C10C1D71C7FE005EC3DF /* BRTestViewModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTestViewModelTest.m; sourceTree = "<group>"; };
+		99653C72202C454F005EBB54 /* MyTestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTestOperation.h; sourceTree = "<group>"; };
+		99653C73202C454F005EBB54 /* MyTestOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTestOperation.m; sourceTree = "<group>"; };
+		99653C75202C4E34005EBB54 /* DemoForOCLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoForOCLock.h; sourceTree = "<group>"; };
+		99653C76202C4E34005EBB54 /* DemoForOCLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoForOCLock.m; sourceTree = "<group>"; };
 		99CE03E51D7D502700608A07 /* UIView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Magic.h"; sourceTree = "<group>"; };
 		99CE03E61D7D502700608A07 /* UIView+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Magic.m"; sourceTree = "<group>"; };
 		99CE03EF1D7E572600608A07 /* MagicDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicDemoViewController.h; sourceTree = "<group>"; };
@@ -1183,6 +1189,10 @@
 			children = (
 				994B3696202C28E600EEE0B3 /* MultiThreadDemoController.h */,
 				994B3697202C28E600EEE0B3 /* MultiThreadDemoController.m */,
+				99653C72202C454F005EBB54 /* MyTestOperation.h */,
+				99653C73202C454F005EBB54 /* MyTestOperation.m */,
+				99653C75202C4E34005EBB54 /* DemoForOCLock.h */,
+				99653C76202C4E34005EBB54 /* DemoForOCLock.m */,
 			);
 			path = "多线程";
 			sourceTree = "<group>";
@@ -1501,6 +1511,7 @@
 				99158B9C1D719E5E0080D078 /* UIView+AdjustFrame.m in Sources */,
 				99158BA91D719E5E0080D078 /* YCFInfiniteView.m in Sources */,
 				99158B8D1D719E5E0080D078 /* NSFileManager+Extension.m in Sources */,
+				99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */,
 				99158BD21D719E5E0080D078 /* YYFPSLabel.m in Sources */,
 				99158B931D719E5E0080D078 /* NSMutableURLRequest+XMGUpload.m in Sources */,
 				99158A1A1D719E0F0080D078 /* main.m in Sources */,
@@ -1573,6 +1584,7 @@
 				99158B7E1D719E5E0080D078 /* BRLoadImageAPI.m in Sources */,
 				99158B791D719E5E0080D078 /* BRStudyDemoViewController.m in Sources */,
 				9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */,
+				99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */,
 				99158B7A1D719E5E0080D078 /* BRChainCodingDemo.m in Sources */,
 				99158BBD1D719E5E0080D078 /* JJTableCollectionCell.m in Sources */,
 				99158B701D719E5E0080D078 /* AutoKeyBoardTestFieldDemoController.m in Sources */,

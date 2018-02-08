@@ -142,7 +142,7 @@ static NSInteger const kcontainerViewTag = -100;
 
 - (void)dealloc
 {
-    NSLog(@"被释放了%@", self.identify);
+//    NSLog(@"被释放了%@", self.identify);
 }
 
 #pragma mark - delegate
