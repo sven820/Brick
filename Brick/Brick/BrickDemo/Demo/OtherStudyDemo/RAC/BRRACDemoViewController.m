@@ -68,6 +68,7 @@
     self.t2 = t2;
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登录" message:@"登录成功" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+    /*
 //1. 处理textField
     RACSignal *signal1 = [t1.rac_textSignal map:^id(NSString *value) {
         BOOL temp = value.length > 3;
@@ -108,11 +109,12 @@
                              简化代码, 至始至终, 我只定义了两个属性, 所有数据流都在信号流的管道内 \
                               低耦合, 数据流通过block传递, 耦合性降低  \
     注意block的循环引用, 可以用RAC自带的@(WeakSelf)和@(StrongSelf)
-
+*/
 }
 
-- (RACSignal *)getLoginServiceSignal
-{
+//- (RACSignal *)getLoginServiceSignal
+//{
+    /*
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [self mockLoginService:self.t1.text pwd:self.t2.text completeBlock:^(BOOL value) {
             [subscriber sendNext:@(value)];
@@ -129,7 +131,9 @@
         }];
     }];
     return signal;
-}
+     */
+//    return nil;
+//}
 
 - (void)mockLoginService:(NSString *)name pwd:(NSString *)pwd completeBlock:(void(^)(BOOL value))complete
 {
@@ -150,13 +154,14 @@
     [self.view addSubview:t];
     t.frame = CGRectMake(100, 150, 200, 30);
     
+    /*
     [[t.rac_textSignal filter:^BOOL(id value) {
         NSString *text = value;
         return text.length > 3;
     }] subscribeNext:^(id x) {
         NSLog(@"%@", x);
     }];
-    
+    */
     /** RACSignal的每个操作都会返回一个RACsignal，这在术语上叫做连贯接口（fluent interface）。这个功能可以让你直接构建管道，而不用每一步都使用本地变量。
      
         分解如下三个步骤
@@ -184,12 +189,14 @@
     [self.view addSubview:t];
     t.frame = CGRectMake(100, 200, 200, 30);
     
+    /*
     [[t.rac_textSignal map:^id(NSString *str) {
         
         return @(str.length);
     }] subscribeNext:^(id x) {
         NSLog(@"%@", x);
     }];
+     */
 }
 
 - (void)textFieldDemo_map_transform
@@ -206,9 +213,11 @@
 //    }];
     
     //也可用RAC的宏来简化
+    /*
     RAC(t, backgroundColor) = [t.rac_textSignal map:^id(NSString *value) {
         return value.length > 3 ? [UIColor redColor] : [UIColor lightGrayColor];
     }];
+     */
 }
 
 - (void)textFieldDemo_combinSignal
@@ -223,6 +232,7 @@
     [self.view addSubview:t2];
     t2.frame = CGRectMake(170, 300, 150, 30);
     
+    /*
     RACSignal *signal = [t.rac_textSignal map:^id(NSString *str) {
         BOOL temp = str.length > 3;
         UIColor *color = temp ? [UIColor greenColor] : [UIColor lightGrayColor];
@@ -246,10 +256,12 @@
         NSString *res = [value boolValue] == YES ? @"绿灯" : @"红灯";
         NSLog(@"%@", res);
     }];
+     */
 }
 
 - (void)subjectDemo
 {
+    /*
     // 1.创建信号
     RACSubject *subject = [RACSubject subject];
     
@@ -265,6 +277,7 @@
     
     // 3.发送信号
     [subject sendNext:@"1"];
+     */
 }
 
 

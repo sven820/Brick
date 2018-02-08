@@ -7,7 +7,6 @@
 //
 
 #import "BRChainCodingDemo.h"
-#import <ReactiveCocoa/ReactiveCocoa-Bridging-Header.h>
 
 @implementation BRChainCodingDemo
 

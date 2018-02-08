@@ -9,6 +9,7 @@
 #import "BRStudyDemoViewController.h"
 #import "BRDemoModel.h"
 #import "BRRACDemoViewController.h"
+#import "MultiThreadDemoController.h"
 
 @interface BRStudyDemoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -57,12 +58,18 @@ static NSString * const kDemoCellIdentify = @"demoCellIdentify";
 - (void)loadDemoDatas
 {
     /** Demo1*/
-    BRDemoModel *demo1 = [[BRDemoModel alloc] init];
-    demo1.demoName = @"rac学习";
-    demo1.demoDetail = @"rac学习";
-    demo1.className = NSStringFromClass([BRRACDemoViewController class]);
-    [self.demoModels addObject:demo1];
+    BRDemoModel *demo = [[BRDemoModel alloc] init];
+    demo.demoName = @"rac学习";
+    demo.demoDetail = @"rac学习";
+    demo.className = NSStringFromClass([BRRACDemoViewController class]);
+    [self.demoModels addObject:demo];
 
+    /** 多线程*/
+    demo = [[BRDemoModel alloc] init];
+    demo.demoName = @"多线程";
+    demo.demoDetail = @"多线程";
+    demo.className = NSStringFromClass([MultiThreadDemoController class]);
+    [self.demoModels addObject:demo];
     
     [self.tableView reloadData];
 }

@@ -104,6 +104,11 @@
 		992F6F1D1D75CBB0007DFD1C /* UIScrollView+CBWRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6F0D1D75CBB0007DFD1C /* UIScrollView+CBWRefresh.m */; };
 		992F6F1E1D75CBB0007DFD1C /* UIView+CBWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6F0F1D75CBB0007DFD1C /* UIView+CBWFrame.m */; };
 		992F6F1F1D75CBB0007DFD1C /* JJStatusBarExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6F121D75CBB0007DFD1C /* JJStatusBarExtension.m */; };
+		994B368B202C256700EEE0B3 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B368C202C256700EEE0B3 /* ReactiveCocoa.framework */; };
+		994B368D202C256D00EEE0B3 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B368E202C256D00EEE0B3 /* ReactiveSwift.framework */; };
+		994B368F202C257200EEE0B3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B3690202C257200EEE0B3 /* Result.framework */; };
+		994B3693202C263000EEE0B3 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 994B3691202C263000EEE0B3 /* YYWeakProxy.m */; };
+		994B3698202C28E600EEE0B3 /* MultiThreadDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994B3697202C28E600EEE0B3 /* MultiThreadDemoController.m */; };
 		9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C0E51D71BEFF005EC3DF /* AppDelegate.m */; };
 		9958C1021D71C71D005EC3DF /* BrickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C1011D71C71D005EC3DF /* BrickTests.m */; };
 		9958C10D1D71C7FE005EC3DF /* BRImageToolsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C10A1D71C7FE005EC3DF /* BRImageToolsTest.m */; };
@@ -330,6 +335,14 @@
 		992F6F0F1D75CBB0007DFD1C /* UIView+CBWFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CBWFrame.m"; sourceTree = "<group>"; };
 		992F6F111D75CBB0007DFD1C /* JJStatusBarExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJStatusBarExtension.h; sourceTree = "<group>"; };
 		992F6F121D75CBB0007DFD1C /* JJStatusBarExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJStatusBarExtension.m; sourceTree = "<group>"; };
+		994B368C202C256700EEE0B3 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		994B368E202C256D00EEE0B3 /* ReactiveSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		994B3690202C257200EEE0B3 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		994B3691202C263000EEE0B3 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		994B3692202C263000EEE0B3 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		994B3694202C266000EEE0B3 /* YCFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCFUtils.h; sourceTree = "<group>"; };
+		994B3696202C28E600EEE0B3 /* MultiThreadDemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadDemoController.h; sourceTree = "<group>"; };
+		994B3697202C28E600EEE0B3 /* MultiThreadDemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadDemoController.m; sourceTree = "<group>"; };
 		9958C0E41D71BEFF005EC3DF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9958C0E51D71BEFF005EC3DF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9958C0FF1D71C71D005EC3DF /* BrickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +368,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994B368F202C257200EEE0B3 /* Result.framework in Frameworks */,
+				994B368D202C256D00EEE0B3 /* ReactiveSwift.framework in Frameworks */,
+				994B368B202C256700EEE0B3 /* ReactiveCocoa.framework in Frameworks */,
 				B77E4C63C1FF95B260008CFD /* Pods_Brick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +389,9 @@
 		20CFBD0CCBA055CF471D35C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				994B3690202C257200EEE0B3 /* Result.framework */,
+				994B368E202C256D00EEE0B3 /* ReactiveSwift.framework */,
+				994B368C202C256700EEE0B3 /* ReactiveCocoa.framework */,
 				CDBDC50EB4E7D157DC12E8D2 /* Pods_Brick.framework */,
 				45A2B7542D50AC8E2E722888 /* Pods_BrickTests.framework */,
 				BA5336F5A4D9943FB93F7335 /* Pods_BrickUITests.framework */,
@@ -545,6 +564,7 @@
 		99158A721D719E5E0080D078 /* OtherStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				994B3695202C28AB00EEE0B3 /* 多线程 */,
 				99158A731D719E5E0080D078 /* AppArchitecture */,
 				99158A751D719E5E0080D078 /* CodeTechnique */,
 				99158A7B1D719E5E0080D078 /* RAC */,
@@ -1044,6 +1064,7 @@
 		99158B661D719E5E0080D078 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				994B3694202C266000EEE0B3 /* YCFUtils.h */,
 				99158B671D719E5E0080D078 /* YYFPSLabel */,
 			);
 			path = Utility;
@@ -1054,6 +1075,8 @@
 			children = (
 				99158B681D719E5E0080D078 /* YYFPSLabel.h */,
 				99158B691D719E5E0080D078 /* YYFPSLabel.m */,
+				994B3692202C263000EEE0B3 /* YYWeakProxy.h */,
+				994B3691202C263000EEE0B3 /* YYWeakProxy.m */,
 			);
 			path = YYFPSLabel;
 			sourceTree = "<group>";
@@ -1153,6 +1176,15 @@
 				992F6F121D75CBB0007DFD1C /* JJStatusBarExtension.m */,
 			);
 			path = JJStatusBarExtension;
+			sourceTree = "<group>";
+		};
+		994B3695202C28AB00EEE0B3 /* 多线程 */ = {
+			isa = PBXGroup;
+			children = (
+				994B3696202C28E600EEE0B3 /* MultiThreadDemoController.h */,
+				994B3697202C28E600EEE0B3 /* MultiThreadDemoController.m */,
+			);
+			path = "多线程";
 			sourceTree = "<group>";
 		};
 		9958C1001D71C71D005EC3DF /* BrickTests */ = {
@@ -1319,13 +1351,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brick-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1CB754A7C8145F0F009DED41 /* [CP] Embed Pods Frameworks */ = {
@@ -1334,9 +1369,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1349,9 +1401,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Brick/Pods-Brick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1379,13 +1446,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brick-BrickTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB1C5839CF012FEB802D26EC /* [CP] Copy Pods Resources */ = {
@@ -1459,6 +1529,7 @@
 				99158B861D719E5E0080D078 /* BRBaseManager.m in Sources */,
 				99158B731D719E5E0080D078 /* YCFDemoTextViewCell.m in Sources */,
 				99158BA51D719E5E0080D078 /* BRCollectionViewLayout.m in Sources */,
+				994B3693202C263000EEE0B3 /* YYWeakProxy.m in Sources */,
 				99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */,
 				99158B6F1D719E5E0080D078 /* YCFKeyboardManagerDemoViewController.m in Sources */,
 				99158BA11D719E5E0080D078 /* NSDate+JJTimeInterval.m in Sources */,
@@ -1489,6 +1560,7 @@
 				99158BAE1D719E5E0080D078 /* BRCalendarConfig.m in Sources */,
 				99158B7B1D719E5E0080D078 /* BRFunctionCodingDemo.m in Sources */,
 				992F6F171D75CBB0007DFD1C /* CBWrefreshComponet.m in Sources */,
+				994B3698202C28E600EEE0B3 /* MultiThreadDemoController.m in Sources */,
 				99158B921D719E5E0080D078 /* NSString+Hash.m in Sources */,
 				99158BA01D719E5E0080D078 /* NSCalendar+JJInitCalendar.m in Sources */,
 				99158B711D719E5E0080D078 /* YCFDemoTextFieldCell.m in Sources */,

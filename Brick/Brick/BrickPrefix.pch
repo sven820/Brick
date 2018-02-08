@@ -19,7 +19,7 @@
 #import "Masonry.h"
 #import "BrickKitDefine.h"
 #import "BRCategory.h"
-#import "YCFSafe.h"
+#import "YCFUtils.h"
 
 #import "BRComponent.h"
 
