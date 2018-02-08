@@ -61,7 +61,6 @@
 		99158BA11D719E5E0080D078 /* NSDate+JJTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158ADF1D719E5E0080D078 /* NSDate+JJTimeInterval.m */; };
 		99158BA21D719E5E0080D078 /* CALayer+PauseAimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158AE21D719E5E0080D078 /* CALayer+PauseAimate.m */; };
 		99158BA31D719E5E0080D078 /* UITextField+JJPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158AE51D719E5E0080D078 /* UITextField+JJPlaceholder.m */; };
-		99158BA41D719E5E0080D078 /* JJBingTu.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158AEB1D719E5E0080D078 /* JJBingTu.m */; };
 		99158BA51D719E5E0080D078 /* BRCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158AF01D719E5E0080D078 /* BRCollectionViewLayout.m */; };
 		99158BA61D719E5E0080D078 /* BRCollectionViewLayoutExp.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158AF21D719E5E0080D078 /* BRCollectionViewLayoutExp.m */; };
 		99158BA71D719E5E0080D078 /* BRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158AF41D719E5E0080D078 /* BRModel.m */; };
@@ -90,12 +89,7 @@
 		99158BBE1D719E5E0080D078 /* JJTableCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B301D719E5E0080D078 /* JJTableCollectionView.m */; };
 		99158BBF1D719E5E0080D078 /* JJTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B321D719E5E0080D078 /* JJTitleBar.m */; };
 		99158BC01D719E5E0080D078 /* YCFTabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B351D719E5E0080D078 /* YCFTabsView.m */; };
-		99158BCE1D719E5E0080D078 /* NSArray+YCFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B5C1D719E5E0080D078 /* NSArray+YCFSafe.m */; };
-		99158BCF1D719E5E0080D078 /* NSObject+YCFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B5E1D719E5E0080D078 /* NSObject+YCFSafe.m */; };
-		99158BD01D719E5E0080D078 /* NSString+YCFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B601D719E5E0080D078 /* NSString+YCFSafe.m */; };
-		99158BD11D719E5E0080D078 /* JJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B651D719E5E0080D078 /* JJPhoto.m */; };
 		99158BD21D719E5E0080D078 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B691D719E5E0080D078 /* YYFPSLabel.m */; };
-		99158BD31D719E5E0080D078 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158B6B1D719E5E0080D078 /* YYWeakProxy.m */; };
 		99158BD91D719E930080D078 /* shuma.png in Resources */ = {isa = PBXBuildFile; fileRef = 99158BD81D719E930080D078 /* shuma.png */; };
 		992F6F131D75CBB0007DFD1C /* CBWAlertSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6EF51D75CBB0007DFD1C /* CBWAlertSheet.m */; };
 		992F6F141D75CBB0007DFD1C /* CBWAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6EF81D75CBB0007DFD1C /* CBWAlertView.m */; };
@@ -247,8 +241,6 @@
 		99158AE21D719E5E0080D078 /* CALayer+PauseAimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+PauseAimate.m"; sourceTree = "<group>"; };
 		99158AE41D719E5E0080D078 /* UITextField+JJPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JJPlaceholder.h"; sourceTree = "<group>"; };
 		99158AE51D719E5E0080D078 /* UITextField+JJPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JJPlaceholder.m"; sourceTree = "<group>"; };
-		99158AEA1D719E5E0080D078 /* JJBingTu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBingTu.h; sourceTree = "<group>"; };
-		99158AEB1D719E5E0080D078 /* JJBingTu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBingTu.m; sourceTree = "<group>"; };
 		99158AED1D719E5E0080D078 /* BRBaseComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBaseComponent.h; sourceTree = "<group>"; };
 		99158AEF1D719E5E0080D078 /* BRCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRCollectionViewLayout.h; sourceTree = "<group>"; };
 		99158AF01D719E5E0080D078 /* BRCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRCollectionViewLayout.m; sourceTree = "<group>"; };
@@ -307,20 +299,8 @@
 		99158B341D719E5E0080D078 /* YCFTabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCFTabsView.h; sourceTree = "<group>"; };
 		99158B351D719E5E0080D078 /* YCFTabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCFTabsView.m; sourceTree = "<group>"; };
 		99158B581D719E5E0080D078 /* BrickKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickKitDefine.h; sourceTree = "<group>"; };
-		99158B5B1D719E5E0080D078 /* NSArray+YCFSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YCFSafe.h"; sourceTree = "<group>"; };
-		99158B5C1D719E5E0080D078 /* NSArray+YCFSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YCFSafe.m"; sourceTree = "<group>"; };
-		99158B5D1D719E5E0080D078 /* NSObject+YCFSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YCFSafe.h"; sourceTree = "<group>"; };
-		99158B5E1D719E5E0080D078 /* NSObject+YCFSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YCFSafe.m"; sourceTree = "<group>"; };
-		99158B5F1D719E5E0080D078 /* NSString+YCFSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YCFSafe.h"; sourceTree = "<group>"; };
-		99158B601D719E5E0080D078 /* NSString+YCFSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YCFSafe.m"; sourceTree = "<group>"; };
-		99158B611D719E5E0080D078 /* YCFSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCFSafe.h; sourceTree = "<group>"; };
-		99158B621D719E5E0080D078 /* YCFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCFUtils.h; sourceTree = "<group>"; };
-		99158B641D719E5E0080D078 /* JJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPhoto.h; sourceTree = "<group>"; };
-		99158B651D719E5E0080D078 /* JJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPhoto.m; sourceTree = "<group>"; };
 		99158B681D719E5E0080D078 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		99158B691D719E5E0080D078 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
-		99158B6A1D719E5E0080D078 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
-		99158B6B1D719E5E0080D078 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		99158BD41D719E7E0080D078 /* BrickPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickPrefix.pch; sourceTree = "<group>"; };
 		99158BD51D719E8A0080D078 /* Formwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formwork.h; sourceTree = "<group>"; };
 		99158BD81D719E930080D078 /* shuma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuma.png; sourceTree = "<group>"; };
@@ -846,37 +826,11 @@
 		99158AE61D719E5E0080D078 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				99158AE71D719E5E0080D078 /* Animation */,
 				99158AEC1D719E5E0080D078 /* Base */,
 				99158AF51D719E5E0080D078 /* BRComponent.h */,
 				99158AF61D719E5E0080D078 /* UI */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		99158AE71D719E5E0080D078 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				99158AE81D719E5E0080D078 /* Progress */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
-		99158AE81D719E5E0080D078 /* Progress */ = {
-			isa = PBXGroup;
-			children = (
-				99158AE91D719E5E0080D078 /* JJBingTu */,
-			);
-			path = Progress;
-			sourceTree = "<group>";
-		};
-		99158AE91D719E5E0080D078 /* JJBingTu */ = {
-			isa = PBXGroup;
-			children = (
-				99158AEA1D719E5E0080D078 /* JJBingTu.h */,
-				99158AEB1D719E5E0080D078 /* JJBingTu.m */,
-			);
-			path = JJBingTu;
 			sourceTree = "<group>";
 		};
 		99158AEC1D719E5E0080D078 /* Base */ = {
@@ -1082,35 +1036,9 @@
 		99158B591D719E5E0080D078 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				99158B5A1D719E5E0080D078 /* EvadeCrash */,
-				99158B631D719E5E0080D078 /* Image */,
 				99158B661D719E5E0080D078 /* Utility */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		99158B5A1D719E5E0080D078 /* EvadeCrash */ = {
-			isa = PBXGroup;
-			children = (
-				99158B5B1D719E5E0080D078 /* NSArray+YCFSafe.h */,
-				99158B5C1D719E5E0080D078 /* NSArray+YCFSafe.m */,
-				99158B5D1D719E5E0080D078 /* NSObject+YCFSafe.h */,
-				99158B5E1D719E5E0080D078 /* NSObject+YCFSafe.m */,
-				99158B5F1D719E5E0080D078 /* NSString+YCFSafe.h */,
-				99158B601D719E5E0080D078 /* NSString+YCFSafe.m */,
-				99158B611D719E5E0080D078 /* YCFSafe.h */,
-				99158B621D719E5E0080D078 /* YCFUtils.h */,
-			);
-			path = EvadeCrash;
-			sourceTree = "<group>";
-		};
-		99158B631D719E5E0080D078 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				99158B641D719E5E0080D078 /* JJPhoto.h */,
-				99158B651D719E5E0080D078 /* JJPhoto.m */,
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		99158B661D719E5E0080D078 /* Utility */ = {
@@ -1126,8 +1054,6 @@
 			children = (
 				99158B681D719E5E0080D078 /* YYFPSLabel.h */,
 				99158B691D719E5E0080D078 /* YYFPSLabel.m */,
-				99158B6A1D719E5E0080D078 /* YYWeakProxy.h */,
-				99158B6B1D719E5E0080D078 /* YYWeakProxy.m */,
 			);
 			path = YYFPSLabel;
 			sourceTree = "<group>";
@@ -1335,7 +1261,7 @@
 				TargetAttributes = {
 					99158A141D719E0F0080D078 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = V2F6ZPW5K6;
+						DevelopmentTeam = NUWT78Q42V;
 						ProvisioningStyle = Automatic;
 					};
 					9958C0FE1D71C71D005EC3DF = {
@@ -1498,7 +1424,6 @@
 				99158B851D719E5E0080D078 /* BRDemoTabBarController.m in Sources */,
 				992F6F1C1D75CBB0007DFD1C /* UIScrollView+CBWFrame.m in Sources */,
 				99158B8B1D719E5E0080D078 /* NSDate+JudgeTime.m in Sources */,
-				99158BD11D719E5E0080D078 /* JJPhoto.m in Sources */,
 				99158BAB1D719E5E0080D078 /* YCFKeyBoardManager.m in Sources */,
 				99158B9A1D719E5E0080D078 /* UIImage+Image.m in Sources */,
 				99158B7F1D719E5E0080D078 /* BRTestViewModel.m in Sources */,
@@ -1513,7 +1438,6 @@
 				99158BBA1D719E5E0080D078 /* JJRefreshView.m in Sources */,
 				99158BBF1D719E5E0080D078 /* JJTitleBar.m in Sources */,
 				99158BB31D719E5E0080D078 /* BRSmallCalendarView.m in Sources */,
-				99158BD31D719E5E0080D078 /* YYWeakProxy.m in Sources */,
 				99158BC01D719E5E0080D078 /* YCFTabsView.m in Sources */,
 				99158BAA1D719E5E0080D078 /* YCFInputAttribute.m in Sources */,
 				99158BB21D719E5E0080D078 /* BRCalendarSectionHeaderView.m in Sources */,
@@ -1542,18 +1466,15 @@
 				99158B9F1D719E5E0080D078 /* NSDictionary+PropertyCode.m in Sources */,
 				99158BB41D719E5E0080D078 /* JJInfiniteTableView.m in Sources */,
 				99158B771D719E5E0080D078 /* BRGodsOfHonour.m in Sources */,
-				99158BCE1D719E5E0080D078 /* NSArray+YCFSafe.m in Sources */,
 				99158B6E1D719E5E0080D078 /* YCFInfiniteDemoViewController.m in Sources */,
 				99158BAF1D719E5E0080D078 /* BRCalendarModel.m in Sources */,
 				99158B761D719E5E0080D078 /* BRDemoModel.m in Sources */,
-				99158BCF1D719E5E0080D078 /* NSObject+YCFSafe.m in Sources */,
 				99158BA81D719E5E0080D078 /* BRTitleView.m in Sources */,
 				99CE03F41D7F12C800608A07 /* TestView.m in Sources */,
 				99158B6D1D719E5E0080D078 /* BRCalendarDemoViewController.m in Sources */,
 				99158BAD1D719E5E0080D078 /* YCFTextView.m in Sources */,
 				99158B891D719E5E0080D078 /* BRURLManager.m in Sources */,
 				99158B7D1D719E5E0080D078 /* BRImageTools.m in Sources */,
-				99158BD01D719E5E0080D078 /* NSString+YCFSafe.m in Sources */,
 				99158B901D719E5E0080D078 /* NSString+Extension.m in Sources */,
 				99158B941D719E5E0080D078 /* NSString+JJKIt.m in Sources */,
 				99158B881D719E5E0080D078 /* BRSpolightManager.m in Sources */,
@@ -1582,7 +1503,6 @@
 				9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */,
 				99158B7A1D719E5E0080D078 /* BRChainCodingDemo.m in Sources */,
 				99158BBD1D719E5E0080D078 /* JJTableCollectionCell.m in Sources */,
-				99158BA41D719E5E0080D078 /* JJBingTu.m in Sources */,
 				99158B701D719E5E0080D078 /* AutoKeyBoardTestFieldDemoController.m in Sources */,
 				99158BA71D719E5E0080D078 /* BRModel.m in Sources */,
 				992F6F191D75CBB0007DFD1C /* CBWRefreshConst.m in Sources */,
