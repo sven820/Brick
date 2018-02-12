@@ -50,9 +50,9 @@
 {
     [super viewDidLoad];
     
-//    [self nsthreadAuto];
+//    [self groupQueue_inner_async];
     
-    [self startSaleTicket];
+//    [self startSaleTicket];
 }
 
 #pragma mark -
@@ -308,6 +308,23 @@
         });    });
     NSLog(@"after");
 }
+- (void)asyncInSerialQueue
+{
+    //async同步队列，任务任然是阻塞的，只是async会开线程（主队列除外）
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.dullgrass.serialQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(serialQueue, ^{
+        NSLog(@"task 1 --- %@", [NSThread currentThread]);
+    });
+    dispatch_async(serialQueue, ^{
+        NSLog(@"task 2 --- %@", [NSThread currentThread]);
+    });
+    dispatch_async(serialQueue, ^{
+        NSLog(@"task 3 --- %@", [NSThread currentThread]);
+    });
+    dispatch_async(serialQueue, ^{
+        NSLog(@"task 4 --- %@", [NSThread currentThread]);
+    });
+}
 #pragma mark - Group queue
 - (void)groupQueue
 {
@@ -320,6 +337,37 @@
     });
     dispatch_group_async(groupQueue, conCurrentGlobalQueue, ^{
         NSLog(@"并行任务2");
+    });
+    dispatch_group_notify(groupQueue, mainQueue, ^{
+        NSLog(@"groupQueue中的任务 都执行完成,回到主线程更新UI");
+    });
+    NSLog(@"next task");
+}
+- (void)groupQueue_inner_async
+{
+    dispatch_queue_t conCurrentGlobalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_group_t groupQueue = dispatch_group_create();
+    NSLog(@"current task");
+    dispatch_group_async(groupQueue, conCurrentGlobalQueue, ^{
+        NSLog(@"并行任务1");
+        dispatch_group_enter(groupQueue);
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            sleep(1.0);
+            NSLog(@"并行任务2");
+            dispatch_group_leave(groupQueue);
+        });
+        NSLog(@"并行任务3");
+    });
+    dispatch_group_async(groupQueue, conCurrentGlobalQueue, ^{
+        NSLog(@"并行任务4");
+        dispatch_group_enter(groupQueue);
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            sleep(1.0);
+            NSLog(@"并行任务5");
+            dispatch_group_leave(groupQueue);
+        });
+        NSLog(@"并行任务6");
     });
     dispatch_group_notify(groupQueue, mainQueue, ^{
         NSLog(@"groupQueue中的任务 都执行完成,回到主线程更新UI");

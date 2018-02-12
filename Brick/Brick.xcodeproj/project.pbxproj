@@ -116,6 +116,9 @@
 		9958C10F1D71C7FE005EC3DF /* BRTestViewModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C10C1D71C7FE005EC3DF /* BRTestViewModelTest.m */; };
 		99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C73202C454F005EBB54 /* MyTestOperation.m */; };
 		99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C76202C4E34005EBB54 /* DemoForOCLock.m */; };
+		99653C7B202C6E26005EBB54 /* EncryptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C7A202C6E26005EBB54 /* EncryptController.m */; };
+		99653C84202DF6F1005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 99653C83202DF6F0005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */; };
+		99653C86202DF6FA005EBB54 /* 20160815101045679.png in Resources */ = {isa = PBXBuildFile; fileRef = 99653C85202DF6FA005EBB54 /* 20160815101045679.png */; };
 		99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03E61D7D502700608A07 /* UIView+Magic.m */; };
 		99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F01D7E572600608A07 /* MagicDemoViewController.m */; };
 		99CE03F41D7F12C800608A07 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F31D7F12C800608A07 /* TestView.m */; };
@@ -357,6 +360,10 @@
 		99653C73202C454F005EBB54 /* MyTestOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTestOperation.m; sourceTree = "<group>"; };
 		99653C75202C4E34005EBB54 /* DemoForOCLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoForOCLock.h; sourceTree = "<group>"; };
 		99653C76202C4E34005EBB54 /* DemoForOCLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoForOCLock.m; sourceTree = "<group>"; };
+		99653C79202C6E26005EBB54 /* EncryptController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptController.h; sourceTree = "<group>"; };
+		99653C7A202C6E26005EBB54 /* EncryptController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptController.m; sourceTree = "<group>"; };
+		99653C83202DF6F0005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "v2-05c3128498b89a70311d9ea41d867292_r.jpg"; path = "../../../../../../../../Downloads/v2-05c3128498b89a70311d9ea41d867292_r.jpg"; sourceTree = "<group>"; };
+		99653C85202DF6FA005EBB54 /* 20160815101045679.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20160815101045679.png; sourceTree = "<group>"; };
 		99CE03E51D7D502700608A07 /* UIView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Magic.h"; sourceTree = "<group>"; };
 		99CE03E61D7D502700608A07 /* UIView+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Magic.m"; sourceTree = "<group>"; };
 		99CE03EF1D7E572600608A07 /* MagicDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicDemoViewController.h; sourceTree = "<group>"; };
@@ -570,6 +577,7 @@
 		99158A721D719E5E0080D078 /* OtherStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				99653C78202C6DEC005EBB54 /* 加密 */,
 				994B3695202C28AB00EEE0B3 /* 多线程 */,
 				99158A731D719E5E0080D078 /* AppArchitecture */,
 				99158A751D719E5E0080D078 /* CodeTechnique */,
@@ -1217,6 +1225,17 @@
 			path = UnitTestDemo;
 			sourceTree = "<group>";
 		};
+		99653C78202C6DEC005EBB54 /* 加密 */ = {
+			isa = PBXGroup;
+			children = (
+				99653C79202C6E26005EBB54 /* EncryptController.h */,
+				99653C7A202C6E26005EBB54 /* EncryptController.m */,
+				99653C83202DF6F0005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */,
+				99653C85202DF6FA005EBB54 /* 20160815101045679.png */,
+			);
+			path = "加密";
+			sourceTree = "<group>";
+		};
 		99CE03DB1D7D19FD00608A07 /* BRMagicView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1341,6 +1360,8 @@
 				992F6F181D75CBB0007DFD1C /* CBWRefresh.bundle in Resources */,
 				99158BD91D719E930080D078 /* shuma.png in Resources */,
 				99158BBB1D719E5E0080D078 /* JJRefreshView.xib in Resources */,
+				99653C84202DF6F1005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg in Resources */,
+				99653C86202DF6FA005EBB54 /* 20160815101045679.png in Resources */,
 				99158A251D719E0F0080D078 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1582,6 +1603,7 @@
 				99158B991D719E5E0080D078 /* UIImage+Render.m in Sources */,
 				992F6F131D75CBB0007DFD1C /* CBWAlertSheet.m in Sources */,
 				99158B7E1D719E5E0080D078 /* BRLoadImageAPI.m in Sources */,
+				99653C7B202C6E26005EBB54 /* EncryptController.m in Sources */,
 				99158B791D719E5E0080D078 /* BRStudyDemoViewController.m in Sources */,
 				9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */,
 				99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */,

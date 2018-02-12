@@ -9,6 +9,7 @@ target 'Brick' do
   pod 'SDWebImage'
   pod 'ReactiveCocoa'
   pod 'YTKNetwork'
+  pod 'SSKeychain'
   
     target 'BrickTests' do
         pod 'OCMock'

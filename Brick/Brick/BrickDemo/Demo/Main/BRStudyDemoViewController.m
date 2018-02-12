@@ -10,6 +10,7 @@
 #import "BRDemoModel.h"
 #import "BRRACDemoViewController.h"
 #import "MultiThreadDemoController.h"
+#import "EncryptController.h"
 
 @interface BRStudyDemoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -69,6 +70,13 @@ static NSString * const kDemoCellIdentify = @"demoCellIdentify";
     demo.demoName = @"多线程";
     demo.demoDetail = @"多线程";
     demo.className = NSStringFromClass([MultiThreadDemoController class]);
+    [self.demoModels addObject:demo];
+    
+    /** 加密*/
+    demo = [[BRDemoModel alloc] init];
+    demo.demoName = @"加密";
+    demo.demoDetail = @"加密";
+    demo.className = NSStringFromClass([EncryptController class]);
     [self.demoModels addObject:demo];
     
     [self.tableView reloadData];
