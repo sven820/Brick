@@ -11,6 +11,8 @@
 #import "BRRACDemoViewController.h"
 #import "MultiThreadDemoController.h"
 #import "EncryptController.h"
+#import "RuntimeController.h"
+#import "TouchChainController.h"
 
 @interface BRStudyDemoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -79,6 +81,20 @@ static NSString * const kDemoCellIdentify = @"demoCellIdentify";
     demo.className = NSStringFromClass([EncryptController class]);
     [self.demoModels addObject:demo];
     
+    /** runtime*/
+    demo = [[BRDemoModel alloc] init];
+    demo.demoName = @"runtime";
+    demo.demoDetail = @"runtime";
+    demo.className = NSStringFromClass([RuntimeController class]);
+    [self.demoModels addObject:demo];
+    
+    /** touch chain*/
+    demo = [[BRDemoModel alloc] init];
+    demo.demoName = @"touch chain";
+    demo.demoDetail = @"touch chain";
+    demo.className = NSStringFromClass([TouchChainController class]);
+    [self.demoModels addObject:demo];
+    
     [self.tableView reloadData];
 }
 
@@ -111,6 +127,11 @@ static NSString * const kDemoCellIdentify = @"demoCellIdentify";
     Class className = NSClassFromString(model.className);
     
     UIViewController *vc = [[className alloc] init];
+    
+    if ([className isEqual:[TouchChainController class]]) {
+        UIStoryboard *s = [UIStoryboard storyboardWithName:@"TouchChainController" bundle:[NSBundle mainBundle]];
+        vc = [s instantiateViewControllerWithIdentifier:@"TouchChainController"];
+    }
     
     [self.navigationController pushViewController:vc animated:YES];
 }

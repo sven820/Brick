@@ -117,11 +117,67 @@
 		99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C73202C454F005EBB54 /* MyTestOperation.m */; };
 		99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C76202C4E34005EBB54 /* DemoForOCLock.m */; };
 		99653C7B202C6E26005EBB54 /* EncryptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C7A202C6E26005EBB54 /* EncryptController.m */; };
-		99653C84202DF6F1005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 99653C83202DF6F0005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */; };
 		99653C86202DF6FA005EBB54 /* 20160815101045679.png in Resources */ = {isa = PBXBuildFile; fileRef = 99653C85202DF6FA005EBB54 /* 20160815101045679.png */; };
+		99B0F705204782340031E1BC /* TouchChainController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F704204782340031E1BC /* TouchChainController.storyboard */; };
+		99B0F708204783290031E1BC /* TouchChainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F707204783290031E1BC /* TouchChainView.m */; };
+		99B0F70B204783910031E1BC /* TouchChainDesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F70A204783910031E1BC /* TouchChainDesController.m */; };
+		99B0F71220478AD30031E1BC /* TouchChainDesController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F71120478AD30031E1BC /* TouchChainDesController.storyboard */; };
 		99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03E61D7D502700608A07 /* UIView+Magic.m */; };
 		99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F01D7E572600608A07 /* MagicDemoViewController.m */; };
 		99CE03F41D7F12C800608A07 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F31D7F12C800608A07 /* TestView.m */; };
+		99DA53CD2040372900E9B094 /* NSObject+JSONExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */; };
+		99DA53D0204038EA00E9B094 /* NSObject+JsonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53CF204038EA00E9B094 /* NSObject+JsonHelp.m */; };
+		99DA53D32040417900E9B094 /* MethodForwrad.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53D22040417900E9B094 /* MethodForwrad.m */; };
+		99DA53D5204049EB00E9B094 /* method_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DA53D4204049EA00E9B094 /* method_forward.png */; };
+		99DE2D3A203E748200C38E88 /* RuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D39203E748200C38E88 /* RuntimeController.m */; };
+		99DE2D3D203E798600C38E88 /* RuntimeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D3C203E798600C38E88 /* RuntimeObj.m */; };
+		99DE2D40203E8C9F00C38E88 /* MyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D3F203E8C9F00C38E88 /* MyProxy.m */; };
+		99DE2D42203EA29D00C38E88 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 99DE2D41203EA29D00C38E88 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */; };
+		99DE2DB1203F3D9500C38E88 /* JPCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D48203F3D9400C38E88 /* JPCleaner.m */; };
+		99DE2DB2203F3D9500C38E88 /* JPStructPointer.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D4C203F3D9400C38E88 /* JPStructPointer.m */; };
+		99DE2DB3203F3D9500C38E88 /* JPMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D4D203F3D9400C38E88 /* JPMemory.m */; };
+		99DE2DB4203F3D9500C38E88 /* JPCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D4E203F3D9400C38E88 /* JPCFunction.m */; };
+		99DE2DB5203F3D9500C38E88 /* JPCGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D58203F3D9400C38E88 /* JPCGColor.m */; };
+		99DE2DB6203F3D9500C38E88 /* JPCGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D5A203F3D9400C38E88 /* JPCGPath.m */; };
+		99DE2DB7203F3D9500C38E88 /* JPCGBitmapContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D5B203F3D9400C38E88 /* JPCGBitmapContext.m */; };
+		99DE2DB8203F3D9500C38E88 /* JPCoreGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D5C203F3D9400C38E88 /* JPCoreGraphics.m */; };
+		99DE2DB9203F3D9500C38E88 /* JPCGGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D5D203F3D9400C38E88 /* JPCGGeometry.m */; };
+		99DE2DBA203F3D9500C38E88 /* JPCGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D5E203F3D9400C38E88 /* JPCGTransform.m */; };
+		99DE2DBB203F3D9500C38E88 /* JPCGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D60203F3D9400C38E88 /* JPCGImage.m */; };
+		99DE2DBC203F3D9500C38E88 /* JPCGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D62203F3D9400C38E88 /* JPCGContext.m */; };
+		99DE2DBD203F3D9500C38E88 /* JPUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D66203F3D9400C38E88 /* JPUIGraphics.m */; };
+		99DE2DBE203F3D9500C38E88 /* JPUIGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D67203F3D9400C38E88 /* JPUIGeometry.m */; };
+		99DE2DBF203F3D9500C38E88 /* JPUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D68203F3D9400C38E88 /* JPUIImage.m */; };
+		99DE2DC0203F3D9500C38E88 /* JPUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D6A203F3D9400C38E88 /* JPUIKit.m */; };
+		99DE2DC1203F3D9500C38E88 /* JPDevMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D70203F3D9400C38E88 /* JPDevMenu.m */; };
+		99DE2DC2203F3D9500C38E88 /* JPDevTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D71203F3D9400C38E88 /* JPDevTipView.m */; };
+		99DE2DC3203F3D9500C38E88 /* JPDevErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D72203F3D9400C38E88 /* JPDevErrorView.m */; };
+		99DE2DC4203F3D9500C38E88 /* JPPlayground.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D74203F3D9400C38E88 /* JPPlayground.m */; };
+		99DE2DC5203F3D9500C38E88 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 99DE2D75203F3D9400C38E88 /* README.md */; };
+		99DE2DC6203F3D9500C38E88 /* JPKeyCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D79203F3D9400C38E88 /* JPKeyCommands.m */; };
+		99DE2DC7203F3D9500C38E88 /* SGDirWatchdog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D7B203F3D9400C38E88 /* SGDirWatchdog.m */; };
+		99DE2DC8203F3D9500C38E88 /* JPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D7C203F3D9400C38E88 /* JPProtocol.m */; };
+		99DE2DC9203F3D9500C38E88 /* JPSpecialInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D7D203F3D9400C38E88 /* JPSpecialInit.m */; };
+		99DE2DCA203F3D9500C38E88 /* JPMethodSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D80203F3D9400C38E88 /* JPMethodSignature.m */; };
+		99DE2DCB203F3D9500C38E88 /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DE2D8B203F3D9400C38E88 /* libffi.a */; };
+		99DE2DCC203F3D9500C38E88 /* JPLocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D8E203F3D9400C38E88 /* JPLocker.m */; };
+		99DE2DCD203F3D9500C38E88 /* JPBlockWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D92203F3D9400C38E88 /* JPBlockWrapper.m */; };
+		99DE2DCE203F3D9500C38E88 /* JPBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D93203F3D9400C38E88 /* JPBlock.m */; };
+		99DE2DCF203F3D9500C38E88 /* JPDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D95203F3D9400C38E88 /* JPDispatch.m */; };
+		99DE2DD0203F3D9500C38E88 /* JPNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D97203F3D9500C38E88 /* JPNumber.m */; };
+		99DE2DD1203F3D9500C38E88 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2D9A203F3D9500C38E88 /* JPEngine.m */; };
+		99DE2DD2203F3D9500C38E88 /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 99DE2D9C203F3D9500C38E88 /* JSPatch.js */; };
+		99DE2DD3203F3D9500C38E88 /* packer.php in Resources */ = {isa = PBXBuildFile; fileRef = 99DE2D9F203F3D9500C38E88 /* packer.php */; };
+		99DE2DD4203F3D9500C38E88 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DA3203F3D9500C38E88 /* RSA.m */; };
+		99DE2DD5203F3D9500C38E88 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DA5203F3D9500C38E88 /* unzip.c */; };
+		99DE2DD6203F3D9500C38E88 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DA6203F3D9500C38E88 /* zip.c */; };
+		99DE2DD7203F3D9500C38E88 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DA7203F3D9500C38E88 /* ioapi.c */; };
+		99DE2DD8203F3D9500C38E88 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DA8203F3D9500C38E88 /* mztools.c */; };
+		99DE2DD9203F3D9500C38E88 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DAE203F3D9500C38E88 /* ZipArchive.m */; };
+		99DE2DDA203F3D9500C38E88 /* JPLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DB0203F3D9500C38E88 /* JPLoader.m */; };
+		99DE2DDD203F3DB000C38E88 /* JPTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DDC203F3DB000C38E88 /* JPTestController.m */; };
+		99DE2DE02040153A00C38E88 /* AutoCodingObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DE2DDF2040153900C38E88 /* AutoCodingObj.m */; };
+		99E07336204579F8005102D2 /* TouchChainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E07335204579F8005102D2 /* TouchChainController.m */; };
 		B77E4C63C1FF95B260008CFD /* Pods_Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBDC50EB4E7D157DC12E8D2 /* Pods_Brick.framework */; };
 /* End PBXBuildFile section */
 
@@ -362,14 +418,130 @@
 		99653C76202C4E34005EBB54 /* DemoForOCLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoForOCLock.m; sourceTree = "<group>"; };
 		99653C79202C6E26005EBB54 /* EncryptController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptController.h; sourceTree = "<group>"; };
 		99653C7A202C6E26005EBB54 /* EncryptController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptController.m; sourceTree = "<group>"; };
-		99653C83202DF6F0005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "v2-05c3128498b89a70311d9ea41d867292_r.jpg"; path = "../../../../../../../../Downloads/v2-05c3128498b89a70311d9ea41d867292_r.jpg"; sourceTree = "<group>"; };
 		99653C85202DF6FA005EBB54 /* 20160815101045679.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20160815101045679.png; sourceTree = "<group>"; };
+		99B0F704204782340031E1BC /* TouchChainController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouchChainController.storyboard; sourceTree = "<group>"; };
+		99B0F706204783290031E1BC /* TouchChainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchChainView.h; sourceTree = "<group>"; };
+		99B0F707204783290031E1BC /* TouchChainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchChainView.m; sourceTree = "<group>"; };
+		99B0F709204783910031E1BC /* TouchChainDesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchChainDesController.h; sourceTree = "<group>"; };
+		99B0F70A204783910031E1BC /* TouchChainDesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchChainDesController.m; sourceTree = "<group>"; };
+		99B0F71120478AD30031E1BC /* TouchChainDesController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TouchChainDesController.storyboard; sourceTree = "<group>"; };
 		99CE03E51D7D502700608A07 /* UIView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Magic.h"; sourceTree = "<group>"; };
 		99CE03E61D7D502700608A07 /* UIView+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Magic.m"; sourceTree = "<group>"; };
 		99CE03EF1D7E572600608A07 /* MagicDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicDemoViewController.h; sourceTree = "<group>"; };
 		99CE03F01D7E572600608A07 /* MagicDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicDemoViewController.m; sourceTree = "<group>"; };
 		99CE03F21D7F12C800608A07 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		99CE03F31D7F12C800608A07 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		99DA53CB2040372900E9B094 /* NSObject+JSONExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONExtension.h"; sourceTree = "<group>"; };
+		99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONExtension.m"; sourceTree = "<group>"; };
+		99DA53CE204038EA00E9B094 /* NSObject+JsonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsonHelp.h"; sourceTree = "<group>"; };
+		99DA53CF204038EA00E9B094 /* NSObject+JsonHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JsonHelp.m"; sourceTree = "<group>"; };
+		99DA53D12040417900E9B094 /* MethodForwrad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodForwrad.h; sourceTree = "<group>"; };
+		99DA53D22040417900E9B094 /* MethodForwrad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodForwrad.m; sourceTree = "<group>"; };
+		99DA53D4204049EA00E9B094 /* method_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = method_forward.png; sourceTree = "<group>"; };
+		99DE2D38203E748200C38E88 /* RuntimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeController.h; sourceTree = "<group>"; };
+		99DE2D39203E748200C38E88 /* RuntimeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeController.m; sourceTree = "<group>"; };
+		99DE2D3B203E798600C38E88 /* RuntimeObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeObj.h; sourceTree = "<group>"; };
+		99DE2D3C203E798600C38E88 /* RuntimeObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeObj.m; sourceTree = "<group>"; };
+		99DE2D3E203E8C9F00C38E88 /* MyProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProxy.h; sourceTree = "<group>"; };
+		99DE2D3F203E8C9F00C38E88 /* MyProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyProxy.m; sourceTree = "<group>"; };
+		99DE2D41203EA29D00C38E88 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "v2-05c3128498b89a70311d9ea41d867292_r.jpg"; sourceTree = "<group>"; };
+		99DE2D47203F3D9400C38E88 /* JPLocker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLocker.h; sourceTree = "<group>"; };
+		99DE2D48203F3D9400C38E88 /* JPCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCleaner.m; sourceTree = "<group>"; };
+		99DE2D4A203F3D9400C38E88 /* JPMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMemory.h; sourceTree = "<group>"; };
+		99DE2D4B203F3D9400C38E88 /* JPCFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCFunction.h; sourceTree = "<group>"; };
+		99DE2D4C203F3D9400C38E88 /* JPStructPointer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPStructPointer.m; sourceTree = "<group>"; };
+		99DE2D4D203F3D9400C38E88 /* JPMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMemory.m; sourceTree = "<group>"; };
+		99DE2D4E203F3D9400C38E88 /* JPCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCFunction.m; sourceTree = "<group>"; };
+		99DE2D4F203F3D9400C38E88 /* JPStructPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPStructPointer.h; sourceTree = "<group>"; };
+		99DE2D50203F3D9400C38E88 /* JPDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDispatch.h; sourceTree = "<group>"; };
+		99DE2D53203F3D9400C38E88 /* JPCGGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGGeometry.h; sourceTree = "<group>"; };
+		99DE2D54203F3D9400C38E88 /* JPCoreGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCoreGraphics.h; sourceTree = "<group>"; };
+		99DE2D55203F3D9400C38E88 /* JPCGBitmapContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGBitmapContext.h; sourceTree = "<group>"; };
+		99DE2D56203F3D9400C38E88 /* JPCGTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGTransform.h; sourceTree = "<group>"; };
+		99DE2D57203F3D9400C38E88 /* JPCGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGImage.h; sourceTree = "<group>"; };
+		99DE2D58203F3D9400C38E88 /* JPCGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGColor.m; sourceTree = "<group>"; };
+		99DE2D59203F3D9400C38E88 /* JPCGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGContext.h; sourceTree = "<group>"; };
+		99DE2D5A203F3D9400C38E88 /* JPCGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGPath.m; sourceTree = "<group>"; };
+		99DE2D5B203F3D9400C38E88 /* JPCGBitmapContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGBitmapContext.m; sourceTree = "<group>"; };
+		99DE2D5C203F3D9400C38E88 /* JPCoreGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCoreGraphics.m; sourceTree = "<group>"; };
+		99DE2D5D203F3D9400C38E88 /* JPCGGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGGeometry.m; sourceTree = "<group>"; };
+		99DE2D5E203F3D9400C38E88 /* JPCGTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGTransform.m; sourceTree = "<group>"; };
+		99DE2D5F203F3D9400C38E88 /* JPCGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGColor.h; sourceTree = "<group>"; };
+		99DE2D60203F3D9400C38E88 /* JPCGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGImage.m; sourceTree = "<group>"; };
+		99DE2D61203F3D9400C38E88 /* JPCGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCGPath.h; sourceTree = "<group>"; };
+		99DE2D62203F3D9400C38E88 /* JPCGContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCGContext.m; sourceTree = "<group>"; };
+		99DE2D64203F3D9400C38E88 /* JPUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIImage.h; sourceTree = "<group>"; };
+		99DE2D65203F3D9400C38E88 /* JPUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIKit.h; sourceTree = "<group>"; };
+		99DE2D66203F3D9400C38E88 /* JPUIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIGraphics.m; sourceTree = "<group>"; };
+		99DE2D67203F3D9400C38E88 /* JPUIGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIGeometry.m; sourceTree = "<group>"; };
+		99DE2D68203F3D9400C38E88 /* JPUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIImage.m; sourceTree = "<group>"; };
+		99DE2D69203F3D9400C38E88 /* JPUIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIGraphics.h; sourceTree = "<group>"; };
+		99DE2D6A203F3D9400C38E88 /* JPUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUIKit.m; sourceTree = "<group>"; };
+		99DE2D6B203F3D9400C38E88 /* JPUIGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUIGeometry.h; sourceTree = "<group>"; };
+		99DE2D6E203F3D9400C38E88 /* JPDevTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDevTipView.h; sourceTree = "<group>"; };
+		99DE2D6F203F3D9400C38E88 /* JPDevErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDevErrorView.h; sourceTree = "<group>"; };
+		99DE2D70203F3D9400C38E88 /* JPDevMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDevMenu.m; sourceTree = "<group>"; };
+		99DE2D71203F3D9400C38E88 /* JPDevTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDevTipView.m; sourceTree = "<group>"; };
+		99DE2D72203F3D9400C38E88 /* JPDevErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDevErrorView.m; sourceTree = "<group>"; };
+		99DE2D73203F3D9400C38E88 /* JPDevMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDevMenu.h; sourceTree = "<group>"; };
+		99DE2D74203F3D9400C38E88 /* JPPlayground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPlayground.m; sourceTree = "<group>"; };
+		99DE2D75203F3D9400C38E88 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		99DE2D76203F3D9400C38E88 /* JPPlayground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPlayground.h; sourceTree = "<group>"; };
+		99DE2D78203F3D9400C38E88 /* SGDirWatchdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDirWatchdog.h; sourceTree = "<group>"; };
+		99DE2D79203F3D9400C38E88 /* JPKeyCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPKeyCommands.m; sourceTree = "<group>"; };
+		99DE2D7A203F3D9400C38E88 /* JPKeyCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPKeyCommands.h; sourceTree = "<group>"; };
+		99DE2D7B203F3D9400C38E88 /* SGDirWatchdog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDirWatchdog.m; sourceTree = "<group>"; };
+		99DE2D7C203F3D9400C38E88 /* JPProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPProtocol.m; sourceTree = "<group>"; };
+		99DE2D7D203F3D9400C38E88 /* JPSpecialInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSpecialInit.m; sourceTree = "<group>"; };
+		99DE2D7E203F3D9400C38E88 /* JPNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNumber.h; sourceTree = "<group>"; };
+		99DE2D80203F3D9400C38E88 /* JPMethodSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMethodSignature.m; sourceTree = "<group>"; };
+		99DE2D81203F3D9400C38E88 /* JPMethodSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMethodSignature.h; sourceTree = "<group>"; };
+		99DE2D83203F3D9400C38E88 /* ffitarget_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm64.h; sourceTree = "<group>"; };
+		99DE2D84203F3D9400C38E88 /* ffitarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget.h; sourceTree = "<group>"; };
+		99DE2D85203F3D9400C38E88 /* ffi_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm.h; sourceTree = "<group>"; };
+		99DE2D86203F3D9400C38E88 /* ffi_i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_i386.h; sourceTree = "<group>"; };
+		99DE2D87203F3D9400C38E88 /* ffitarget_x86_64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
+		99DE2D88203F3D9400C38E88 /* ffi_x86_64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_x86_64.h; sourceTree = "<group>"; };
+		99DE2D89203F3D9400C38E88 /* ffitarget_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm.h; sourceTree = "<group>"; };
+		99DE2D8A203F3D9400C38E88 /* ffitarget_i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
+		99DE2D8B203F3D9400C38E88 /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
+		99DE2D8C203F3D9400C38E88 /* ffi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi.h; sourceTree = "<group>"; };
+		99DE2D8D203F3D9400C38E88 /* ffi_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
+		99DE2D8E203F3D9400C38E88 /* JPLocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLocker.m; sourceTree = "<group>"; };
+		99DE2D8F203F3D9400C38E88 /* JPCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCleaner.h; sourceTree = "<group>"; };
+		99DE2D91203F3D9400C38E88 /* JPBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPBlock.h; sourceTree = "<group>"; };
+		99DE2D92203F3D9400C38E88 /* JPBlockWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPBlockWrapper.m; sourceTree = "<group>"; };
+		99DE2D93203F3D9400C38E88 /* JPBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPBlock.m; sourceTree = "<group>"; };
+		99DE2D94203F3D9400C38E88 /* JPBlockWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPBlockWrapper.h; sourceTree = "<group>"; };
+		99DE2D95203F3D9400C38E88 /* JPDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDispatch.m; sourceTree = "<group>"; };
+		99DE2D96203F3D9500C38E88 /* JPSpecialInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSpecialInit.h; sourceTree = "<group>"; };
+		99DE2D97203F3D9500C38E88 /* JPNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNumber.m; sourceTree = "<group>"; };
+		99DE2D98203F3D9500C38E88 /* JPProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPProtocol.h; sourceTree = "<group>"; };
+		99DE2D9A203F3D9500C38E88 /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEngine.m; sourceTree = "<group>"; };
+		99DE2D9B203F3D9500C38E88 /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPEngine.h; sourceTree = "<group>"; };
+		99DE2D9C203F3D9500C38E88 /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSPatch.js; sourceTree = "<group>"; };
+		99DE2D9F203F3D9500C38E88 /* packer.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = packer.php; sourceTree = "<group>"; };
+		99DE2DA0203F3D9500C38E88 /* JPLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLoader.h; sourceTree = "<group>"; };
+		99DE2DA2203F3D9500C38E88 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		99DE2DA3203F3D9500C38E88 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
+		99DE2DA5203F3D9500C38E88 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		99DE2DA6203F3D9500C38E88 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		99DE2DA7203F3D9500C38E88 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		99DE2DA8203F3D9500C38E88 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		99DE2DA9203F3D9500C38E88 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		99DE2DAA203F3D9500C38E88 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		99DE2DAB203F3D9500C38E88 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		99DE2DAC203F3D9500C38E88 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		99DE2DAD203F3D9500C38E88 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		99DE2DAE203F3D9500C38E88 /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
+		99DE2DAF203F3D9500C38E88 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		99DE2DB0203F3D9500C38E88 /* JPLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLoader.m; sourceTree = "<group>"; };
+		99DE2DDB203F3DB000C38E88 /* JPTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPTestController.h; sourceTree = "<group>"; };
+		99DE2DDC203F3DB000C38E88 /* JPTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPTestController.m; sourceTree = "<group>"; };
+		99DE2DDE2040153900C38E88 /* AutoCodingObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoCodingObj.h; sourceTree = "<group>"; };
+		99DE2DDF2040153900C38E88 /* AutoCodingObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCodingObj.m; sourceTree = "<group>"; };
+		99E07334204579F8005102D2 /* TouchChainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchChainController.h; sourceTree = "<group>"; };
+		99E07335204579F8005102D2 /* TouchChainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchChainController.m; sourceTree = "<group>"; };
 		A3E7EED7F0AB2FF89BFF156B /* Pods_Brick_BrickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brick_BrickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5336F5A4D9943FB93F7335 /* Pods_BrickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBDC50EB4E7D157DC12E8D2 /* Pods_Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,6 +556,7 @@
 				994B368F202C257200EEE0B3 /* Result.framework in Frameworks */,
 				994B368D202C256D00EEE0B3 /* ReactiveSwift.framework in Frameworks */,
 				994B368B202C256700EEE0B3 /* ReactiveCocoa.framework in Frameworks */,
+				99DE2DCB203F3D9500C38E88 /* libffi.a in Frameworks */,
 				B77E4C63C1FF95B260008CFD /* Pods_Brick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +750,9 @@
 		99158A721D719E5E0080D078 /* OtherStudyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				99E07333204579DC005102D2 /* TouchChain */,
+				99DE2D43203F3C5800C38E88 /* hybird */,
+				99DE2D37203E744100C38E88 /* runtime */,
 				99653C78202C6DEC005EBB54 /* 加密 */,
 				994B3695202C28AB00EEE0B3 /* 多线程 */,
 				99158A731D719E5E0080D078 /* AppArchitecture */,
@@ -705,6 +881,8 @@
 			isa = PBXGroup;
 			children = (
 				99158AA51D719E5E0080D078 /* BRCategory.h */,
+				99DA53CE204038EA00E9B094 /* NSObject+JsonHelp.h */,
+				99DA53CF204038EA00E9B094 /* NSObject+JsonHelp.m */,
 				99158AA61D719E5E0080D078 /* Foundation */,
 				99158AB51D719E5E0080D078 /* image除锯齿 */,
 				99158AB81D719E5E0080D078 /* MD5 */,
@@ -1230,7 +1408,7 @@
 			children = (
 				99653C79202C6E26005EBB54 /* EncryptController.h */,
 				99653C7A202C6E26005EBB54 /* EncryptController.m */,
-				99653C83202DF6F0005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */,
+				99DE2D41203EA29D00C38E88 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg */,
 				99653C85202DF6FA005EBB54 /* 20160815101045679.png */,
 			);
 			path = "加密";
@@ -1254,6 +1432,293 @@
 				99CE03F31D7F12C800608A07 /* TestView.m */,
 			);
 			path = MagicView;
+			sourceTree = "<group>";
+		};
+		99CEA4BA2050EFA500A076DB /* HybirdWebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HybirdWebView;
+			sourceTree = "<group>";
+		};
+		99DE2D37203E744100C38E88 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D38203E748200C38E88 /* RuntimeController.h */,
+				99DE2D39203E748200C38E88 /* RuntimeController.m */,
+				99DE2D3B203E798600C38E88 /* RuntimeObj.h */,
+				99DE2D3C203E798600C38E88 /* RuntimeObj.m */,
+				99DE2D3E203E8C9F00C38E88 /* MyProxy.h */,
+				99DE2D3F203E8C9F00C38E88 /* MyProxy.m */,
+				99DE2DDE2040153900C38E88 /* AutoCodingObj.h */,
+				99DE2DDF2040153900C38E88 /* AutoCodingObj.m */,
+				99DA53CB2040372900E9B094 /* NSObject+JSONExtension.h */,
+				99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */,
+				99DA53D12040417900E9B094 /* MethodForwrad.h */,
+				99DA53D22040417900E9B094 /* MethodForwrad.m */,
+				99DA53D4204049EA00E9B094 /* method_forward.png */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
+		99DE2D43203F3C5800C38E88 /* hybird */ = {
+			isa = PBXGroup;
+			children = (
+				99CEA4BA2050EFA500A076DB /* HybirdWebView */,
+				99DE2D45203F3C6F00C38E88 /* weex */,
+				99DE2D44203F3C6500C38E88 /* jspatch */,
+			);
+			path = hybird;
+			sourceTree = "<group>";
+		};
+		99DE2D44203F3C6500C38E88 /* jspatch */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D46203F3D9400C38E88 /* Extensions */,
+				99DE2D99203F3D9500C38E88 /* JSPatch */,
+				99DE2D9D203F3D9500C38E88 /* Loader */,
+				99DE2DDB203F3DB000C38E88 /* JPTestController.h */,
+				99DE2DDC203F3DB000C38E88 /* JPTestController.m */,
+			);
+			path = jspatch;
+			sourceTree = "<group>";
+		};
+		99DE2D45203F3C6F00C38E88 /* weex */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = weex;
+			sourceTree = "<group>";
+		};
+		99DE2D46203F3D9400C38E88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D47203F3D9400C38E88 /* JPLocker.h */,
+				99DE2D48203F3D9400C38E88 /* JPCleaner.m */,
+				99DE2D49203F3D9400C38E88 /* JPCFunction */,
+				99DE2D50203F3D9400C38E88 /* JPDispatch.h */,
+				99DE2D51203F3D9400C38E88 /* JPCFunctionBinder */,
+				99DE2D6C203F3D9400C38E88 /* JPPlaygroundTool */,
+				99DE2D7C203F3D9400C38E88 /* JPProtocol.m */,
+				99DE2D7D203F3D9400C38E88 /* JPSpecialInit.m */,
+				99DE2D7E203F3D9400C38E88 /* JPNumber.h */,
+				99DE2D7F203F3D9400C38E88 /* JPLibffi */,
+				99DE2D8E203F3D9400C38E88 /* JPLocker.m */,
+				99DE2D8F203F3D9400C38E88 /* JPCleaner.h */,
+				99DE2D90203F3D9400C38E88 /* JPBlock */,
+				99DE2D95203F3D9400C38E88 /* JPDispatch.m */,
+				99DE2D96203F3D9500C38E88 /* JPSpecialInit.h */,
+				99DE2D97203F3D9500C38E88 /* JPNumber.m */,
+				99DE2D98203F3D9500C38E88 /* JPProtocol.h */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		99DE2D49203F3D9400C38E88 /* JPCFunction */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D4A203F3D9400C38E88 /* JPMemory.h */,
+				99DE2D4B203F3D9400C38E88 /* JPCFunction.h */,
+				99DE2D4C203F3D9400C38E88 /* JPStructPointer.m */,
+				99DE2D4D203F3D9400C38E88 /* JPMemory.m */,
+				99DE2D4E203F3D9400C38E88 /* JPCFunction.m */,
+				99DE2D4F203F3D9400C38E88 /* JPStructPointer.h */,
+			);
+			path = JPCFunction;
+			sourceTree = "<group>";
+		};
+		99DE2D51203F3D9400C38E88 /* JPCFunctionBinder */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D52203F3D9400C38E88 /* CoreGraphics */,
+				99DE2D63203F3D9400C38E88 /* UIKit */,
+			);
+			path = JPCFunctionBinder;
+			sourceTree = "<group>";
+		};
+		99DE2D52203F3D9400C38E88 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D53203F3D9400C38E88 /* JPCGGeometry.h */,
+				99DE2D54203F3D9400C38E88 /* JPCoreGraphics.h */,
+				99DE2D55203F3D9400C38E88 /* JPCGBitmapContext.h */,
+				99DE2D56203F3D9400C38E88 /* JPCGTransform.h */,
+				99DE2D57203F3D9400C38E88 /* JPCGImage.h */,
+				99DE2D58203F3D9400C38E88 /* JPCGColor.m */,
+				99DE2D59203F3D9400C38E88 /* JPCGContext.h */,
+				99DE2D5A203F3D9400C38E88 /* JPCGPath.m */,
+				99DE2D5B203F3D9400C38E88 /* JPCGBitmapContext.m */,
+				99DE2D5C203F3D9400C38E88 /* JPCoreGraphics.m */,
+				99DE2D5D203F3D9400C38E88 /* JPCGGeometry.m */,
+				99DE2D5E203F3D9400C38E88 /* JPCGTransform.m */,
+				99DE2D5F203F3D9400C38E88 /* JPCGColor.h */,
+				99DE2D60203F3D9400C38E88 /* JPCGImage.m */,
+				99DE2D61203F3D9400C38E88 /* JPCGPath.h */,
+				99DE2D62203F3D9400C38E88 /* JPCGContext.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		99DE2D63203F3D9400C38E88 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D64203F3D9400C38E88 /* JPUIImage.h */,
+				99DE2D65203F3D9400C38E88 /* JPUIKit.h */,
+				99DE2D66203F3D9400C38E88 /* JPUIGraphics.m */,
+				99DE2D67203F3D9400C38E88 /* JPUIGeometry.m */,
+				99DE2D68203F3D9400C38E88 /* JPUIImage.m */,
+				99DE2D69203F3D9400C38E88 /* JPUIGraphics.h */,
+				99DE2D6A203F3D9400C38E88 /* JPUIKit.m */,
+				99DE2D6B203F3D9400C38E88 /* JPUIGeometry.h */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		99DE2D6C203F3D9400C38E88 /* JPPlaygroundTool */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D6D203F3D9400C38E88 /* JPPlaygroundView */,
+				99DE2D74203F3D9400C38E88 /* JPPlayground.m */,
+				99DE2D75203F3D9400C38E88 /* README.md */,
+				99DE2D76203F3D9400C38E88 /* JPPlayground.h */,
+				99DE2D77203F3D9400C38E88 /* JPPlaygroundModule */,
+			);
+			path = JPPlaygroundTool;
+			sourceTree = "<group>";
+		};
+		99DE2D6D203F3D9400C38E88 /* JPPlaygroundView */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D6E203F3D9400C38E88 /* JPDevTipView.h */,
+				99DE2D6F203F3D9400C38E88 /* JPDevErrorView.h */,
+				99DE2D70203F3D9400C38E88 /* JPDevMenu.m */,
+				99DE2D71203F3D9400C38E88 /* JPDevTipView.m */,
+				99DE2D72203F3D9400C38E88 /* JPDevErrorView.m */,
+				99DE2D73203F3D9400C38E88 /* JPDevMenu.h */,
+			);
+			path = JPPlaygroundView;
+			sourceTree = "<group>";
+		};
+		99DE2D77203F3D9400C38E88 /* JPPlaygroundModule */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D78203F3D9400C38E88 /* SGDirWatchdog.h */,
+				99DE2D79203F3D9400C38E88 /* JPKeyCommands.m */,
+				99DE2D7A203F3D9400C38E88 /* JPKeyCommands.h */,
+				99DE2D7B203F3D9400C38E88 /* SGDirWatchdog.m */,
+			);
+			path = JPPlaygroundModule;
+			sourceTree = "<group>";
+		};
+		99DE2D7F203F3D9400C38E88 /* JPLibffi */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D80203F3D9400C38E88 /* JPMethodSignature.m */,
+				99DE2D81203F3D9400C38E88 /* JPMethodSignature.h */,
+				99DE2D82203F3D9400C38E88 /* libffi */,
+			);
+			path = JPLibffi;
+			sourceTree = "<group>";
+		};
+		99DE2D82203F3D9400C38E88 /* libffi */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D83203F3D9400C38E88 /* ffitarget_arm64.h */,
+				99DE2D84203F3D9400C38E88 /* ffitarget.h */,
+				99DE2D85203F3D9400C38E88 /* ffi_arm.h */,
+				99DE2D86203F3D9400C38E88 /* ffi_i386.h */,
+				99DE2D87203F3D9400C38E88 /* ffitarget_x86_64.h */,
+				99DE2D88203F3D9400C38E88 /* ffi_x86_64.h */,
+				99DE2D89203F3D9400C38E88 /* ffitarget_arm.h */,
+				99DE2D8A203F3D9400C38E88 /* ffitarget_i386.h */,
+				99DE2D8B203F3D9400C38E88 /* libffi.a */,
+				99DE2D8C203F3D9400C38E88 /* ffi.h */,
+				99DE2D8D203F3D9400C38E88 /* ffi_arm64.h */,
+			);
+			path = libffi;
+			sourceTree = "<group>";
+		};
+		99DE2D90203F3D9400C38E88 /* JPBlock */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D91203F3D9400C38E88 /* JPBlock.h */,
+				99DE2D92203F3D9400C38E88 /* JPBlockWrapper.m */,
+				99DE2D93203F3D9400C38E88 /* JPBlock.m */,
+				99DE2D94203F3D9400C38E88 /* JPBlockWrapper.h */,
+			);
+			path = JPBlock;
+			sourceTree = "<group>";
+		};
+		99DE2D99203F3D9500C38E88 /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D9A203F3D9500C38E88 /* JPEngine.m */,
+				99DE2D9B203F3D9500C38E88 /* JPEngine.h */,
+				99DE2D9C203F3D9500C38E88 /* JSPatch.js */,
+			);
+			path = JSPatch;
+			sourceTree = "<group>";
+		};
+		99DE2D9D203F3D9500C38E88 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D9E203F3D9500C38E88 /* tools */,
+				99DE2DA0203F3D9500C38E88 /* JPLoader.h */,
+				99DE2DA1203F3D9500C38E88 /* libs */,
+				99DE2DB0203F3D9500C38E88 /* JPLoader.m */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		99DE2D9E203F3D9500C38E88 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2D9F203F3D9500C38E88 /* packer.php */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		99DE2DA1203F3D9500C38E88 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2DA2203F3D9500C38E88 /* ZipArchive.h */,
+				99DE2DA3203F3D9500C38E88 /* RSA.m */,
+				99DE2DA4203F3D9500C38E88 /* minizip */,
+				99DE2DAE203F3D9500C38E88 /* ZipArchive.m */,
+				99DE2DAF203F3D9500C38E88 /* RSA.h */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		99DE2DA4203F3D9500C38E88 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				99DE2DA5203F3D9500C38E88 /* unzip.c */,
+				99DE2DA6203F3D9500C38E88 /* zip.c */,
+				99DE2DA7203F3D9500C38E88 /* ioapi.c */,
+				99DE2DA8203F3D9500C38E88 /* mztools.c */,
+				99DE2DA9203F3D9500C38E88 /* crypt.h */,
+				99DE2DAA203F3D9500C38E88 /* zip.h */,
+				99DE2DAB203F3D9500C38E88 /* unzip.h */,
+				99DE2DAC203F3D9500C38E88 /* mztools.h */,
+				99DE2DAD203F3D9500C38E88 /* ioapi.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		99E07333204579DC005102D2 /* TouchChain */ = {
+			isa = PBXGroup;
+			children = (
+				99E07334204579F8005102D2 /* TouchChainController.h */,
+				99E07335204579F8005102D2 /* TouchChainController.m */,
+				99B0F709204783910031E1BC /* TouchChainDesController.h */,
+				99B0F70A204783910031E1BC /* TouchChainDesController.m */,
+				99B0F706204783290031E1BC /* TouchChainView.h */,
+				99B0F707204783290031E1BC /* TouchChainView.m */,
+				99B0F704204782340031E1BC /* TouchChainController.storyboard */,
+				99B0F71120478AD30031E1BC /* TouchChainDesController.storyboard */,
+			);
+			path = TouchChain;
 			sourceTree = "<group>";
 		};
 		B294960F7FAD68D2A175825B /* Pods */ = {
@@ -1357,11 +1822,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B0F705204782340031E1BC /* TouchChainController.storyboard in Resources */,
 				992F6F181D75CBB0007DFD1C /* CBWRefresh.bundle in Resources */,
+				99DE2D42203EA29D00C38E88 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg in Resources */,
+				99B0F71220478AD30031E1BC /* TouchChainDesController.storyboard in Resources */,
+				99DE2DD2203F3D9500C38E88 /* JSPatch.js in Resources */,
 				99158BD91D719E930080D078 /* shuma.png in Resources */,
+				99DE2DC5203F3D9500C38E88 /* README.md in Resources */,
+				99DE2DD3203F3D9500C38E88 /* packer.php in Resources */,
 				99158BBB1D719E5E0080D078 /* JJRefreshView.xib in Resources */,
-				99653C84202DF6F1005EBB54 /* v2-05c3128498b89a70311d9ea41d867292_r.jpg in Resources */,
 				99653C86202DF6FA005EBB54 /* 20160815101045679.png in Resources */,
+				99DA53D5204049EB00E9B094 /* method_forward.png in Resources */,
 				99158A251D719E0F0080D078 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1402,22 +1873,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 			);
@@ -1434,21 +1909,25 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Brick/Pods-Brick-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1511,26 +1990,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DE2DC7203F3D9500C38E88 /* SGDirWatchdog.m in Sources */,
+				99DE2DBA203F3D9500C38E88 /* JPCGTransform.m in Sources */,
 				99158BAC1D719E5E0080D078 /* YCFTextField.m in Sources */,
 				99158BBE1D719E5E0080D078 /* JJTableCollectionView.m in Sources */,
 				99158B8C1D719E5E0080D078 /* NSDictionary+BRLog.m in Sources */,
 				99158BB91D719E5E0080D078 /* JJRightTableViewCell.m in Sources */,
+				99DE2DCF203F3D9500C38E88 /* JPDispatch.m in Sources */,
+				99DE2DBC203F3D9500C38E88 /* JPCGContext.m in Sources */,
 				99158BB71D719E5E0080D078 /* JJLeftTableViewCell.m in Sources */,
 				99158B781D719E5E0080D078 /* BrickDemoListViewController.m in Sources */,
 				99158BA21D719E5E0080D078 /* CALayer+PauseAimate.m in Sources */,
 				99158B8F1D719E5E0080D078 /* NSNumber+Extension.m in Sources */,
 				99158BA31D719E5E0080D078 /* UITextField+JJPlaceholder.m in Sources */,
 				99158B911D719E5E0080D078 /* UIImage+Antialias.m in Sources */,
+				99DE2DD4203F3D9500C38E88 /* RSA.m in Sources */,
 				99158B981D719E5E0080D078 /* UIImage+ImageCompress.m in Sources */,
 				99158B851D719E5E0080D078 /* BRDemoTabBarController.m in Sources */,
 				992F6F1C1D75CBB0007DFD1C /* UIScrollView+CBWFrame.m in Sources */,
 				99158B8B1D719E5E0080D078 /* NSDate+JudgeTime.m in Sources */,
+				99DE2DC2203F3D9500C38E88 /* JPDevTipView.m in Sources */,
+				99DE2DCD203F3D9500C38E88 /* JPBlockWrapper.m in Sources */,
+				99DE2DB2203F3D9500C38E88 /* JPStructPointer.m in Sources */,
 				99158BAB1D719E5E0080D078 /* YCFKeyBoardManager.m in Sources */,
 				99158B9A1D719E5E0080D078 /* UIImage+Image.m in Sources */,
 				99158B7F1D719E5E0080D078 /* BRTestViewModel.m in Sources */,
 				992F6F1B1D75CBB0007DFD1C /* CBWActivityViewHeader.m in Sources */,
 				99158B9C1D719E5E0080D078 /* UIView+AdjustFrame.m in Sources */,
 				99158BA91D719E5E0080D078 /* YCFInfiniteView.m in Sources */,
+				99DE2DDD203F3DB000C38E88 /* JPTestController.m in Sources */,
+				99DE2DC9203F3D9500C38E88 /* JPSpecialInit.m in Sources */,
+				99DE2D3A203E748200C38E88 /* RuntimeController.m in Sources */,
 				99158B8D1D719E5E0080D078 /* NSFileManager+Extension.m in Sources */,
 				99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */,
 				99158BD21D719E5E0080D078 /* YYFPSLabel.m in Sources */,
@@ -1542,69 +2032,105 @@
 				99158BB31D719E5E0080D078 /* BRSmallCalendarView.m in Sources */,
 				99158BC01D719E5E0080D078 /* YCFTabsView.m in Sources */,
 				99158BAA1D719E5E0080D078 /* YCFInputAttribute.m in Sources */,
+				99DA53CD2040372900E9B094 /* NSObject+JSONExtension.m in Sources */,
 				99158BB21D719E5E0080D078 /* BRCalendarSectionHeaderView.m in Sources */,
 				99158B741D719E5E0080D078 /* YCFTestCellModel.m in Sources */,
 				99158BB11D719E5E0080D078 /* BRCalendarCell.m in Sources */,
+				99DE2DC6203F3D9500C38E88 /* JPKeyCommands.m in Sources */,
 				992F6F151D75CBB0007DFD1C /* CBWFooter.m in Sources */,
+				99DE2DC4203F3D9500C38E88 /* JPPlayground.m in Sources */,
 				99158BA61D719E5E0080D078 /* BRCollectionViewLayoutExp.m in Sources */,
 				99158B961D719E5E0080D078 /* UIImage+Fit.m in Sources */,
 				992F6F1F1D75CBB0007DFD1C /* JJStatusBarExtension.m in Sources */,
 				992F6F161D75CBB0007DFD1C /* CBWHeader.m in Sources */,
 				992F6F1A1D75CBB0007DFD1C /* CBWActivityViewFooter.m in Sources */,
+				99DE2DC0203F3D9500C38E88 /* JPUIKit.m in Sources */,
+				99DE2DBD203F3D9500C38E88 /* JPUIGraphics.m in Sources */,
 				99158B9B1D719E5E0080D078 /* UIScrollView+JJExtension.m in Sources */,
+				99DE2DCE203F3D9500C38E88 /* JPBlock.m in Sources */,
 				992F6F1E1D75CBB0007DFD1C /* UIView+CBWFrame.m in Sources */,
 				99158BB51D719E5E0080D078 /* JJInfiniteTitleBar.m in Sources */,
 				99158B951D719E5E0080D078 /* UIColor+Hex.m in Sources */,
+				99DE2DCA203F3D9500C38E88 /* JPMethodSignature.m in Sources */,
+				99DE2DDA203F3D9500C38E88 /* JPLoader.m in Sources */,
 				99158B9D1D719E5E0080D078 /* UIView+draw.m in Sources */,
+				99DE2DC8203F3D9500C38E88 /* JPProtocol.m in Sources */,
 				99158B871D719E5E0080D078 /* BRFileManager.m in Sources */,
 				99158BB81D719E5E0080D078 /* JJLRTableView.m in Sources */,
 				99158B861D719E5E0080D078 /* BRBaseManager.m in Sources */,
 				99158B731D719E5E0080D078 /* YCFDemoTextViewCell.m in Sources */,
 				99158BA51D719E5E0080D078 /* BRCollectionViewLayout.m in Sources */,
 				994B3693202C263000EEE0B3 /* YYWeakProxy.m in Sources */,
+				99DE2DC3203F3D9500C38E88 /* JPDevErrorView.m in Sources */,
 				99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */,
+				99DE2DD9203F3D9500C38E88 /* ZipArchive.m in Sources */,
+				99DE2DD7203F3D9500C38E88 /* ioapi.c in Sources */,
 				99158B6F1D719E5E0080D078 /* YCFKeyboardManagerDemoViewController.m in Sources */,
 				99158BA11D719E5E0080D078 /* NSDate+JJTimeInterval.m in Sources */,
 				99158BB61D719E5E0080D078 /* JJTitleBtn.m in Sources */,
+				99DE2DD8203F3D9500C38E88 /* mztools.c in Sources */,
 				99158B9F1D719E5E0080D078 /* NSDictionary+PropertyCode.m in Sources */,
 				99158BB41D719E5E0080D078 /* JJInfiniteTableView.m in Sources */,
 				99158B771D719E5E0080D078 /* BRGodsOfHonour.m in Sources */,
 				99158B6E1D719E5E0080D078 /* YCFInfiniteDemoViewController.m in Sources */,
+				99DE2D40203E8C9F00C38E88 /* MyProxy.m in Sources */,
 				99158BAF1D719E5E0080D078 /* BRCalendarModel.m in Sources */,
+				99DE2DD0203F3D9500C38E88 /* JPNumber.m in Sources */,
+				99DE2DB7203F3D9500C38E88 /* JPCGBitmapContext.m in Sources */,
 				99158B761D719E5E0080D078 /* BRDemoModel.m in Sources */,
+				99DE2DD1203F3D9500C38E88 /* JPEngine.m in Sources */,
 				99158BA81D719E5E0080D078 /* BRTitleView.m in Sources */,
 				99CE03F41D7F12C800608A07 /* TestView.m in Sources */,
+				99DE2DB6203F3D9500C38E88 /* JPCGPath.m in Sources */,
+				99DE2DB5203F3D9500C38E88 /* JPCGColor.m in Sources */,
+				99DE2DD6203F3D9500C38E88 /* zip.c in Sources */,
 				99158B6D1D719E5E0080D078 /* BRCalendarDemoViewController.m in Sources */,
+				99DE2D3D203E798600C38E88 /* RuntimeObj.m in Sources */,
 				99158BAD1D719E5E0080D078 /* YCFTextView.m in Sources */,
 				99158B891D719E5E0080D078 /* BRURLManager.m in Sources */,
 				99158B7D1D719E5E0080D078 /* BRImageTools.m in Sources */,
 				99158B901D719E5E0080D078 /* NSString+Extension.m in Sources */,
+				99DA53D0204038EA00E9B094 /* NSObject+JsonHelp.m in Sources */,
+				99DE2DB3203F3D9500C38E88 /* JPMemory.m in Sources */,
 				99158B941D719E5E0080D078 /* NSString+JJKIt.m in Sources */,
 				99158B881D719E5E0080D078 /* BRSpolightManager.m in Sources */,
 				99158BB01D719E5E0080D078 /* BRCalendarView.m in Sources */,
 				99158B7C1D719E5E0080D078 /* BRRACDemoViewController.m in Sources */,
 				99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */,
 				99158B8A1D719E5E0080D078 /* NSArray+Extension.m in Sources */,
+				99DE2DB4203F3D9500C38E88 /* JPCFunction.m in Sources */,
 				99158B721D719E5E0080D078 /* AutoKeyBoardTestViewDemoController.m in Sources */,
+				99DE2DBF203F3D9500C38E88 /* JPUIImage.m in Sources */,
+				99E07336204579F8005102D2 /* TouchChainController.m in Sources */,
 				99158BBC1D719E5E0080D078 /* UIScrollView+JJRefreshControl.m in Sources */,
 				992F6F141D75CBB0007DFD1C /* CBWAlertView.m in Sources */,
+				99DE2DB9203F3D9500C38E88 /* JPCGGeometry.m in Sources */,
 				99158B841D719E5E0080D078 /* BRDemoNavigationController.m in Sources */,
 				99158BAE1D719E5E0080D078 /* BRCalendarConfig.m in Sources */,
 				99158B7B1D719E5E0080D078 /* BRFunctionCodingDemo.m in Sources */,
+				99DE2DC1203F3D9500C38E88 /* JPDevMenu.m in Sources */,
 				992F6F171D75CBB0007DFD1C /* CBWrefreshComponet.m in Sources */,
+				99DE2DCC203F3D9500C38E88 /* JPLocker.m in Sources */,
 				994B3698202C28E600EEE0B3 /* MultiThreadDemoController.m in Sources */,
 				99158B921D719E5E0080D078 /* NSString+Hash.m in Sources */,
 				99158BA01D719E5E0080D078 /* NSCalendar+JJInitCalendar.m in Sources */,
+				99DA53D32040417900E9B094 /* MethodForwrad.m in Sources */,
 				99158B711D719E5E0080D078 /* YCFDemoTextFieldCell.m in Sources */,
 				99158B971D719E5E0080D078 /* UIImage+GetColor.m in Sources */,
+				99DE2DBB203F3D9500C38E88 /* JPCGImage.m in Sources */,
 				992F6F1D1D75CBB0007DFD1C /* UIScrollView+CBWRefresh.m in Sources */,
 				99158B9E1D719E5E0080D078 /* UIViewController+BRCommonConfig.m in Sources */,
 				99158B751D719E5E0080D078 /* YCFTabsDemoViewController.m in Sources */,
 				99158B991D719E5E0080D078 /* UIImage+Render.m in Sources */,
 				992F6F131D75CBB0007DFD1C /* CBWAlertSheet.m in Sources */,
+				99DE2DBE203F3D9500C38E88 /* JPUIGeometry.m in Sources */,
+				99B0F708204783290031E1BC /* TouchChainView.m in Sources */,
+				99DE2DE02040153A00C38E88 /* AutoCodingObj.m in Sources */,
 				99158B7E1D719E5E0080D078 /* BRLoadImageAPI.m in Sources */,
 				99653C7B202C6E26005EBB54 /* EncryptController.m in Sources */,
 				99158B791D719E5E0080D078 /* BRStudyDemoViewController.m in Sources */,
+				99DE2DD5203F3D9500C38E88 /* unzip.c in Sources */,
+				99B0F70B204783910031E1BC /* TouchChainDesController.m in Sources */,
 				9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */,
 				99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */,
 				99158B7A1D719E5E0080D078 /* BRChainCodingDemo.m in Sources */,
@@ -1612,6 +2138,8 @@
 				99158B701D719E5E0080D078 /* AutoKeyBoardTestFieldDemoController.m in Sources */,
 				99158BA71D719E5E0080D078 /* BRModel.m in Sources */,
 				992F6F191D75CBB0007DFD1C /* CBWRefreshConst.m in Sources */,
+				99DE2DB1203F3D9500C38E88 /* JPCleaner.m in Sources */,
+				99DE2DB8203F3D9500C38E88 /* JPCoreGraphics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1739,6 +2267,10 @@
 				GCC_PREFIX_HEADER = Brick/BrickPrefix.pch;
 				INFOPLIST_FILE = Brick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Brick/BrickDemo/Demo/OtherStudyDemo/hybird/jspatch/Extensions/JPLibffi/libffi",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nima.Brick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1754,6 +2286,10 @@
 				GCC_PREFIX_HEADER = Brick/BrickPrefix.pch;
 				INFOPLIST_FILE = Brick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Brick/BrickDemo/Demo/OtherStudyDemo/hybird/jspatch/Extensions/JPLibffi/libffi",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nima.Brick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

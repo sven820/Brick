@@ -10,6 +10,7 @@ target 'Brick' do
   pod 'ReactiveCocoa'
   pod 'YTKNetwork'
   pod 'SSKeychain'
+  pod 'CocoaAsyncSocket'
   
     target 'BrickTests' do
         pod 'OCMock'
