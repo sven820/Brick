@@ -125,6 +125,7 @@
 		99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03E61D7D502700608A07 /* UIView+Magic.m */; };
 		99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F01D7E572600608A07 /* MagicDemoViewController.m */; };
 		99CE03F41D7F12C800608A07 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F31D7F12C800608A07 /* TestView.m */; };
+		99D5FA9C22B785E000E3373B /* TestJJJJJJJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5FA9B22B785E000E3373B /* TestJJJJJJJ.swift */; };
 		99DA53CD2040372900E9B094 /* NSObject+JSONExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */; };
 		99DA53D0204038EA00E9B094 /* NSObject+JsonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53CF204038EA00E9B094 /* NSObject+JsonHelp.m */; };
 		99DA53D32040417900E9B094 /* MethodForwrad.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53D22040417900E9B094 /* MethodForwrad.m */; };
@@ -431,6 +432,8 @@
 		99CE03F01D7E572600608A07 /* MagicDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicDemoViewController.m; sourceTree = "<group>"; };
 		99CE03F21D7F12C800608A07 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		99CE03F31D7F12C800608A07 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		99D5FA9A22B785DF00E3373B /* Brick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brick-Bridging-Header.h"; sourceTree = "<group>"; };
+		99D5FA9B22B785E000E3373B /* TestJJJJJJJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJJJJJJJ.swift; sourceTree = "<group>"; };
 		99DA53CB2040372900E9B094 /* NSObject+JSONExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONExtension.h"; sourceTree = "<group>"; };
 		99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONExtension.m"; sourceTree = "<group>"; };
 		99DA53CE204038EA00E9B094 /* NSObject+JsonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsonHelp.h"; sourceTree = "<group>"; };
@@ -611,6 +614,8 @@
 			children = (
 				9958C0E41D71BEFF005EC3DF /* AppDelegate.h */,
 				9958C0E51D71BEFF005EC3DF /* AppDelegate.m */,
+				99D5FA9A22B785DF00E3373B /* Brick-Bridging-Header.h */,
+				99D5FA9922B7801B00E3373B /* Component */,
 				99158A4D1D719E5E0080D078 /* BrickDemo */,
 				99158A951D719E5E0080D078 /* BrickKit */,
 				99158A241D719E0F0080D078 /* Assets.xcassets */,
@@ -1441,6 +1446,14 @@
 			path = HybirdWebView;
 			sourceTree = "<group>";
 		};
+		99D5FA9922B7801B00E3373B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				99D5FA9B22B785E000E3373B /* TestJJJJJJJ.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		99DE2D37203E744100C38E88 /* runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -1744,7 +1757,6 @@
 				99158A121D719E0F0080D078 /* Frameworks */,
 				99158A131D719E0F0080D078 /* Resources */,
 				54E262C8CBA1B6602565A748 /* [CP] Embed Pods Frameworks */,
-				80F8B2B97CB57A4957C06DFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1764,7 +1776,6 @@
 				9958C0FC1D71C71D005EC3DF /* Frameworks */,
 				9958C0FD1D71C71D005EC3DF /* Resources */,
 				1CB754A7C8145F0F009DED41 /* [CP] Embed Pods Frameworks */,
-				BB1C5839CF012FEB802D26EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1788,6 +1799,7 @@
 					99158A141D719E0F0080D078 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = NUWT78Q42V;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					9958C0FE1D71C71D005EC3DF = {
@@ -1803,6 +1815,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1871,7 +1884,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1898,7 +1911,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		54E262C8CBA1B6602565A748 /* [CP] Embed Pods Frameworks */ = {
@@ -1907,7 +1920,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Brick/Pods-Brick-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Brick/Pods-Brick-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1932,22 +1945,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brick/Pods-Brick-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80F8B2B97CB57A4957C06DFA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brick/Pods-Brick-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brick/Pods-Brick-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		85E5768AF104009BF1726589 /* [CP] Check Pods Manifest.lock */ = {
@@ -1966,21 +1964,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB1C5839CF012FEB802D26EC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2022,6 +2005,7 @@
 				99DE2DC9203F3D9500C38E88 /* JPSpecialInit.m in Sources */,
 				99DE2D3A203E748200C38E88 /* RuntimeController.m in Sources */,
 				99158B8D1D719E5E0080D078 /* NSFileManager+Extension.m in Sources */,
+				99D5FA9C22B785E000E3373B /* TestJJJJJJJ.swift in Sources */,
 				99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */,
 				99158BD21D719E5E0080D078 /* YYFPSLabel.m in Sources */,
 				99158B931D719E5E0080D078 /* NSMutableURLRequest+XMGUpload.m in Sources */,
@@ -2262,6 +2246,7 @@
 			baseConfigurationReference = FCCA24180A1FA8BCBD5EDE3D /* Pods-Brick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				GCC_PREFIX_HEADER = Brick/BrickPrefix.pch;
@@ -2273,6 +2258,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nima.Brick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brick/Component/Brick-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -2281,6 +2269,7 @@
 			baseConfigurationReference = 1C3DE2B050A5264612F25E5C /* Pods-Brick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				GCC_PREFIX_HEADER = Brick/BrickPrefix.pch;
@@ -2292,6 +2281,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nima.Brick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brick/Component/Brick-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2299,6 +2290,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AE36EFF44CA245B862205F3 /* Pods-Brick-BrickTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				INFOPLIST_FILE = BrickTests/Info.plist;
@@ -2314,6 +2306,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 32F3969093586A7CFF2F677C /* Pods-Brick-BrickTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				INFOPLIST_FILE = BrickTests/Info.plist;
