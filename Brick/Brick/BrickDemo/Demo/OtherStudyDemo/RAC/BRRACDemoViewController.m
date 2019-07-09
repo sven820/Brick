@@ -7,7 +7,7 @@
 //
 
 #import "BRRACDemoViewController.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+@import ReactiveCocoa;
 
 
 @interface BRRACDemoViewController ()

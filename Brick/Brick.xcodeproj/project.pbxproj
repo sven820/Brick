@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		868B8AE4D573B6F6E5FFB2D8 /* Pods_Brick_BrickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7EED7F0AB2FF89BFF156B /* Pods_Brick_BrickTests.framework */; };
+		9914DF5322D431C30076A84E /* TemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF3C22D431C30076A84E /* TemplateViewController.m */; };
+		9914DF5622D431C30076A84E /* TemplateTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF3F22D431C30076A84E /* TemplateTableController.m */; };
+		9914DF5722D431C30076A84E /* TemplateLazyUIKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF4122D431C30076A84E /* TemplateLazyUIKitView.m */; };
+		9914DF5922D431C30076A84E /* TemplateScrollerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF4722D431C30076A84E /* TemplateScrollerController.m */; };
+		9914DF5C22D431C30076A84E /* TemplateCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF5022D431C30076A84E /* TemplateCollectionController.m */; };
+		9914DF5D22D431C30076A84E /* TemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF5222D431C30076A84E /* TemplateView.m */; };
+		9914DF6322D439C50076A84E /* YXYItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914DF6122D439C50076A84E /* YXYItemView.m */; };
 		99158A1A1D719E0F0080D078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158A191D719E0F0080D078 /* main.m */; };
 		99158A251D719E0F0080D078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99158A241D719E0F0080D078 /* Assets.xcassets */; };
 		99158B6D1D719E5E0080D078 /* BRCalendarDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99158A521D719E5E0080D078 /* BRCalendarDemoViewController.m */; };
@@ -104,9 +111,6 @@
 		992F6F1D1D75CBB0007DFD1C /* UIScrollView+CBWRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6F0D1D75CBB0007DFD1C /* UIScrollView+CBWRefresh.m */; };
 		992F6F1E1D75CBB0007DFD1C /* UIView+CBWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6F0F1D75CBB0007DFD1C /* UIView+CBWFrame.m */; };
 		992F6F1F1D75CBB0007DFD1C /* JJStatusBarExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 992F6F121D75CBB0007DFD1C /* JJStatusBarExtension.m */; };
-		994B368B202C256700EEE0B3 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B368C202C256700EEE0B3 /* ReactiveCocoa.framework */; };
-		994B368D202C256D00EEE0B3 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B368E202C256D00EEE0B3 /* ReactiveSwift.framework */; };
-		994B368F202C257200EEE0B3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B3690202C257200EEE0B3 /* Result.framework */; };
 		994B3693202C263000EEE0B3 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 994B3691202C263000EEE0B3 /* YYWeakProxy.m */; };
 		994B3698202C28E600EEE0B3 /* MultiThreadDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994B3697202C28E600EEE0B3 /* MultiThreadDemoController.m */; };
 		9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958C0E51D71BEFF005EC3DF /* AppDelegate.m */; };
@@ -125,7 +129,6 @@
 		99CE03E71D7D502700608A07 /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03E61D7D502700608A07 /* UIView+Magic.m */; };
 		99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F01D7E572600608A07 /* MagicDemoViewController.m */; };
 		99CE03F41D7F12C800608A07 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE03F31D7F12C800608A07 /* TestView.m */; };
-		99D5FA9C22B785E000E3373B /* TestJJJJJJJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5FA9B22B785E000E3373B /* TestJJJJJJJ.swift */; };
 		99DA53CD2040372900E9B094 /* NSObject+JSONExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */; };
 		99DA53D0204038EA00E9B094 /* NSObject+JsonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53CF204038EA00E9B094 /* NSObject+JsonHelp.m */; };
 		99DA53D32040417900E9B094 /* MethodForwrad.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DA53D22040417900E9B094 /* MethodForwrad.m */; };
@@ -197,6 +200,21 @@
 		32F3969093586A7CFF2F677C /* Pods-Brick-BrickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brick-BrickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests.release.xcconfig"; sourceTree = "<group>"; };
 		45A2B7542D50AC8E2E722888 /* Pods_BrickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE36EFF44CA245B862205F3 /* Pods-Brick-BrickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brick-BrickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brick-BrickTests/Pods-Brick-BrickTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9914DF3C22D431C30076A84E /* TemplateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateViewController.m; sourceTree = "<group>"; };
+		9914DF3F22D431C30076A84E /* TemplateTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateTableController.m; sourceTree = "<group>"; };
+		9914DF4122D431C30076A84E /* TemplateLazyUIKitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateLazyUIKitView.m; sourceTree = "<group>"; };
+		9914DF4322D431C30076A84E /* TemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateView.h; sourceTree = "<group>"; };
+		9914DF4622D431C30076A84E /* TemplateCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateCollectionController.h; sourceTree = "<group>"; };
+		9914DF4722D431C30076A84E /* TemplateScrollerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateScrollerController.m; sourceTree = "<group>"; };
+		9914DF4922D431C30076A84E /* TemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateViewController.h; sourceTree = "<group>"; };
+		9914DF4C22D431C30076A84E /* TemplateLazyUIKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateLazyUIKitView.h; sourceTree = "<group>"; };
+		9914DF4E22D431C30076A84E /* TemplateTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateTableController.h; sourceTree = "<group>"; };
+		9914DF4F22D431C30076A84E /* TemplateScrollerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateScrollerController.h; sourceTree = "<group>"; };
+		9914DF5022D431C30076A84E /* TemplateCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateCollectionController.m; sourceTree = "<group>"; };
+		9914DF5222D431C30076A84E /* TemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateView.m; sourceTree = "<group>"; };
+		9914DF5F22D4350C0076A84E /* ZXAlertUntil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXAlertUntil.swift; sourceTree = "<group>"; };
+		9914DF6122D439C50076A84E /* YXYItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXYItemView.m; sourceTree = "<group>"; };
+		9914DF6222D439C50076A84E /* YXYItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYItemView.h; sourceTree = "<group>"; };
 		99158A151D719E0F0080D078 /* Brick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99158A191D719E0F0080D078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		99158A241D719E0F0080D078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -433,7 +451,6 @@
 		99CE03F21D7F12C800608A07 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		99CE03F31D7F12C800608A07 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		99D5FA9A22B785DF00E3373B /* Brick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brick-Bridging-Header.h"; sourceTree = "<group>"; };
-		99D5FA9B22B785E000E3373B /* TestJJJJJJJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJJJJJJJ.swift; sourceTree = "<group>"; };
 		99DA53CB2040372900E9B094 /* NSObject+JSONExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONExtension.h"; sourceTree = "<group>"; };
 		99DA53CC2040372900E9B094 /* NSObject+JSONExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONExtension.m"; sourceTree = "<group>"; };
 		99DA53CE204038EA00E9B094 /* NSObject+JsonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsonHelp.h"; sourceTree = "<group>"; };
@@ -556,9 +573,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				994B368F202C257200EEE0B3 /* Result.framework in Frameworks */,
-				994B368D202C256D00EEE0B3 /* ReactiveSwift.framework in Frameworks */,
-				994B368B202C256700EEE0B3 /* ReactiveCocoa.framework in Frameworks */,
 				99DE2DCB203F3D9500C38E88 /* libffi.a in Frameworks */,
 				B77E4C63C1FF95B260008CFD /* Pods_Brick.framework in Frameworks */,
 			);
@@ -589,6 +603,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9914DF3B22D431C30076A84E /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				9914DF4C22D431C30076A84E /* TemplateLazyUIKitView.h */,
+				9914DF4122D431C30076A84E /* TemplateLazyUIKitView.m */,
+				9914DF4922D431C30076A84E /* TemplateViewController.h */,
+				9914DF3C22D431C30076A84E /* TemplateViewController.m */,
+				9914DF4322D431C30076A84E /* TemplateView.h */,
+				9914DF5222D431C30076A84E /* TemplateView.m */,
+				9914DF4E22D431C30076A84E /* TemplateTableController.h */,
+				9914DF3F22D431C30076A84E /* TemplateTableController.m */,
+				9914DF4F22D431C30076A84E /* TemplateScrollerController.h */,
+				9914DF4722D431C30076A84E /* TemplateScrollerController.m */,
+				9914DF4622D431C30076A84E /* TemplateCollectionController.h */,
+				9914DF5022D431C30076A84E /* TemplateCollectionController.m */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		9914DF5E22D434E00076A84E /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				9914DF5F22D4350C0076A84E /* ZXAlertUntil.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		9914DF6022D439B90076A84E /* ItemView */ = {
+			isa = PBXGroup;
+			children = (
+				9914DF6222D439C50076A84E /* YXYItemView.h */,
+				9914DF6122D439C50076A84E /* YXYItemView.m */,
+			);
+			path = ItemView;
+			sourceTree = "<group>";
+		};
 		99158A0C1D719E0F0080D078 = {
 			isa = PBXGroup;
 			children = (
@@ -615,7 +665,6 @@
 				9958C0E41D71BEFF005EC3DF /* AppDelegate.h */,
 				9958C0E51D71BEFF005EC3DF /* AppDelegate.m */,
 				99D5FA9A22B785DF00E3373B /* Brick-Bridging-Header.h */,
-				99D5FA9922B7801B00E3373B /* Component */,
 				99158A4D1D719E5E0080D078 /* BrickDemo */,
 				99158A951D719E5E0080D078 /* BrickKit */,
 				99158A241D719E0F0080D078 /* Assets.xcassets */,
@@ -1043,8 +1092,9 @@
 		99158AE61D719E5E0080D078 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				99158AEC1D719E5E0080D078 /* Base */,
 				99158AF51D719E5E0080D078 /* BRComponent.h */,
+				9914DF3B22D431C30076A84E /* Template */,
+				99158AEC1D719E5E0080D078 /* Base */,
 				99158AF61D719E5E0080D078 /* UI */,
 			);
 			path = Component;
@@ -1075,6 +1125,8 @@
 		99158AF61D719E5E0080D078 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9914DF6022D439B90076A84E /* ItemView */,
+				9914DF5E22D434E00076A84E /* Alert */,
 				99CE03DB1D7D19FD00608A07 /* BRMagicView */,
 				99158AF71D719E5E0080D078 /* BRTitleView */,
 				99158AFA1D719E5E0080D078 /* InfiniteView */,
@@ -1444,14 +1496,6 @@
 			children = (
 			);
 			path = HybirdWebView;
-			sourceTree = "<group>";
-		};
-		99D5FA9922B7801B00E3373B /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				99D5FA9B22B785E000E3373B /* TestJJJJJJJ.swift */,
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		99DE2D37203E744100C38E88 /* runtime */ = {
@@ -1890,7 +1934,6 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
@@ -1903,7 +1946,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
@@ -1926,7 +1968,6 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
@@ -1938,7 +1979,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
@@ -2005,12 +2045,12 @@
 				99DE2DC9203F3D9500C38E88 /* JPSpecialInit.m in Sources */,
 				99DE2D3A203E748200C38E88 /* RuntimeController.m in Sources */,
 				99158B8D1D719E5E0080D078 /* NSFileManager+Extension.m in Sources */,
-				99D5FA9C22B785E000E3373B /* TestJJJJJJJ.swift in Sources */,
 				99653C77202C4E34005EBB54 /* DemoForOCLock.m in Sources */,
 				99158BD21D719E5E0080D078 /* YYFPSLabel.m in Sources */,
 				99158B931D719E5E0080D078 /* NSMutableURLRequest+XMGUpload.m in Sources */,
 				99158A1A1D719E0F0080D078 /* main.m in Sources */,
 				99158B8E1D719E5E0080D078 /* NSMutableAttributedString+Extension.m in Sources */,
+				9914DF5C22D431C30076A84E /* TemplateCollectionController.m in Sources */,
 				99158BBA1D719E5E0080D078 /* JJRefreshView.m in Sources */,
 				99158BBF1D719E5E0080D078 /* JJTitleBar.m in Sources */,
 				99158BB31D719E5E0080D078 /* BRSmallCalendarView.m in Sources */,
@@ -2018,6 +2058,7 @@
 				99158BAA1D719E5E0080D078 /* YCFInputAttribute.m in Sources */,
 				99DA53CD2040372900E9B094 /* NSObject+JSONExtension.m in Sources */,
 				99158BB21D719E5E0080D078 /* BRCalendarSectionHeaderView.m in Sources */,
+				9914DF6322D439C50076A84E /* YXYItemView.m in Sources */,
 				99158B741D719E5E0080D078 /* YCFTestCellModel.m in Sources */,
 				99158BB11D719E5E0080D078 /* BRCalendarCell.m in Sources */,
 				99DE2DC6203F3D9500C38E88 /* JPKeyCommands.m in Sources */,
@@ -2074,11 +2115,14 @@
 				99158B891D719E5E0080D078 /* BRURLManager.m in Sources */,
 				99158B7D1D719E5E0080D078 /* BRImageTools.m in Sources */,
 				99158B901D719E5E0080D078 /* NSString+Extension.m in Sources */,
+				9914DF5622D431C30076A84E /* TemplateTableController.m in Sources */,
 				99DA53D0204038EA00E9B094 /* NSObject+JsonHelp.m in Sources */,
 				99DE2DB3203F3D9500C38E88 /* JPMemory.m in Sources */,
 				99158B941D719E5E0080D078 /* NSString+JJKIt.m in Sources */,
+				9914DF5722D431C30076A84E /* TemplateLazyUIKitView.m in Sources */,
 				99158B881D719E5E0080D078 /* BRSpolightManager.m in Sources */,
 				99158BB01D719E5E0080D078 /* BRCalendarView.m in Sources */,
+				9914DF5322D431C30076A84E /* TemplateViewController.m in Sources */,
 				99158B7C1D719E5E0080D078 /* BRRACDemoViewController.m in Sources */,
 				99CE03F11D7E572600608A07 /* MagicDemoViewController.m in Sources */,
 				99158B8A1D719E5E0080D078 /* NSArray+Extension.m in Sources */,
@@ -2099,6 +2143,7 @@
 				99158B921D719E5E0080D078 /* NSString+Hash.m in Sources */,
 				99158BA01D719E5E0080D078 /* NSCalendar+JJInitCalendar.m in Sources */,
 				99DA53D32040417900E9B094 /* MethodForwrad.m in Sources */,
+				9914DF5D22D431C30076A84E /* TemplateView.m in Sources */,
 				99158B711D719E5E0080D078 /* YCFDemoTextFieldCell.m in Sources */,
 				99158B971D719E5E0080D078 /* UIImage+GetColor.m in Sources */,
 				99DE2DBB203F3D9500C38E88 /* JPCGImage.m in Sources */,
@@ -2114,6 +2159,7 @@
 				99653C7B202C6E26005EBB54 /* EncryptController.m in Sources */,
 				99158B791D719E5E0080D078 /* BRStudyDemoViewController.m in Sources */,
 				99DE2DD5203F3D9500C38E88 /* unzip.c in Sources */,
+				9914DF5922D431C30076A84E /* TemplateScrollerController.m in Sources */,
 				99B0F70B204783910031E1BC /* TouchChainDesController.m in Sources */,
 				9958C0E61D71BEFF005EC3DF /* AppDelegate.m in Sources */,
 				99653C74202C454F005EBB54 /* MyTestOperation.m in Sources */,
@@ -2258,7 +2304,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nima.Brick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Brick/Component/Brick-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brick/Brick-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2281,7 +2327,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nima.Brick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Brick/Component/Brick-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brick/Brick-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2290,7 +2336,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AE36EFF44CA245B862205F3 /* Pods-Brick-BrickTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				INFOPLIST_FILE = BrickTests/Info.plist;
@@ -2306,7 +2351,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 32F3969093586A7CFF2F677C /* Pods-Brick-BrickTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				INFOPLIST_FILE = BrickTests/Info.plist;
